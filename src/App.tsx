@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { ShowSemesters } from "./components/ShowSemesters";
 
 function App(): JSX.Element {
     return (
@@ -15,6 +16,7 @@ function App(): JSX.Element {
                     UD. You can get started by viewing your courses.
                 </p>
             </div>
+            <ShowSemesters></ShowSemesters>
         </div>
     );
 }
