@@ -8,14 +8,15 @@ PASS src/App.test.tsx
 --------------------|---------|----------|---------|---------|-------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 --------------------|---------|----------|---------|---------|-------------------
-All files           |     100 |      100 |     100 |     100 |                   
+All files           |   22.22 |      100 |   28.57 |   22.22 |                   
  src                |     100 |      100 |     100 |     100 |                   
   App.tsx           |     100 |      100 |     100 |     100 |                   
- src/components     |     100 |      100 |     100 |     100 |                   
+ src/components     |    12.5 |      100 |   16.66 |    12.5 |                   
+  Courses.tsx       |       0 |      100 |       0 |       0 | 11-38             
   ShowSemesters.tsx |     100 |      100 |     100 |     100 |                   
 --------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        1.628 s
+Time:        1.617 s
 Ran all test suites.
