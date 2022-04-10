@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { CourseEditor } from "./Courses";
 export function ShowSemesters(): JSX.Element {
     return (
         <div>
@@ -13,6 +14,12 @@ export function ShowSemesters(): JSX.Element {
                     <Col>Spring Semester</Col>
                     <Col>Summer Session</Col>
                 </Row>
+                <Row>
+                    <CourseEditor
+                        courseOptions={[]}
+                        termOptions={[]}
+                    ></CourseEditor>
+                </Row>
             </Container>
             <Container>
                 <Row>
@@ -23,6 +30,12 @@ export function ShowSemesters(): JSX.Element {
                     <Col>Winter Session</Col>
                     <Col>Spring Semester</Col>
                     <Col>Summer Session</Col>
+                </Row>
+                <Row>
+                    <CourseEditor
+                        courseOptions={[]}
+                        termOptions={[]}
+                    ></CourseEditor>
                 </Row>
             </Container>
             <Container>
@@ -35,6 +48,12 @@ export function ShowSemesters(): JSX.Element {
                     <Col>Spring Semester</Col>
                     <Col>Summer Session</Col>
                 </Row>
+                <Row>
+                    <CourseEditor
+                        courseOptions={[]}
+                        termOptions={[]}
+                    ></CourseEditor>
+                </Row>
             </Container>
             <Container>
                 <Row>
@@ -45,6 +64,12 @@ export function ShowSemesters(): JSX.Element {
                     <Col>Winter Session</Col>
                     <Col>Spring Semester</Col>
                     <Col>Summer Session</Col>
+                </Row>
+                <Row>
+                    <CourseEditor
+                        courseOptions={[]}
+                        termOptions={[]}
+                    ></CourseEditor>
                 </Row>
             </Container>
         </div>
