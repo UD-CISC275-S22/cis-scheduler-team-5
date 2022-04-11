@@ -1,22 +1,17 @@
 import React, { useState } from "react";
-import { Button, Form, Col, Row } from "react-bootstrap";
+import { Button, Form, Row } from "react-bootstrap";
 
 export function CourseEditor({
-    courseOptions,
-    termOptions
+    courseOptions
 }: {
     courseOptions: string[];
     termOptions: string[];
 }): JSX.Element {
-    const [term, setTerm] = useState<string>(termOptions[0]);
     const [course, setCourse] = useState<string>(courseOptions[0]);
     const [termCourses, setTermCourses] = useState<string[]>([]);
 
     function updateCourse(event: React.ChangeEvent<HTMLSelectElement>) {
         setCourse(event.target.value);
-    }
-    function updateTerm(event: React.ChangeEvent<HTMLSelectElement>) {
-        setTerm(event.target.value);
     }
     function addCourse(course: string) {
         const updateTermCourses = [...termCourses, course];
