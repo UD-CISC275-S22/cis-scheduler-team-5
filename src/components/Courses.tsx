@@ -28,35 +28,29 @@ export function CourseEditor({
 
     return (
         <div>
+            {termCourses.map((member: string) => (
+                <li key={member}>
+                    {member} <Button>Edit</Button>
+                    <Button onClick={() => removeCourse(course)}>
+                        {" "}
+                        Delete{" "}
+                    </Button>
+                </li>
+            ))}
             <Row>
-                <Col>
-                    <Form.Group controlId="termSelect">
-                        <Form.Label>Please select a term.</Form.Label>
-                        <Form.Select value={term} onChange={updateTerm}>
-                            {termOptions.map((option: string) => (
-                                <option key={option} value={option}>
-                                    {option}
-                                </option>
-                            ))}
-                        </Form.Select>
-                    </Form.Group>
-                </Col>
-                <Col>
-                    <Form.Group controlId="courseSelect">
-                        <Form.Label>Please select a course.</Form.Label>
-                        <Form.Select value={course} onChange={updateCourse}>
-                            {courseOptions.map((option: string) => (
-                                <option key={option} value={option}>
-                                    {option}
-                                </option>
-                            ))}
-                        </Form.Select>
-                    </Form.Group>
-                </Col>
+                <Form.Group controlId="courseSelect">
+                    <Form.Label>Please select a course.</Form.Label>
+                    <Form.Select value={course} onChange={updateCourse}>
+                        {courseOptions.map((option: string) => (
+                            <option key={option} value={option}>
+                                {option}
+                            </option>
+                        ))}
+                    </Form.Select>
+                </Form.Group>
             </Row>
             <Row>
                 <Button onClick={() => addCourse(course)}> Insert </Button>
-                <Button onClick={() => removeCourse(course)}> Delete </Button>
             </Row>
         </div>
     );
