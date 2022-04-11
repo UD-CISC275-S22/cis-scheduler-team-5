@@ -20,6 +20,9 @@ export function CourseEditor({
     function removeCourse(course: string) {
         termCourses.filter((badCourse: string): boolean => course != badCourse);
     }
+    function clearCourses() {
+        setTermCourses([]);
+    }
 
     return (
         <div>
@@ -46,6 +49,7 @@ export function CourseEditor({
             </Row>
             <Row>
                 <Button onClick={() => addCourse(course)}> Insert </Button>
+                <Button onClick={() => clearCourses()}> Clear Courses</Button>
             </Row>
         </div>
     );
