@@ -18,7 +18,9 @@ export function CourseEditor({
         setTermCourses(updateTermCourses);
     }
     function removeCourse(course: string) {
-        termCourses.filter((badCourse: string): boolean => course != badCourse);
+        const newTermCourses = [...termCourses];
+        newTermCourses.splice(termCourses.indexOf(course), 1);
+        setTermCourses(newTermCourses);
     }
     function clearCourses() {
         setTermCourses([]);
