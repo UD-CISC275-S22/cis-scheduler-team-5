@@ -9,6 +9,7 @@ export function CourseEditor({
 }): JSX.Element {
     const [course, setCourse] = useState<string>(courseOptions[0]);
     const [termCourses, setTermCourses] = useState<string[]>([]);
+    const [isShown, setIsShown] = useState<boolean>(false);
 
     function updateCourse(event: React.ChangeEvent<HTMLSelectElement>) {
         setCourse(event.target.value);
@@ -27,12 +28,20 @@ export function CourseEditor({
     return (
         <div>
             {termCourses.map((member: string) => (
-                <li key={member}>
-                    {member} <Button>Edit</Button>
-                    <Button onClick={() => removeCourse(course)}>
-                        {" "}
-                        Delete{" "}
-                    </Button>
+                <li
+                    onMouseEnter={() => setIsShown(true)}
+                    onMouseLeave={() => setIsShown(false)}
+                    key={member}
+                >
+                    {member}
+                    {isShown && <div> AAAAAAAAAAAAH.</div>}
+                    {isShown && <Button>Edit ME</Button>}
+                    {isShown && (
+                        <Button onClick={() => removeCourse(course)}>
+                            {" "}
+                            Delete{" "}
+                        </Button>
+                    )}
                 </li>
             ))}
             <Row>
