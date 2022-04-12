@@ -20,16 +20,25 @@ export function CourseEditor({
     function removeCourse(course: string) {
         termCourses.filter((badCourse: string): boolean => course != badCourse);
     }
+    const [isShown, setIsShown] = useState<boolean>(false);
 
     return (
         <div>
             {termCourses.map((member: string) => (
-                <li key={member}>
-                    {member} <Button>Edit</Button>
-                    <Button onClick={() => removeCourse(course)}>
-                        {" "}
-                        Delete{" "}
-                    </Button>
+                <li
+                    onMouseEnter={() => setIsShown(true)}
+                    onMouseLeave={() => setIsShown(false)}
+                    key={member}
+                >
+                    {member}
+                    {isShown && <div> AAAAAAAAAAAAH.</div>}
+                    {isShown && <Button>Edit ME</Button>}
+                    {isShown && (
+                        <Button onClick={() => removeCourse(course)}>
+                            {" "}
+                            Delete{" "}
+                        </Button>
+                    )}
                 </li>
             ))}
             <Row>
