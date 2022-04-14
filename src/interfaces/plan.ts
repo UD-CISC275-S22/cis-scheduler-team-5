@@ -1,4 +1,4 @@
-import { Term } from "./term";
+import { Year } from "./year";
 export interface Plan {
-    semesters: Term[];
+    years: Year[];
 }
