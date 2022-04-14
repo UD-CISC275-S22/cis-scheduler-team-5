@@ -1,0 +1,44 @@
+import React, { useState } from "react";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Years } from "./Years";
+import { Plan } from "../interfaces/plan";
+
+export function CreatePlan(): JSX.Element {
+    const [plan, setPlan] = useState<string[]>([]);
+    const [name, setName] = useState<string>("");
+
+    function addPlan(option: string) {
+        setPlan([...plan, option]);
+    }
+    function clearPlan() {
+        setPlan([]);
+    }
+    function updateName(event: React.ChangeEvent<HTMLInputElement>) {
+        setName(event.target.value);
+    }
+    return (
+        <div>
+            <Form.Group controlId="dorPlanName">
+                <Form.Label>New Plan Name:</Form.Label>
+                <Form.Control value={name} onChange={updateName} />
+            </Form.Group>
+            <Button onClick={() => addPlan(name)}>Add Plan</Button>
+            <Button onClick={clearPlan}>Delete All Plans</Button>
+            {plan.map((onePlan: string) => (
+                <div key={onePlan} style={{ marginBottom: "40px" }}>
+                    <Container>
+                        <Row>
+                            <Col>
+                                {onePlan} <Button>Delete</Button>
+                                <Button>Edit</Button>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Years></Years>
+                        </Row>
+                    </Container>
+                </div>
+            ))}
+        </div>
+    );
+}

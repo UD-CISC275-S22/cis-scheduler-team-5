@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { ShowSemesters } from "./components/ShowSemesters";
+import { CreatePlan } from "./components/CreatePlan";
 
 function App(): JSX.Element {
     return (
@@ -16,7 +16,7 @@ function App(): JSX.Element {
                     UD. You can get started by viewing your courses.
                 </p>
             </div>
-            <ShowSemesters></ShowSemesters>
+            <CreatePlan></CreatePlan>
         </div>
     );
 }
