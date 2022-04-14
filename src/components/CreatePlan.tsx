@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Years } from "./Years";
-import { Plan } from "../interfaces/plan";
+//import { Plan } from "../interfaces/plan";
 
 export function CreatePlan(): JSX.Element {
     const [plan, setPlan] = useState<string[]>([]);
