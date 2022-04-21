@@ -1,8 +1,17 @@
 import React from "react";
 import "./App.css";
 import { CreatePlan } from "./components/CreatePlan";
+import Catalog from "./data/easyCatalog.json";
+//import { Course } from "./interfaces/course";
 
 function App(): JSX.Element {
+    /*const COURSES = Object.values(EasyCatalog).map(
+        (courses: Record<string, Course>): Course => ({
+            Object.entries(courses).map(
+                ([courseKey,course] : [string,Course]) => 
+            )
+        })
+    );*/
     return (
         <div className="App">
             <header className="App-header">
@@ -16,7 +25,7 @@ function App(): JSX.Element {
                     UD. You can get started by viewing your courses.
                 </p>
             </div>
-            <CreatePlan></CreatePlan>
+            <CreatePlan catalog={Catalog}></CreatePlan>
         </div>
     );
 }
