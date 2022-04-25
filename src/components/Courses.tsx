@@ -1,3 +1,4 @@
+import { Autocomplete, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
@@ -9,10 +10,12 @@ export function CourseEditor({
     catalog: Record<string, Record<string, Course>>;
 }): JSX.Element {
     const COURSES = getAllCourses();
-    const [course, setCourse] = useState<string>(COURSES[0]);
+    const [course, setCourse] = useState<string>("");
     const [termCourses, setTermCourses] = useState<Course[]>([]);
     const [isShown, setIsShown] = useState<boolean>(false);
-    const [isShown2, setIsShown2] = useState<boolean>(false);
+    const [visible, setVisible] = useState<boolean>(false);
+    const [value, setValue] = React.useState<string | null>(COURSES[0]);
+    const [inpu, setInpu] = useState<string>(""); //string value for input for class
     //const [name, setName] = useState<string>("");
     //const [modalShow, setModalShow] = React.useState(false);
 
@@ -68,8 +71,10 @@ export function CourseEditor({
     }
     function addCourse(course: string) {
         const newCourse: Course = findCourse(course);
-        const updateTermCourses = [...termCourses, newCourse];
-        setTermCourses(updateTermCourses);
+        if (newCourse.code !== "") {
+            const updateTermCourses = [...termCourses, newCourse];
+            setTermCourses(updateTermCourses);
+        }
     }
     function removeCourse(courseCode: string) {
         const newTermCourses = termCourses;
@@ -80,6 +85,11 @@ export function CourseEditor({
     }
     function clearCourses() {
         setTermCourses([]);
+    }
+
+    function flipVisibility(): void {
+        // Set visible to be the logical opposite of its previous value
+        setVisible(!visible);
     }
 
     //function updateName(event: React.ChangeEvent<HTMLInputElement>) {
@@ -98,45 +108,45 @@ export function CourseEditor({
                         >
                             <Container>
                                 <Col>
-                                    <Button
-                                        id="btn"
-                                        onClick={() => setIsShown2(true)}
-                                    >
+                                    <Button id="btn" onClick={flipVisibility}>
                                         {oneCourse.code} {oneCourse.name}
                                     </Button>
-                                </Col>
-                                <Col>
-                                    {isShown && (
-                                        <Button
-                                            onClick={() =>
-                                                removeCourse(oneCourse.code)
-                                            }
-                                        >
-                                            {" "}
-                                            Delete{" "}
-                                        </Button>
-                                    )}
+                                    <Button
+                                        variant="outline-danger"
+                                        onClick={() =>
+                                            removeCourse(oneCourse.code)
+                                        }
+                                    >
+                                        X
+                                    </Button>
                                 </Col>
                             </Container>
 
-                            {isShown2 && <CourseEdit></CourseEdit>}
+                            {visible && (
+                                <CourseEdit course={oneCourse}></CourseEdit>
+                            )}
                         </div>
                     ))}
                 </div>
                 <Row>
-                    <Form.Group controlId="courseSelect">
-                        <Form.Label>Please select a course.</Form.Label>
-                        <Form.Select value={course} onChange={updateCourse}>
-                            {COURSES.map((option: string) => (
-                                <option key={option} value={option}>
-                                    {option}
-                                </option>
-                            ))}
-                        </Form.Select>
-                    </Form.Group>
+                    <Autocomplete
+                        disablePortal
+                        id="combo-box-demo"
+                        value={course}
+                        onChange={(event, value) => {
+                            setInpu(value as string);
+                            event.preventDefault();
+                        }}
+                        options={COURSES}
+                        sx={{ width: 300 }}
+                        //inputValue={course}
+                        renderInput={(params) => (
+                            <TextField {...params} label="Course" />
+                        )}
+                    />
                 </Row>
                 <Row>
-                    <Button onClick={() => addCourse(course)}> Insert </Button>
+                    <Button onClick={() => addCourse(inpu)}> Insert </Button>
                     <Button onClick={() => clearCourses()}>
                         {" "}
                         Clear Courses
