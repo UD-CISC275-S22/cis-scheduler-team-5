@@ -1,6 +1,6 @@
 import { Autocomplete, TextField } from "@mui/material";
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { CourseEdit } from "./CourseEdit";
 
@@ -10,11 +10,11 @@ export function CourseEditor({
     catalog: Record<string, Record<string, Course>>;
 }): JSX.Element {
     const COURSES = getAllCourses();
-    const [course, setCourse] = useState<string>("");
+    const [course] = useState<string>("");
     const [termCourses, setTermCourses] = useState<Course[]>([]);
     const [isShown, setIsShown] = useState<boolean>(false);
     const [visible, setVisible] = useState<boolean>(false);
-    const [value, setValue] = React.useState<string | null>(COURSES[0]);
+    //const [value, setValue] = React.useState<string | null>(COURSES[0]);
     const [inpu, setInpu] = useState<string>(""); //string value for input for class
     //const [name, setName] = useState<string>("");
     //const [modalShow, setModalShow] = React.useState(false);
@@ -66,9 +66,9 @@ export function CourseEditor({
         return course;
     }
 
-    function updateCourse(event: React.ChangeEvent<HTMLSelectElement>) {
-        setCourse(event.target.value);
-    }
+    //function updateCourse(event: React.ChangeEvent<HTMLSelectElement>) {
+    //    setCourse(event.target.value);
+    //}
     function addCourse(course: string) {
         const newCourse: Course = findCourse(course);
         if (newCourse.code !== "") {
@@ -96,14 +96,19 @@ export function CourseEditor({
     // setName(event.target.value);
     // }
 
+    function flipVisibility2(): void {
+        // Set visible to be the logical opposite of its previous value
+        setIsShown(!isShown);
+    }
+
     return (
         <>
             <div>
                 <div>
                     {termCourses.map((oneCourse: Course) => (
                         <div
-                            onMouseEnter={() => setIsShown(true)}
-                            onMouseLeave={() => setIsShown(false)}
+                            onMouseEnter={flipVisibility2}
+                            onMouseLeave={flipVisibility2}
                             key={oneCourse.code}
                         >
                             <Container>

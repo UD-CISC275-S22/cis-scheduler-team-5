@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
+import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { EditText, EditTextarea } from "react-edit-text";
 import { Course } from "../interfaces/course";
 export function CourseEdit({ course }: { course: Course }) {
     //Modal from https://react-bootstrap.github.io/components/modal/
     const [show, setShow] = useState(true);
 
-    const handleShow = () => setShow(true);
+    //const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
     return (
