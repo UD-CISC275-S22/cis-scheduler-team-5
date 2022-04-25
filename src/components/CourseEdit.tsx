@@ -1,43 +1,44 @@
 import React, { useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
-export function CourseEdit() {
+import { Button, Col, Container, Form, Modal, Row } from "react-bootstrap";
+import { EditText, EditTextarea } from "react-edit-text";
+import { Course } from "../interfaces/course";
+export function CourseEdit({ course }: { course: Course }) {
     //Modal from https://react-bootstrap.github.io/components/modal/
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
-                Edit ME
-            </Button>
-
-            <Modal show={show} onHide={handleClose}>
+            <Modal size="lg" show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>
+                        {course.code}
+                        <br></br>
+                        <EditText defaultValue={course.name}></EditText>
+                    </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
-                        <Form.Group
-                            className="mb-3"
-                            controlId="exampleForm.ControlInput1"
-                        >
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control
-                                type="email"
-                                placeholder="name@example.com"
-                                autoFocus
-                            />
-                        </Form.Group>
-                        <Form.Group
-                            className="mb-3"
-                            controlId="exampleForm.ControlTextarea1"
-                        >
-                            <Form.Label>Example textarea</Form.Label>
-                            <Form.Control as="textarea" rows={3} />
-                        </Form.Group>
-                    </Form>
+                    <Container>
+                        <Row>
+                            <Col md="2">Course Description:</Col>
+                            <Col>
+                                <EditTextarea
+                                    defaultValue={course.descr}
+                                    rows={10}
+                                ></EditTextarea>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="2">Course Credits:</Col>
+                            <Col>
+                                <EditText
+                                    defaultValue={course.credits}
+                                ></EditText>
+                            </Col>
+                        </Row>
+                    </Container>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>

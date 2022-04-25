@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { CreatePlan } from "./components/CreatePlan";
-import Catalog from "./data/easyCatalog.json";
+import Catalog from "./data/catalog.json";
 //import { Course } from "./interfaces/course";
 
 function App(): JSX.Element {
