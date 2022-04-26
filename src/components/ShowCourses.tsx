@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
+import React from "react";
+import { Col, Container, Row, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 // adding a year will automatically have 4 terms, this addSemester is for ppl who wanna add to their 4 years
 // export function addSemester(): JSX.Element {
@@ -29,22 +29,37 @@ export function ShowCourses(): JSX.Element {
     // this is a const array of Course objects you'll use here for now
     const courses: Course[] = [
         {
-            courseid: 181,
-            name: "Introduction to Computer Science II",
-            description: "Intro to programming in java",
-            prereqs: []
+            code: "CISC 101",
+            name: "Principles of Computing",
+            descr: "Introduces students to the central ideas of computing and computer science including programs, algorithms, abstraction, the internet, and information systems. Instills ideas and practices of computational thinking and engages students in activities that show how computing and computer science change the world. Explores computing as a creative activity and empowers students to apply computational thinking to all disciplines including the arts, humanities, business, social and physical sciences, health, and entertainment.",
+            credits: " 3",
+            preReq: "",
+            restrict: "",
+            breadth:
+                "University: Mathematics, Natural Sciences and Technology; A&S: GROUP D: A&S Math, Nat Sci & Technology",
+            typ: "Fall, Winter and Spring"
         },
         {
-            courseid: 108,
-            name: "Introduction to Computer Science I",
-            description: "Intro to programming in python",
-            prereqs: []
+            code: "CISC 103",
+            name: "Introduction to Computer Science with Web Applications",
+            descr: "Principles of computer science illustrated through programming in scripting languages such as JavaScript and VBScript. Topics include control structures, arrays, functions, and procedures. Programming projects illustrate web-based applications.",
+            credits: " 3",
+            preReq: "",
+            restrict: "Open to non-majors.",
+            breadth:
+                "University: Mathematics, Natural Sciences and Technology; A&S: GROUP D: A&S Math, Nat Sci & Technology",
+            typ: "Fall and Spring"
         },
         {
-            courseid: 210,
-            name: "Introduction to Systems Programming",
-            description: "Intro to programming in C and the terminal",
-            prereqs: []
+            code: "CISC 106",
+            name: "General Computer Science for Engineers",
+            descr: "Principles of computer science illustrated and applied through programming in a general-purpose language. Programming projects illustrate computational problems, styles, and issues that arise in engineering.",
+            credits: " 3",
+            preReq: "",
+            restrict: "",
+            breadth:
+                "University: Mathematics, Natural Sciences and Technology; A&S: GROUP D: A&S Math, Nat Sci & Technology",
+            typ: "Fall, Summer and Spring"
         }
     ];
 
@@ -63,16 +78,16 @@ export function ShowCourses(): JSX.Element {
                                     <th>Course ID</th>
                                     <th>Course Name</th>
                                     <th>Description</th>
-                                    <th>Prerequisites</th>
+                                    <th>Credits</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {courses.map((course: Course) => (
-                                    <tr key={course.courseid}>
-                                        <td>{course.courseid}</td>
+                                    <tr key={course.code}>
+                                        <td>{course.code}</td>
                                         <td>{course.name}</td>
-                                        <td>{course.description}</td>
-                                        <td>{course.prereqs}</td>
+                                        <td>{course.descr}</td>
+                                        <td>{course.credits}</td>
                                     </tr>
                                 ))}
                             </tbody>
