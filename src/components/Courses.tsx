@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { CourseEdit } from "./CourseEdit";
+import Draggable from "react-draggable";
 
 export function CourseEditor({
     catalog
@@ -113,9 +114,18 @@ export function CourseEditor({
                         >
                             <Container>
                                 <Col>
-                                    <Button id="btn" onClick={flipVisibility}>
-                                        {oneCourse.code} {oneCourse.name}
-                                    </Button>
+                                    <Draggable>
+                                        <div
+                                            className="box"
+                                            id="btn"
+                                            onClick={flipVisibility}
+                                        >
+                                            <div>
+                                                {oneCourse.code}{" "}
+                                                {oneCourse.name}
+                                            </div>
+                                        </div>
+                                    </Draggable>
                                     <Button
                                         variant="outline-danger"
                                         onClick={() =>

@@ -1,5 +1,7 @@
 import React from "react";
+import { Col, Row } from "react-bootstrap";
 import "./App.css";
+import { CourseEditor } from "./components/Courses";
 import { CreatePlan } from "./components/CreatePlan";
 import Catalog from "./data/catalog.json";
 //import { Course } from "./interfaces/course";
@@ -25,7 +27,14 @@ function App(): JSX.Element {
                     UD. You can get started by viewing your courses.
                 </p>
             </div>
-            <CreatePlan catalog={Catalog}></CreatePlan>
+            <Row>
+                <Col md="2">
+                    <CourseEditor catalog={Catalog}></CourseEditor>
+                </Col>
+                <Col>
+                    <CreatePlan catalog={Catalog}></CreatePlan>
+                </Col>
+            </Row>
         </div>
     );
 }

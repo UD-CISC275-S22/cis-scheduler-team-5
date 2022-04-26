@@ -11,22 +11,10 @@ export function ShowSemesters({
         <div>
             <Container>
                 <Row>
-                    <Col>
-                        Fall Semester
-                        <CourseEditor catalog={catalog}></CourseEditor>
-                    </Col>
-                    <Col>
-                        Winter Session
-                        <CourseEditor catalog={catalog}></CourseEditor>
-                    </Col>
-                    <Col>
-                        Spring Semester
-                        <CourseEditor catalog={catalog}></CourseEditor>
-                    </Col>
-                    <Col>
-                        Summer Session
-                        <CourseEditor catalog={catalog}></CourseEditor>
-                    </Col>
+                    <Col>Fall Semester</Col>
+                    <Col>Winter Session</Col>
+                    <Col>Spring Semester</Col>
+                    <Col>Summer Session</Col>
                 </Row>
             </Container>
         </div>
