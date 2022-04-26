@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { CreatePlan } from "./components/CreatePlan";
+import { ShowCourses } from "./components/ShowCourses";
 import Catalog from "./data/catalog.json";
 //import { Course } from "./interfaces/course";
 
@@ -26,6 +27,7 @@ function App(): JSX.Element {
                 </p>
             </div>
             <CreatePlan catalog={Catalog}></CreatePlan>
+            <ShowCourses></ShowCourses>
         </div>
     );
 }
