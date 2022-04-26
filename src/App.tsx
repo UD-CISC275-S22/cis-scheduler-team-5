@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { CreatePlan } from "./components/CreatePlan";
+import { ShowCourses } from "./components/ShowCourses";
 
 function App(): JSX.Element {
     return (
@@ -17,6 +18,9 @@ function App(): JSX.Element {
                 </p>
             </div>
             <CreatePlan></CreatePlan>
+            <div>
+                <ShowCourses></ShowCourses>
+            </div>
         </div>
     );
 }
