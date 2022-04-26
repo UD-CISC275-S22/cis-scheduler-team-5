@@ -75,9 +75,8 @@ export function ShowCourses(): JSX.Element {
                         <Table striped bordered hover size="sm">
                             <thead>
                                 <tr>
-                                    <th>Course ID</th>
+                                    <th>Course Code</th>
                                     <th>Course Name</th>
-                                    <th>Description</th>
                                     <th>Credits</th>
                                 </tr>
                             </thead>
@@ -86,7 +85,6 @@ export function ShowCourses(): JSX.Element {
                                     <tr key={course.code}>
                                         <td>{course.code}</td>
                                         <td>{course.name}</td>
-                                        <td>{course.descr}</td>
                                         <td>{course.credits}</td>
                                     </tr>
                                 ))}
