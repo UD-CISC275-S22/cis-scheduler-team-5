@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import "./App.css";
 import { CourseEditor } from "./components/Courses";
 import { CreatePlan } from "./components/CreatePlan";
+import { ShowCourses } from "./components/ShowCourses";
 import Catalog from "./data/catalog.json";
 //import { Course } from "./interfaces/course";
 
@@ -32,7 +33,8 @@ function App(): JSX.Element {
                     <CourseEditor catalog={Catalog}></CourseEditor>
                 </Col>
                 <Col>
-                    <CreatePlan catalog={Catalog}></CreatePlan>
+                    <CreatePlan /*catalog={Catalog}*/></CreatePlan>
+                    <ShowCourses></ShowCourses>
                 </Col>
             </Row>
         </div>
