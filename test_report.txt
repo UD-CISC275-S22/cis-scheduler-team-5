@@ -2,30 +2,56 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-PASS src/App.test.tsx
-  ✓ renders the course name somewhere (46 ms)
+  console.warn
+    MUI: The value provided to Autocomplete is invalid.
+    None of the options match with `""`.
+    You can use the `isOptionEqualToValue` prop to customize the equality test.
 
---------------------|---------|----------|---------|---------|-------------------
-File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
---------------------|---------|----------|---------|---------|-------------------
-All files           |    10.6 |        0 |   12.12 |   10.93 |                   
- src                |     100 |      100 |     100 |     100 |                   
-  App.tsx           |     100 |      100 |     100 |     100 |                   
- src/components     |    9.23 |        0 |    9.37 |    9.52 |                   
-  CourseEdit.tsx    |       0 |      100 |       0 |       0 | 7-12              
-  Courses.tsx       |       0 |        0 |       0 |       0 | 12-155            
-  CreatePlan.tsx    |    37.5 |      100 |   16.66 |    37.5 | 16-22,30-33       
-  ShowCourses.tsx   |     100 |      100 |     100 |     100 |                   
-  ShowSemesters.tsx |       0 |      100 |       0 |       0 | 10                
-  Years.tsx         |       0 |      100 |       0 |       0 | 10-31             
- src/interfaces     |       0 |        0 |       0 |       0 |                   
-  course.ts         |       0 |        0 |       0 |       0 |                   
-  plan.ts           |       0 |        0 |       0 |       0 |                   
-  term.ts           |       0 |        0 |       0 |       0 |                   
-  year.ts           |       0 |        0 |       0 |       0 |                   
---------------------|---------|----------|---------|---------|-------------------
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+
+  console.warn
+    MUI: The value provided to Autocomplete is invalid.
+    None of the options match with `""`.
+    You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+
+PASS src/App.test.tsx
+  ✓ renders the course name somewhere (215 ms)
+
+--------------------|---------|----------|---------|---------|------------------------
+File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s      
+--------------------|---------|----------|---------|---------|------------------------
+All files           |   33.33 |        0 |   21.21 |   32.81 |                        
+ src                |     100 |      100 |     100 |     100 |                        
+  App.tsx           |     100 |      100 |     100 |     100 |                        
+ src/components     |    32.3 |        0 |   18.75 |   31.74 |                        
+  CourseEdit.tsx    |       0 |      100 |       0 |       0 | 7-12                   
+  Courses.tsx       |   36.58 |        0 |      20 |      35 | 36-102,110-153,164-165 
+  CreatePlan.tsx    |    37.5 |      100 |   16.66 |    37.5 | 16-22,30-33            
+  ShowCourses.tsx   |     100 |      100 |     100 |     100 |                        
+  ShowSemesters.tsx |       0 |      100 |       0 |       0 | 10                     
+  Years.tsx         |       0 |      100 |       0 |       0 | 10-31                  
+ src/interfaces     |       0 |        0 |       0 |       0 |                        
+  course.ts         |       0 |        0 |       0 |       0 |                        
+  plan.ts           |       0 |        0 |       0 |       0 |                        
+  term.ts           |       0 |        0 |       0 |       0 |                        
+  year.ts           |       0 |        0 |       0 |       0 |                        
+--------------------|---------|----------|---------|---------|------------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        3.134 s
+Time:        3.35 s
 Ran all test suites.
