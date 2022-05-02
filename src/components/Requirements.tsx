@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Form } from "react-bootstrap";
+import { Col, Container, Form } from "react-bootstrap";
 import "../App.css";
 
 export function Requirements(): JSX.Element {
@@ -22,7 +22,7 @@ export function Requirements(): JSX.Element {
         "Total 124 credits"
     ];
     return (
-        <Col className="sidecolumns" id="move-when-scroll">
+        <Container className="sidecolumns" id="move-when-scroll">
             <h2 className="subtitle">Degree Requirements</h2>
             {requirementsBS.map((req: string) => (
                 <div key={req}>
@@ -34,6 +34,6 @@ export function Requirements(): JSX.Element {
                     />
                 </div>
             ))}
-        </Col>
+        </Container>
     );
 }

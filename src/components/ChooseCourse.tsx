@@ -5,12 +5,11 @@ import { Course } from "../interfaces/course";
 import { CourseEdit } from "./CourseEdit";
 import Draggable from "react-draggable";
 import { ShowCourses } from "./ShowCourses";
+import { padding } from "@mui/system";
 //https://lo-victoria.com/making-draggable-components-in-react DRAGGABLE
 //https://medium.com/nmc-techblog/easy-drag-and-drop-in-react-22778b30ba37 DROP DRAGGABLE
 
-//https://www.kennethlange.com/drag-and-drop-in-pure-typescript-and-react/ DRAG AND DROP
-
-export function CourseEditor({
+export function ChooseCourse({
     catalog
 }: {
     catalog: Record<string, Record<string, Course>>;
@@ -71,10 +70,6 @@ export function CourseEditor({
         }
         return course;
     }
-
-    //function updateCourse(event: React.ChangeEvent<HTMLSelectElement>) {
-    //    setCourse(event.target.value);
-    //}
     function addCourse(course: string) {
         const newCourse: Course = findCourse(course);
         if (newCourse.code !== "") {
@@ -93,39 +88,68 @@ export function CourseEditor({
         setTermCourses([]);
     }
 
-    function flipVisibility(): void {
-        // Set visible to be the logical opposite of its previous value
-        setVisible(!visible);
-    }
-
-    //function updateName(event: React.ChangeEvent<HTMLInputElement>) {
-    // setName(event.target.value);
-    // }
-
-    function flipVisibility2(): void {
-        // Set visible to be the logical opposite of its previous value
-        setIsShown(!isShown);
-    }
-
-    const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
-        const course = event.dataTransfer.getData("text");
-        const newCourse: Course = findCourse(course);
-        if (newCourse.code !== "") {
-            const updateTermCourses = [...termCourses, newCourse];
-            setTermCourses(updateTermCourses);
-        }
-        console.log("BU");
-    };
-    const enableDropping = (event: React.DragEvent<HTMLDivElement>) => {
-        event.preventDefault();
+    const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
+        event.dataTransfer.setData("text", event.currentTarget.id);
     };
 
     return (
         <>
-            <div onDragOver={enableDropping} onDrop={handleDrop}>
+            <div>
+                Choose the courses you want to insert, drag them to the righ
+                semester!
                 <Container>
-                    <ShowCourses listCourses={termCourses}></ShowCourses>
+                    <div>
+                        {termCourses.map((oneCourse: Course) => (
+                            <div
+                                key={oneCourse.code}
+                                style={{
+                                    padding: "4px"
+                                }}
+                            >
+                                <Container>
+                                    <Col>
+                                        <div>
+                                            <div
+                                                className="box"
+                                                id={oneCourse.code}
+                                                draggable="true"
+                                                onDragStart={handleDragStart}
+                                                style={{
+                                                    padding: "4px",
+                                                    backgroundColor: "#e1bee7"
+                                                }}
+                                            >
+                                                {oneCourse.code}{" "}
+                                                {oneCourse.name}
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Container>
+                            </div>
+                        ))}
+                    </div>
                     <Row>
+                        <Autocomplete
+                            disablePortal
+                            id="combo-box-demo"
+                            value={course}
+                            onChange={(event, value) => {
+                                setInpu(value as string);
+                                event.preventDefault();
+                            }}
+                            options={COURSES}
+                            sx={{ width: 300 }}
+                            //inputValue={course}
+                            renderInput={(params) => (
+                                <TextField {...params} label="Course" />
+                            )}
+                        />
+                    </Row>
+                    <Row>
+                        <Button onClick={() => addCourse(inpu)}>
+                            {" "}
+                            Insert{" "}
+                        </Button>
                         <Button onClick={() => clearCourses()}>
                             {" "}
                             Clear Courses
