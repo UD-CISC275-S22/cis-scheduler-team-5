@@ -3,12 +3,7 @@ import { Col, Container, Row, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 // adding a year will automatically have 4 terms, this addSemester is for ppl who wanna add to their 4 years
 // export function addSemester(): JSX.Element {
-//     const [term, setTerm] = useState<Term>({
-//         year: 2022,
-//         season: "Fall",
-//         courses: [],
-//         credits: 0
-//     });
+//     const [term, setTerm] = useState<Term>([]);
 //     //should i use state for each of the updated fields in the term interface?
 //     const [year, setYear]=useState<number>(2022);
 //     const [season, setSeason]=useState<TermSeason>("Fall");
@@ -17,9 +12,6 @@ import { Course } from "../interfaces/course";
 //         setYear(event.target.value);
 //     }
 // }
-
-// have button that onclick calls addsemester function
-//materializes form that allows you to say the year, season from a dropdown,
 
 export function ShowCourses(): JSX.Element {
     // have functions here like editCourse that use state and are called w button/editable radio switch? then put in rows?
@@ -63,10 +55,8 @@ export function ShowCourses(): JSX.Element {
         }
     ];
 
-    // map fn to make the course have CISC in front of ID
-    // const termCourses= courses.map(
-    //     (course: Course): Course => ({...course, courseid: INSERTCISC})
-    // )
+    // const [termCourses, setTermCourses] = useState<Course[]>([]);
+
     return (
         <div>
             <Container>
