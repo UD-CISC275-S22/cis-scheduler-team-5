@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { CourseEditor } from "./Courses";
-import { ShowCourses } from "./ShowCourses";
+//import { ShowCourses } from "./ShowCourses";
 import { Course } from "../interfaces/course";
 export function ShowSemesters({
     catalog
