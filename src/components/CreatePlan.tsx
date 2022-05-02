@@ -22,7 +22,7 @@ export function CreatePlan(/*{
         setName(event.target.value);
     }
     return (
-        <div>
+        <div style={{ border: "1px solid gray", padding: "4px" }}>
             <Form.Group controlId="dorPlanName">
                 <Form.Label>New Plan Name:</Form.Label>
                 <Form.Control value={name} onChange={updateName} />
