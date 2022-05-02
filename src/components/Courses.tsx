@@ -4,6 +4,8 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { CourseEdit } from "./CourseEdit";
 import Draggable from "react-draggable";
+import { ShowCourses } from "./ShowCourses";
+//https://lo-victoria.com/making-draggable-components-in-react DRAGGABLE
 
 export function CourseEditor({
     catalog
@@ -105,6 +107,7 @@ export function CourseEditor({
     return (
         <>
             <div>
+                <ShowCourses listCourses={termCourses}></ShowCourses>
                 <div>
                     {termCourses.map((oneCourse: Course) => (
                         <div
