@@ -4,12 +4,7 @@ import { Course } from "../interfaces/course";
 import { CourseEdit } from "./CourseEdit";
 // adding a year will automatically have 4 terms, this addSemester is for ppl who wanna add to their 4 years
 // export function addSemester(): JSX.Element {
-//     const [term, setTerm] = useState<Term>({
-//         year: 2022,
-//         season: "Fall",
-//         courses: [],
-//         credits: 0
-//     });
+//     const [term, setTerm] = useState<Term>([]);
 //     //should i use state for each of the updated fields in the term interface?
 //     const [year, setYear]=useState<number>(2022);
 //     const [season, setSeason]=useState<TermSeason>("Fall");
