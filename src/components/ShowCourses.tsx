@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
+import { CourseEdit } from "./CourseEdit";
 // adding a year will automatically have 4 terms, this addSemester is for ppl who wanna add to their 4 years
 // export function addSemester(): JSX.Element {
 //     const [term, setTerm] = useState<Term>([]);
@@ -13,13 +14,20 @@ import { Course } from "../interfaces/course";
 //     }
 // }
 
-export function ShowCourses(): JSX.Element {
+// have button that onclick calls addsemester function
+//materializes form that allows you to say the year, season from a dropdown,
+
+export function ShowCourses({
+    listCourses
+}: {
+    listCourses: Course[];
+}): JSX.Element {
     // have functions here like editCourse that use state and are called w button/editable radio switch? then put in rows?
     // state, control, view
     // an array of Courses, fn that adds a Course to the array, a table view of resulting courses including added
 
     // this is a const array of Course objects you'll use here for now
-    const courses: Course[] = [
+    /*const courses: Course[] = [
         {
             code: "CISC 101",
             name: "Principles of Computing",
@@ -53,10 +61,17 @@ export function ShowCourses(): JSX.Element {
                 "University: Mathematics, Natural Sciences and Technology; A&S: GROUP D: A&S Math, Nat Sci & Technology",
             typ: "Fall, Summer and Spring"
         }
-    ];
+    ];*/
 
-    // const [termCourses, setTermCourses] = useState<Course[]>([]);
-
+    // map fn to make the course have CISC in front of ID
+    // const termCourses= courses.map(
+    //     (course: Course): Course => ({...course, courseid: INSERTCISC})
+    // )
+    const [visible, setVisible] = useState<boolean>(false);
+    function flipVisibility(): void {
+        // Set visible to be the logical opposite of its previous value
+        setVisible(!visible);
+    }
     return (
         <div>
             <Container>
@@ -71,11 +86,22 @@ export function ShowCourses(): JSX.Element {
                                 </tr>
                             </thead>
                             <tbody>
-                                {courses.map((course: Course) => (
+                                {listCourses.map((course: Course) => (
                                     <tr key={course.code}>
-                                        <td>{course.code}</td>
-                                        <td>{course.name}</td>
-                                        <td>{course.credits}</td>
+                                        {visible && (
+                                            <CourseEdit
+                                                course={course}
+                                            ></CourseEdit>
+                                        )}
+                                        <td onClick={flipVisibility}>
+                                            {course.code}
+                                        </td>
+                                        <td onClick={flipVisibility}>
+                                            {course.name}
+                                        </td>
+                                        <td onClick={flipVisibility}>
+                                            {course.credits}
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>

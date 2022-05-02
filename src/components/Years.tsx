@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-//import { Course } from "../interfaces/course";
+import { Course } from "../interfaces/course";
 import { ShowSemesters } from "./ShowSemesters";
-export function Years(/*{
+export function Years({
     catalog
 }: {
     catalog: Record<string, Record<string, Course>>;
-}*/): JSX.Element {
+}): JSX.Element {
     const [year, setYear] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
 
@@ -37,8 +37,7 @@ export function Years(/*{
                             </Col>
                         </Row>
                         <Row>
-                            <ShowSemesters /*catalog={catalog}*/
-                            ></ShowSemesters>
+                            <ShowSemesters catalog={catalog}></ShowSemesters>
                         </Row>
                     </Container>
                 </div>

@@ -9,6 +9,46 @@ export function CourseEdit({ course }: { course: Course }) {
     //const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
+    interface save {
+        name: string;
+        value: string;
+        previousValue: string;
+    }
+
+    /*
+    const handleSave = ({ name, value, previousValue }: save) => {
+        const newEdit: Course = course;
+        if (name !== course.name) {
+            newEdit.name = value;
+        }
+        if (name !== course.descr) {
+            newEdit.descr = value;
+        }
+        if (name !== course.credits) {
+            newEdit.credits = value;
+        }
+        if (name !== course.preReq) {
+            newEdit.preReq = value;
+        }
+        if (name !== course.restrict) {
+            newEdit.restrict = value;
+        }
+        if (name !== course.breadth) {
+            newEdit.breadth = value;
+        }
+        if (name !== course.typ) {
+            newEdit.typ = value;
+        }
+    };
+
+    function handleSaveChanges(): void {
+        const newSem: Semester = semester;
+        newSem.courses[
+            semester.courses.findIndex((c) => c.code == course.code)
+        ] = mod;
+        setSemester(newSem);
+    }*/
+
     return (
         <>
             <Modal size="lg" show={show} onHide={handleClose}>
@@ -16,7 +56,10 @@ export function CourseEdit({ course }: { course: Course }) {
                     <Modal.Title>
                         {course.code}
                         <br></br>
-                        <EditText defaultValue={course.name}></EditText>
+                        <EditText
+                            defaultValue={course.name}
+                            //onSave={handleSave}
+                        ></EditText>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
@@ -27,6 +70,7 @@ export function CourseEdit({ course }: { course: Course }) {
                                 <EditTextarea
                                     defaultValue={course.descr}
                                     rows={10}
+                                    //onSave={handleSave}
                                 ></EditTextarea>
                             </Col>
                         </Row>
@@ -35,6 +79,7 @@ export function CourseEdit({ course }: { course: Course }) {
                             <Col>
                                 <EditText
                                     defaultValue={course.credits}
+                                    //onSave={handleSave}
                                 ></EditText>
                             </Col>
                         </Row>
@@ -44,7 +89,13 @@ export function CourseEdit({ course }: { course: Course }) {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button
+                        variant="primary"
+                        onClick={() => {
+                            //handleSaveChanges();
+                            setShow(false);
+                        }}
+                    >
                         Save Changes
                     </Button>
                 </Modal.Footer>
