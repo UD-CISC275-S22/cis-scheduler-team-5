@@ -28,21 +28,268 @@
       at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
 
-PASS src/App.test.tsx
-  ✓ renders the course name somewhere (215 ms)
+FAIL src/App.test.tsx
+  ✕ renders the word Course somewhere (234 ms)
+
+  ● renders the word Course somewhere
+
+    TestingLibraryElementError: Found multiple elements with the text: /Course/i
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<header[39m
+      [33mclass[39m=[32m"App-header"[39m
+    [36m>[39m
+      [0mUD Course Editor[0m
+    [36m</header>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<p>[39m
+      [0mWe are here to help you find clarity on your courses path at UD. You can get started by viewing your courses.[0m
+    [36m</p>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<label[39m
+      [33mclass[39m=[32m"MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"[39m
+      [33mdata-shrink[39m=[32m"false"[39m
+      [33mfor[39m=[32m"combo-box-demo"[39m
+      [33mid[39m=[32m"combo-box-demo-label"[39m
+    [36m>[39m
+      [0mCourse[0m
+    [36m</label>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<span>[39m
+      [0mCourse[0m
+    [36m</span>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<button[39m
+      [33mclass[39m=[32m"btn btn-primary"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0m [0m
+      [0mClear Courses[0m
+    [36m</button>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mUD Course Editor[0m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"margin: 10px;"[39m
+          [36m>[39m
+            [36m<h1>[39m
+              [0mWelcome to your degree scheduler.[0m
+            [36m</h1>[39m
+            [0m [0m
+            [36m<p>[39m
+              [0mWe are here to help you find clarity on your courses path at UD. You can get started by viewing your courses.[0m
+            [36m</p>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"row"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col-md-2"[39m
+            [36m>[39m
+              [36m<div>[39m
+                [36m<div />[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"row"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-viou3o-MuiAutocomplete-root"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"[39m
+                    [36m>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"[39m
+                        [33mdata-shrink[39m=[32m"false"[39m
+                        [33mfor[39m=[32m"combo-box-demo"[39m
+                        [33mid[39m=[32m"combo-box-demo-label"[39m
+                      [36m>[39m
+                        [0mCourse[0m
+                      [36m</label>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"[39m
+                      [36m>[39m
+                        [36m<input[39m
+                          [33maria-autocomplete[39m=[32m"list"[39m
+                          [33maria-expanded[39m=[32m"false"[39m
+                          [33maria-invalid[39m=[32m"false"[39m
+                          [33mautocapitalize[39m=[32m"none"[39m
+                          [33mautocomplete[39m=[32m"off"[39m
+                          [33mclass[39m=[32m"MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"[39m
+                          [33mid[39m=[32m"combo-box-demo"[39m
+                          [33mrole[39m=[32m"combobox"[39m
+                          [33mspellcheck[39m=[32m"false"[39m
+                          [33mtype[39m=[32m"text"[39m
+                          [33mvalue[39m=[32m""[39m
+                        [36m/>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"[39m
+                        [36m>[39m
+                          [36m<button[39m
+                            [33maria-label[39m=[32m"Clear"[39m
+                            [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"[39m
+                            [33mtabindex[39m=[32m"-1"[39m
+                            [33mtitle[39m=[32m"Clear"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [36m<svg[39m
+                              [33maria-hidden[39m=[32m"true"[39m
+                              [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"[39m
+                              [33mdata-testid[39m=[32m"CloseIcon"[39m
+                              [33mfocusable[39m=[32m"false"[39m
+                              [33mviewBox[39m=[32m"0 0 24 24"[39m
+                            [36m>[39m
+                              [36m<path[39m
+                                [33md[39m=[32m"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"[39m
+                              [36m/>[39m
+                            [36m</svg>[39m
+                            [36m<span[39m
+                              [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                            [36m/>[39m
+                          [36m</button>[39m
+                          [36m<button[39m
+                            [33maria-label[39m=[32m"Open"[39m
+                            [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"[39m
+                            [33mtabindex[39m=[32m"-1"[39m
+                            [33mtitle[39m=[32m"Open"[39m
+                            [33mtype[39m=[32m"button"[39m
+                          [36m>[39m
+                            [36m<svg[39m
+                              [33maria-hidden[39m=[32m"true"[39m
+                              [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                              [33mdata-testid[39m=[32m"ArrowDropDownIcon"[39m
+                              [33mfocusable[39m=[32m"false"[39m
+                              [33mviewBox[39m=[32m"0 0 24 24"[39m
+                            [36m>[39m
+                              [36m<path[39m
+                                [33md[39m=[32m"M7 10l5 5 5-5z"[39m
+                              [36m/>[39m
+                            [36m</svg>[39m
+                            [36m<span[39m
+                              [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                            [36m/>[39m
+                          [36m</button>[39m
+                        [36m</div>[39m
+                        [36m<fieldset[39m
+                          [33maria-hidden[39m=[32m"true"[39m
+                          [33mclass[39m=[32m"MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"[39m
+                        [36m>[39m
+                          [36m<legend[39m
+                            [33mclass[39m=[32m"css-1ftyaf0"[39m
+                          [36m>[39m
+                            [36m<span>[39m
+                              [0mCourse[0m
+                            [36m</span>[39m
+                          [36m</legend>[39m
+                        [36m</fieldset>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"row"[39m
+                [36m>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0m Insert [0m
+                  [36m</button>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0m [0m
+                    [0mClear Courses[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"border: 1px solid gray; padding: 4px;"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                    [33mfor[39m=[32m"dorPlanName"[39m
+                  [36m>[39m
+                    [0mNew Plan Name:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mid[39m=[32m"dorPlanName"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mAdd Plan[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mDelete All Plans[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       5 | test("renders the word Course somewhere", () => {
+       6 |     render(<App />);
+    >  7 |     const linkElement = screen.getByText(/Course/i);
+         |                                ^
+       8 |     expect(linkElement).toBeInTheDocument();
+       9 | });
+      10 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/App.test.tsx:7:32)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 --------------------|---------|----------|---------|---------|------------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s      
 --------------------|---------|----------|---------|---------|------------------------
-All files           |   33.33 |        0 |   21.21 |   32.81 |                        
+All files           |   28.78 |        0 |   15.15 |   28.12 |                        
  src                |     100 |      100 |     100 |     100 |                        
   App.tsx           |     100 |      100 |     100 |     100 |                        
- src/components     |    32.3 |        0 |   18.75 |   31.74 |                        
+ src/components     |   27.69 |        0 |    12.5 |   26.98 |                        
   CourseEdit.tsx    |       0 |      100 |       0 |       0 | 7-12                   
   Courses.tsx       |   36.58 |        0 |      20 |      35 | 36-102,110-153,164-165 
   CreatePlan.tsx    |    37.5 |      100 |   16.66 |    37.5 | 16-22,30-33            
-  ShowCourses.tsx   |     100 |      100 |     100 |     100 |                        
-  ShowSemesters.tsx |       0 |      100 |       0 |       0 | 10                     
+  ShowCourses.tsx   |       0 |      100 |       0 |       0 | 22-75                  
+  ShowSemesters.tsx |       0 |      100 |       0 |       0 | 11                     
   Years.tsx         |       0 |      100 |       0 |       0 | 10-31                  
  src/interfaces     |       0 |        0 |       0 |       0 |                        
   course.ts         |       0 |        0 |       0 |       0 |                        
@@ -50,8 +297,8 @@ All files           |   33.33 |        0 |   21.21 |   32.81 |
   term.ts           |       0 |        0 |       0 |       0 |                        
   year.ts           |       0 |        0 |       0 |       0 |                        
 --------------------|---------|----------|---------|---------|------------------------
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.35 s
+Time:        3.568 s
 Ran all test suites.
