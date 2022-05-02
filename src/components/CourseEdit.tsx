@@ -9,11 +9,11 @@ export function CourseEdit({ course }: { course: Course }) {
     //const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-    interface save {
+    /*interface save {
         name: string;
         value: string;
         previousValue: string;
-    }
+    }*/
 
     /*
     const handleSave = ({ name, value, previousValue }: save) => {
