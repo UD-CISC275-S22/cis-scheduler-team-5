@@ -29,7 +29,7 @@
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
 
 FAIL src/App.test.tsx
-  ✕ renders the word Course somewhere (234 ms)
+  ✕ renders the word Course somewhere (241 ms)
 
   ● renders the word Course somewhere
 
@@ -38,16 +38,19 @@ FAIL src/App.test.tsx
     Here are the matching elements:
 
     Ignored nodes: comments, <script />, <style />
-    [36m<header[39m
-      [33mclass[39m=[32m"App-header"[39m
-    [36m>[39m
-      [0mUD Course Editor[0m
-    [36m</header>[39m
-
-    Ignored nodes: comments, <script />, <style />
     [36m<p>[39m
       [0mWe are here to help you find clarity on your courses path at UD. You can get started by viewing your courses.[0m
     [36m</p>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<th>[39m
+      [0mCourse Code[0m
+    [36m</th>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<th>[39m
+      [0mCourse Name[0m
+    [36m</th>[39m
 
     Ignored nodes: comments, <script />, <style />
     [36m<label[39m
@@ -84,19 +87,15 @@ FAIL src/App.test.tsx
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
-            [0mUD Course Editor[0m
-          [36m</header>[39m
-          [36m<div[39m
-            [33mstyle[39m=[32m"margin: 10px;"[39m
-          [36m>[39m
+            [0mUD CISC275 with React Hooks and TypeScript - Nabiha Syed, Mar Tejedor, Alexis Mainiero[0m
             [36m<h1>[39m
-              [0mWelcome to your degree scheduler.[0m
+              [0mWelcome to your degree scheduler![0m
             [36m</h1>[39m
             [0m [0m
             [36m<p>[39m
               [0mWe are here to help you find clarity on your courses path at UD. You can get started by viewing your courses.[0m
             [36m</p>[39m
-          [36m</div>[39m
+          [36m</header>[39m
           [36m<div[39m
             [33mclass[39m=[32m"row"[39m
           [36m>[39m
@@ -104,6 +103,38 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"col-md-2"[39m
             [36m>[39m
               [36m<div>[39m
+                [36m<div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"container"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"row"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"col"[39m
+                      [36m>[39m
+                        [36m<table[39m
+                          [33mclass[39m=[32m"table table-sm table-striped table-bordered table-hover"[39m
+                        [36m>[39m
+                          [36m<thead>[39m
+                            [36m<tr>[39m
+                              [36m<th>[39m
+                                [0mCourse Code[0m
+                              [36m</th>[39m
+                              [36m<th>[39m
+                                [0mCourse Name[0m
+                              [36m</th>[39m
+                              [36m<th>[39m
+                                [0mCredits[0m
+                              [36m</th>[39m
+                            [36m</tr>[39m
+                          [36m</thead>[39m
+                          [36m<tbody />[39m
+                        [36m</table>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
                 [36m<div />[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"row"[39m
@@ -220,6 +251,320 @@ FAIL src/App.test.tsx
                   [36m</button>[39m
                 [36m</div>[39m
               [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sidecolumns col"[39m
+                [33mid[39m=[32m"move-when-scroll"[39m
+              [36m>[39m
+                [36m<h2[39m
+                  [33mclass[39m=[32m"subtitle"[39m
+                [36m>[39m
+                  [0mDegree Requirements[0m
+                [36m</h2>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 108[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 181[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 210[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 220[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 260[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 275[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 303[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 320[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 361[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 372[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mMATH 210[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mMATH 241[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mMATH 242[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0m6 credits 300[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mOther requirements[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mTotal 124 credits[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
               [33mclass[39m=[32m"col"[39m
@@ -281,14 +626,15 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|------------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s      
 --------------------|---------|----------|---------|---------|------------------------
-All files           |   28.78 |        0 |   15.15 |   28.12 |                        
+All files           |    33.8 |        0 |   21.62 |   33.33 |                        
  src                |     100 |      100 |     100 |     100 |                        
   App.tsx           |     100 |      100 |     100 |     100 |                        
- src/components     |   27.69 |        0 |    12.5 |   26.98 |                        
-  CourseEdit.tsx    |       0 |      100 |       0 |       0 | 7-12                   
-  Courses.tsx       |   36.58 |        0 |      20 |      35 | 36-102,110-153,164-165 
-  CreatePlan.tsx    |    37.5 |      100 |   16.66 |    37.5 | 16-22,30-33            
-  ShowCourses.tsx   |       0 |      100 |       0 |       0 | 22-75                  
+ src/components     |   32.85 |        0 |   19.44 |   32.35 |                        
+  CourseEdit.tsx    |       0 |      100 |       0 |       0 | 7-96                   
+  Courses.tsx       |   36.58 |        0 |      20 |      35 | 38-104,113-156,167-168 
+  CreatePlan.tsx    |    37.5 |      100 |   16.66 |    37.5 | 17-23,31-34            
+  Requirements.tsx  |     100 |      100 |     100 |     100 |                        
+  ShowCourses.tsx   |      50 |        0 |   33.33 |      50 | 73,90                  
   ShowSemesters.tsx |       0 |      100 |       0 |       0 | 11                     
   Years.tsx         |       0 |      100 |       0 |       0 | 10-31                  
  src/interfaces     |       0 |        0 |       0 |       0 |                        
@@ -300,5 +646,5 @@ All files           |   28.78 |        0 |   15.15 |   28.12 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.568 s
+Time:        3.082 s
 Ran all test suites.
