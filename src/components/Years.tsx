@@ -9,15 +9,21 @@ export function Years({
 }): JSX.Element {
     const [year, setYear] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
+    const [visible, setVisible] = useState<boolean>(false);
 
     function addYear(option: string) {
         setYear([...year, option]);
+        flipVisibility();
     }
     function clearYears() {
         setYear([]);
     }
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
+    }
+    function flipVisibility(): void {
+        // Set visible to be the logical opposite of its previous value
+        setVisible(!visible);
     }
     return (
         <div
@@ -27,12 +33,17 @@ export function Years({
                 backgroundColor: "#dcedc8"
             }}
         >
-            <Form.Group controlId="forYearName">
-                <Form.Label>New Year Name:</Form.Label>
-                <Form.Control value={name} onChange={updateName} />
-            </Form.Group>
-            <Button onClick={() => addYear(name)}>Add Year</Button>
+            <Button onClick={flipVisibility}>Add a Year</Button>
             <Button onClick={clearYears}>Delete All Years</Button>
+            {visible && (
+                <>
+                    <Form.Group controlId="forYearName">
+                        <Form.Label>New Year Name:</Form.Label>
+                        <Form.Control value={name} onChange={updateName} />
+                    </Form.Group>
+                    <Button onClick={() => addYear(name)}>Confirm</Button>
+                </>
+            )}
             {year.map((oneYear: string) => (
                 <div key={oneYear} style={{ marginBottom: "4px" }}>
                     <Container>

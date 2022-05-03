@@ -26,19 +26,20 @@ export function CourseEdit({
 
     const handleSave = ({ name, value /*previousValue*/ }: save) => {
         const newEdit: Course = course;
-        if (name !== course.name) {
+        console.log(name);
+        if (name === "name") {
             newEdit.name = value;
-        } else if (name !== course.descr) {
+        } else if (name === "descr") {
             newEdit.descr = value;
-        } else if (name !== course.credits) {
+        } else if (name === "credits") {
             newEdit.credits = value;
-        } else if (name !== course.preReq) {
+        } else if (name === "prereq") {
             newEdit.preReq = value;
-        } else if (name !== course.restrict) {
+        } else if (name === "restr") {
             newEdit.restrict = value;
-        } else if (name !== course.breadth) {
+        } else if (name === "breath") {
             newEdit.breadth = value;
-        } else if (name !== course.typ) {
+        } else if (name === "typ") {
             newEdit.typ = value;
         }
     };
@@ -58,6 +59,7 @@ export function CourseEdit({
                         {course.code}
                         <br></br>
                         <EditText
+                            name="name"
                             style={{ width: "100%" }}
                             defaultValue={course.name}
                             onSave={handleSave}
@@ -70,6 +72,7 @@ export function CourseEdit({
                             <Col md="3">Course Description:</Col>
                             <Col>
                                 <EditTextarea
+                                    name="descr"
                                     defaultValue={course.descr}
                                     rows={10}
                                     style={{ width: "100%" }}
@@ -81,6 +84,7 @@ export function CourseEdit({
                             <Col md="3">Course Credits:</Col>
                             <Col>
                                 <EditText
+                                    name="credits"
                                     style={{ width: "15%" }}
                                     defaultValue={course.credits}
                                     onSave={handleSave}
@@ -91,6 +95,7 @@ export function CourseEdit({
                             <Col md="3">Course PreRequisites:</Col>
                             <Col>
                                 <EditTextarea
+                                    name="prereq"
                                     style={{ width: "100%" }}
                                     defaultValue={course.preReq}
                                     onSave={handleSave}
@@ -101,6 +106,7 @@ export function CourseEdit({
                             <Col md="3">Course Restrictions:</Col>
                             <Col>
                                 <EditTextarea
+                                    name="restr"
                                     style={{ width: "100%" }}
                                     defaultValue={course.restrict}
                                     onSave={handleSave}
@@ -111,8 +117,20 @@ export function CourseEdit({
                             <Col md="3">Course Breath:</Col>
                             <Col>
                                 <EditTextarea
+                                    name="breath"
                                     style={{ width: "100%" }}
                                     defaultValue={course.breadth}
+                                    onSave={handleSave}
+                                ></EditTextarea>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="3">Semester Offered:</Col>
+                            <Col>
+                                <EditTextarea
+                                    name="typ"
+                                    style={{ width: "100%" }}
+                                    defaultValue={course.typ}
                                     onSave={handleSave}
                                 ></EditTextarea>
                             </Col>
