@@ -12,9 +12,11 @@ export function CreatePlan({
 }): JSX.Element {
     const [plan, setPlan] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
+    const [visible, setVisible] = useState<boolean>(false);
 
     function addPlan(option: string) {
         setPlan([...plan, option]);
+        flipVisibility();
     }
     function clearPlan() {
         setPlan([]);
@@ -22,20 +24,31 @@ export function CreatePlan({
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
     }
+    function flipVisibility(): void {
+        // Set visible to be the logical opposite of its previous value
+        setVisible(!visible);
+    }
     return (
         <div
             style={{
-                border: "1px solid gray",
+                border: "3px solid black",
                 padding: "4px",
-                backgroundColor: "#bbdefb"
+                backgroundColor: "#bbdefb",
+                height: "100%",
+                margin: "10px"
             }}
         >
-            <Form.Group controlId="dorPlanName">
-                <Form.Label>New Plan Name:</Form.Label>
-                <Form.Control value={name} onChange={updateName} />
-            </Form.Group>
-            <Button onClick={() => addPlan(name)}>Add Plan</Button>
+            <Button onClick={flipVisibility}>Add a plan</Button>
             <Button onClick={clearPlan}>Delete All Plans</Button>
+            {visible && (
+                <>
+                    <Form.Group controlId="dorPlanName">
+                        <Form.Label>New Plan Name:</Form.Label>
+                        <Form.Control value={name} onChange={updateName} />
+                    </Form.Group>
+                    <Button onClick={() => addPlan(name)}>Confirm</Button>
+                </>
+            )}
             {plan.map((onePlan: string) => (
                 <div key={onePlan} style={{ marginBottom: "40px" }}>
                     <Container>
@@ -50,6 +63,7 @@ export function CreatePlan({
                     </Container>
                 </div>
             ))}
+            <Button>Export / Import Plan</Button>
         </div>
     );
 }
