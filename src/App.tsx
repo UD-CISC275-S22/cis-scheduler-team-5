@@ -8,6 +8,9 @@ import { Requirements } from "./components/Requirements";
 import Catalog from "./data/catalog.json";
 //import { Course } from "./interfaces/course";
 
+/* THIS IS A DROPPED UNFINISHED BRANCH WHERE I WAS WORKING ON ADD SEMESTER. OUR IMPLEMENTATION CREATES A YEAR 
+THAT AUTOMATICALLY HAS 4 EMPTY SEMESTERS SO THIS WASNT NEEDED AT THE MOMENT. MIGHT HAVE TO COME BACK */
+
 function App(): JSX.Element {
     /*const COURSES = Object.values(EasyCatalog).map(
         (courses: Record<string, Course>): Course => ({
@@ -19,8 +22,8 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript - Nabiha Syed, Mar
-                Tejedor, Alexis Mainiero
+                THIS IS A DROPPED UNFINISHED BRANCH - UD CISC275 with React
+                Hooks and TypeScript - Nabiha Syed, Mar Tejedor, Alexis Mainiero
                 <h1>Welcome to your degree scheduler!</h1>{" "}
                 <p>
                     We are here to help you find clarity on your courses path at

@@ -3,5 +3,5 @@ export interface Term {
     year: number;
     season: "Fall" | "Spring" | "Winter" | "Summer";
     courses: Course[];
-    credits: number;
+    credits: string;
 }
