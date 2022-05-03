@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Form } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
 import "../App.css";
 
 export function Requirements(): JSX.Element {

@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import "./App.css";
 import { ChooseCourse } from "./components/ChooseCourse";
-import { CourseEditor } from "./components/Courses";
+//import { CourseEditor } from "./components/Courses";
 import { CreatePlan } from "./components/CreatePlan";
 import { Requirements } from "./components/Requirements";
 //import { ShowCourses } from "./components/ShowCourses";
