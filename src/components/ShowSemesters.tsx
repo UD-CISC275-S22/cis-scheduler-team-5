@@ -10,18 +10,33 @@ export function ShowSemesters({
 }): JSX.Element {
     return (
         <div>
-            <Container>
+            <Container
+                style={{
+                    border: "1px solid gray",
+                    padding: "4px",
+                    backgroundColor: "white"
+                }}
+            >
                 <Row>
                     <Row>
                         <Col>
                             Fall Semester
                             <CourseEditor catalog={catalog}></CourseEditor>
                         </Col>
-                        <Col>Winter Session</Col>
+                        <Col>
+                            Winter Session
+                            <CourseEditor catalog={catalog}></CourseEditor>
+                        </Col>
                     </Row>
                     <Row>
-                        <Col>Spring Semester</Col>
-                        <Col>Summer Session</Col>
+                        <Col>
+                            Spring Semester
+                            <CourseEditor catalog={catalog}></CourseEditor>
+                        </Col>
+                        <Col>
+                            Summer Session
+                            <CourseEditor catalog={catalog}></CourseEditor>
+                        </Col>
                     </Row>
                 </Row>
             </Container>

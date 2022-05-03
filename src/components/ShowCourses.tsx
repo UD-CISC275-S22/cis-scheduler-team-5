@@ -77,7 +77,17 @@ export function ShowCourses({
             <Container>
                 <Row>
                     <Col>
-                        <Table striped bordered hover size="sm">
+                        <Table
+                            striped
+                            bordered
+                            hover
+                            size="sm"
+                            style={{
+                                border: "1px solid gray",
+                                padding: "4px",
+                                backgroundColor: "default"
+                            }}
+                        >
                             <thead>
                                 <tr>
                                     <th>Course Code</th>

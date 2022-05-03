@@ -32,8 +32,7 @@ export function Years({
                     <Container>
                         <Row>
                             <Col>
-                                {oneYear} <Button>Delete</Button>
-                                <Button>Edit</Button>
+                                <h2>{oneYear} </h2>
                             </Col>
                         </Row>
                         <Row>

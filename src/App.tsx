@@ -1,7 +1,8 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import "./App.css";
-import { CourseEditor } from "./components/Courses";
+import { ChooseCourse } from "./components/ChooseCourse";
+//import { CourseEditor } from "./components/Courses";
 import { CreatePlan } from "./components/CreatePlan";
 import { Requirements } from "./components/Requirements";
 //import { ShowCourses } from "./components/ShowCourses";
@@ -19,21 +20,17 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript - Nabiha Syed, Mar
-                Tejedor, Alexis Mainiero
-                <h1>Welcome to your degree scheduler!</h1>{" "}
-                <p>
-                    We are here to help you find clarity on your courses path at
-                    UD. You can get started by viewing your courses.
-                </p>
+                <h1>Welcome to your UD degree scheduler!</h1>{" "}
             </header>
             <Row>
                 <Col md="2">
-                    <CourseEditor catalog={Catalog}></CourseEditor>
-                    <Requirements></Requirements>
+                    <ChooseCourse catalog={Catalog}></ChooseCourse>
                 </Col>
                 <Col>
                     <CreatePlan catalog={Catalog}></CreatePlan>
+                </Col>
+                <Col md="2">
+                    <Requirements></Requirements>
                 </Col>
             </Row>
         </div>
