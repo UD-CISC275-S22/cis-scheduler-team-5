@@ -2,34 +2,492 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
-  console.warn
-    MUI: The value provided to Autocomplete is invalid.
-    None of the options match with `""`.
-    You can use the `isOptionEqualToValue` prop to customize the equality test.
+FAIL src/components/Requirements.test.tsx
+  ● Requirements Component tests › There is one checkbox and no textboxes
 
-      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
-      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+    TestingLibraryElementError: Found multiple elements with the role "checkbox"
 
-  console.warn
-    MUI: The value provided to Autocomplete is invalid.
-    None of the options match with `""`.
-    You can use the `isOptionEqualToValue` prop to customize the equality test.
+    Here are the matching elements:
 
-      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
-      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
-      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
-      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
-      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
-      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
-      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<input[39m
+      [33mclass[39m=[32m"form-check-input"[39m
+      [33mid[39m=[32m"is-student-check"[39m
+      [33mtype[39m=[32m"checkbox"[39m
+    [36m/>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sidecolumns container"[39m
+          [33mid[39m=[32m"move-when-scroll"[39m
+        [36m>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"subtitle"[39m
+          [36m>[39m
+            [0mDegree Requirements[0m
+          [36m</h2>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mCISC 108[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mCISC 181[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mCISC 210[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mCISC 220[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mCISC 260[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mCISC 275[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mCISC 303[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mCISC 320[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mCISC 361[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mCISC 372[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mMATH 210[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mMATH 241[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mMATH 242[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0m6 credits 300[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mOther requirements[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [0m [0m
+            [36m<div[39m
+              [33mclass[39m=[32m"form-check"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-check-input"[39m
+                [33mid[39m=[32m"is-student-check"[39m
+                [33mtype[39m=[32m"checkbox"[39m
+              [36m/>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"form-check-label"[39m
+                [33mfor[39m=[32m"is-student-check"[39m
+                [33mtitle[39m=[32m""[39m
+              [36m>[39m
+                [0mTotal 124 credits[0m
+              [36m</label>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+       7 |     beforeEach(() => render(<Requirements />));
+       8 |     test("There is one checkbox and no textboxes", () => {
+    >  9 |         const switchButton = screen.getByRole("checkbox");
+         |                                     ^
+      10 |         expect(switchButton).toBeInTheDocument();
+      11 |         expect(switchButton.parentElement).toHaveClass("form-switch");
+      12 |         expect(screen.queryByRole("textbox")).not.toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:25:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:29:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:66:13
+      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/Requirements.test.tsx:9:37)
 
 FAIL src/App.test.tsx
-  ✕ renders the word Course somewhere (269 ms)
+  ● Console
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+    console.warn
+      MUI: The value provided to Autocomplete is invalid.
+      None of the options match with `""`.
+      You can use the `isOptionEqualToValue` prop to customize the equality test.
+
+      at useAutocomplete (node_modules/@mui/base/node/AutocompleteUnstyled/useAutocomplete.js:238:17)
+      at Autocomplete (node_modules/@mui/material/node/Autocomplete/Autocomplete.js:477:33)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at updateForwardRef (node_modules/react-dom/cjs/react-dom.development.js:17044:20)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19098:16)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
 
   ● renders the word Course somewhere
 
@@ -39,7 +497,7 @@ FAIL src/App.test.tsx
 
     Ignored nodes: comments, <script />, <style />
     [36m<div>[39m
-      [0mChoose the courses you want to insert, drag them to the righ semester![0m
+      [0mChoose the courses you want to insert, drag them to the right semester![0m
       [36m<div[39m
         [33mclass[39m=[32m"container"[39m
       [36m>[39m
@@ -210,7 +668,7 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"col-md-2"[39m
             [36m>[39m
               [36m<div>[39m
-                [0mChoose the courses you want to insert, drag them to the righ semester![0m
+                [0mChoose the courses you want to insert, drag them to the right semester![0m
                 [36m<div[39m
                   [33mclass[39m=[32m"container"[39m
                 [36m>[39m
@@ -307,7 +765,388 @@ FAIL src/App.test.tsx
                                 [0mCourse[0m
                               [36m</span>[39m
                             [36m</legend>[39m
-                          [36m</fieldset>...
+                          [36m</fieldset>[39m
+                        [36m</div>[39m
+                      [36m</div>[39m
+                    [36m</div>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"row"[39m
+                  [36m>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0m [0m
+                      [0mInsert[0m
+                      [0m [0m
+                    [36m</button>[39m
+                    [36m<button[39m
+                      [33mclass[39m=[32m"btn btn-primary"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [0m [0m
+                      [0mClear Courses[0m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"border: 1px solid gray; padding: 4px; background-color: rgb(187, 222, 251);"[39m
+              [36m>[39m
+                [36m<div>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"form-label"[39m
+                    [33mfor[39m=[32m"dorPlanName"[39m
+                  [36m>[39m
+                    [0mNew Plan Name:[0m
+                  [36m</label>[39m
+                  [36m<input[39m
+                    [33mclass[39m=[32m"form-control"[39m
+                    [33mid[39m=[32m"dorPlanName"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                [36m</div>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mAdd Plan[0m
+                [36m</button>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"btn btn-primary"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mDelete All Plans[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col-md-2"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sidecolumns container"[39m
+                [33mid[39m=[32m"move-when-scroll"[39m
+              [36m>[39m
+                [36m<h2[39m
+                  [33mclass[39m=[32m"subtitle"[39m
+                [36m>[39m
+                  [0mDegree Requirements[0m
+                [36m</h2>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 108[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 181[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 210[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 220[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 260[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 275[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 303[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 320[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 361[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mCISC 372[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mMATH 210[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mMATH 241[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mMATH 242[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0m6 credits 300[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mOther requirements[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div>[39m
+                  [0m [0m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"form-check"[39m
+                  [36m>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"form-check-input"[39m
+                      [33mid[39m=[32m"is-student-check"[39m
+                      [33mtype[39m=[32m"checkbox"[39m
+                    [36m/>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"form-check-label"[39m
+                      [33mfor[39m=[32m"is-student-check"[39m
+                      [33mtitle[39m=[32m""[39m
+                    [36m>[39m
+                      [0mTotal 124 credits[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
 
        5 | test("renders the word Course somewhere", () => {
        6 |     render(<App />);
@@ -331,26 +1170,26 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|--------------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
 --------------------|---------|----------|---------|---------|--------------------------
-All files           |   24.41 |        0 |   17.94 |    23.8 |                          
+All files           |   19.62 |        0 |   16.66 |   19.23 |                          
  src                |     100 |      100 |     100 |     100 |                          
   App.tsx           |     100 |      100 |     100 |     100 |                          
- src/components     |   23.52 |        0 |   15.78 |   22.89 |                          
+ src/components     |   18.86 |        0 |   14.63 |   18.44 |                          
   ChooseCourse.tsx  |   41.17 |        0 |   27.27 |   39.39 | 40-88,92,103-138,149-153 
-  CourseEdit.tsx    |       0 |      100 |       0 |       0 | 7-96                     
-  Courses.tsx       |       0 |        0 |       0 |       0 | 17-114                   
-  CreatePlan.tsx    |    37.5 |      100 |   16.66 |    37.5 | 25-31,83-86              
+  CourseEdit.tsx    |       0 |        0 |       0 |       0 | 16-130                   
+  Courses.tsx       |       0 |        0 |       0 |       0 | 17-117                   
+  CreatePlan.tsx    |    37.5 |      100 |   16.66 |    37.5 | 17-23,37-40              
   Requirements.tsx  |     100 |      100 |     100 |     100 |                          
-  ShowCourses.tsx   |       0 |        0 |       0 |       0 | 70-100                   
+  ShowCourses.tsx   |       0 |        0 |       0 |       0 | 72-102                   
   ShowSemesters.tsx |       0 |      100 |       0 |       0 | 11                       
-  Years.tsx         |       0 |      100 |       0 |       0 | 10-31                    
+  Years.tsx         |       0 |      100 |       0 |       0 | 10-37                    
  src/interfaces     |       0 |        0 |       0 |       0 |                          
   course.ts         |       0 |        0 |       0 |       0 |                          
   plan.ts           |       0 |        0 |       0 |       0 |                          
   term.ts           |       0 |        0 |       0 |       0 |                          
   year.ts           |       0 |        0 |       0 |       0 |                          
 --------------------|---------|----------|---------|---------|--------------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
+Test Suites: 2 failed, 2 total
+Tests:       2 failed, 2 total
 Snapshots:   0 total
-Time:        3.598 s
+Time:        5.413 s
 Ran all test suites.
