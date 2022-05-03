@@ -95,7 +95,7 @@ export function ChooseCourse({
     return (
         <>
             <div>
-                Choose the courses you want to insert, drag them to the righ
+                Choose the courses you want to insert, drag them to the right
                 semester!
                 <Container>
                     <div>

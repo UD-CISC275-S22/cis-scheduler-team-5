@@ -20,7 +20,13 @@ export function Years({
         setName(event.target.value);
     }
     return (
-        <div>
+        <div
+            style={{
+                border: "1px solid gray",
+                padding: "4px",
+                backgroundColor: "#dcedc8"
+            }}
+        >
             <Form.Group controlId="forYearName">
                 <Form.Label>New Year Name:</Form.Label>
                 <Form.Control value={name} onChange={updateName} />
