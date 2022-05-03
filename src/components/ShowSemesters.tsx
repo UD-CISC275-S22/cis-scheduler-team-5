@@ -24,13 +24,13 @@ export function ShowSemesters({
                             <CourseEditor catalog={catalog}></CourseEditor>
                         </Col>
                         <Col>
-                            Winter Session
+                            Spring Semester
                             <CourseEditor catalog={catalog}></CourseEditor>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
-                            Spring Semester
+                            Winter Session
                             <CourseEditor catalog={catalog}></CourseEditor>
                         </Col>
                         <Col>
