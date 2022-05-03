@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { CourseEdit } from "./CourseEdit";
@@ -18,9 +18,11 @@ import { CourseEdit } from "./CourseEdit";
 //materializes form that allows you to say the year, season from a dropdown,
 
 export function ShowCourses({
-    listCourses
+    listCourses,
+    setTermCourses
 }: {
     listCourses: Course[];
+    setTermCourses: Dispatch<SetStateAction<Course[]>>;
 }): JSX.Element {
     // have functions here like editCourse that use state and are called w button/editable radio switch? then put in rows?
     // state, control, view
@@ -100,7 +102,9 @@ export function ShowCourses({
                                     <tr key={course.code}>
                                         {visible && (
                                             <CourseEdit
+                                                setTermCourses={setTermCourses}
                                                 course={course}
+                                                termCourses={listCourses}
                                             ></CourseEdit>
                                         )}
                                         <td onClick={flipVisibility}>
