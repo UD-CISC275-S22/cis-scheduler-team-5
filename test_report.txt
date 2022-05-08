@@ -810,12 +810,6 @@ FAIL src/App.test.tsx
                 [36m>[39m
                   [0mDelete All Plans[0m
                 [36m</button>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mExport / Import Plan[0m
-                [36m</button>[39m
               [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
@@ -1137,6 +1131,24 @@ FAIL src/App.test.tsx
               [36m</div>[39m
             [36m</div>[39m
           [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"row"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0m Download Plan [0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mImport Plan[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -1163,10 +1175,11 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|--------------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
 --------------------|---------|----------|---------|---------|--------------------------
-All files           |   19.29 |     3.57 |    15.9 |   18.91 |                          
+All files           |   19.04 |     3.57 |   17.02 |   18.69 |                          
  src                |     100 |      100 |     100 |     100 |                          
   App.tsx           |     100 |      100 |     100 |     100 |                          
- src/components     |   18.58 |     3.57 |   13.95 |   18.18 |                          
+ src/components     |    18.4 |     3.57 |   15.21 |   18.03 |                          
+  CSVFile.tsx       |   16.66 |      100 |   33.33 |   16.66 | 9-21                     
   ChooseCourse.tsx  |   41.17 |        0 |   27.27 |   39.39 | 40-88,92,103-138,149-153 
   CourseEdit.tsx    |       0 |        0 |       0 |       0 | 16-148                   
   Courses.tsx       |       0 |        0 |       0 |       0 | 17-117                   
@@ -1184,5 +1197,5 @@ All files           |   19.29 |     3.57 |    15.9 |   18.91 |
 Test Suites: 2 failed, 2 total
 Tests:       2 failed, 2 total
 Snapshots:   0 total
-Time:        3.864 s
+Time:        5.523 s
 Ran all test suites.
