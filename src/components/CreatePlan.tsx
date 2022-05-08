@@ -63,7 +63,6 @@ export function CreatePlan({
                     </Container>
                 </div>
             ))}
-            <Button>Export / Import Plan</Button>
         </div>
     );
 }
