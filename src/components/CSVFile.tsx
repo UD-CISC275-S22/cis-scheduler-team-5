@@ -21,5 +21,10 @@ export function CVSFile(): JSX.Element {
         hiddenElement.click();
     }
 
-    return <Button onClick={downloadFile}> Download CSV </Button>;
+    return (
+        <div>
+            <Button onClick={downloadFile}> Download Plan </Button>
+            <Button>Import Plan</Button>
+        </div>
+    );
 }
