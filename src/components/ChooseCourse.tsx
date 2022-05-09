@@ -94,7 +94,12 @@ export function ChooseCourse({
 
     return (
         <>
-            <div>
+            <div
+                style={{
+                    top: "0",
+                    position: "sticky"
+                }}
+            >
                 Choose the courses you want to insert, drag them to the right
                 semester!
                 <Container>

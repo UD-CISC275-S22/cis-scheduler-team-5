@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Container, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
+import { Term } from "../interfaces/term";
 import { ShowCourses } from "./ShowCourses";
 //https://lo-victoria.com/making-draggable-components-in-react DRAGGABLE
 //https://medium.com/nmc-techblog/easy-drag-and-drop-in-react-22778b30ba37 DROP DRAGGABLE
@@ -8,19 +9,28 @@ import { ShowCourses } from "./ShowCourses";
 //https://www.kennethlange.com/drag-and-drop-in-pure-typescript-and-react/ DRAG AND DROP
 
 export function CourseEditor({
-    catalog
-}: {
+    catalog,
+    /*semesters,
+    setSemesters,*/
+    sem
+}: /*key*/
+{
     catalog: Record<string, Record<string, Course>>;
+    semesters: Term[];
+    setSemesters: (s: Term[]) => void;
+    sem: Term;
+    key: string;
 }): JSX.Element {
     //const COURSES = getAllCourses();
     //const [course] = useState<string>("");
-    const [termCourses, setTermCourses] = useState<Course[]>([]);
+    //const [termCourses, setTermCourses] = useState<Term["courses"]>([]);
     //const [isShown, setIsShown] = useState<boolean>(false);
     //const [visible, setVisible] = useState<boolean>(false);
     //const [value, setValue] = React.useState<string | null>(COURSES[0]);
     //const [inpu, setInpu] = useState<string>(""); //string value for input for class
     //const [name, setName] = useState<string>("");
     //const [modalShow, setModalShow] = React.useState(false);
+    const [semester, setSemester] = useState<Term>(sem);
 
     function findCourse(name: string): Course {
         const code = name.substring(0, 4); //gets department, Ex ACCT
@@ -75,7 +85,11 @@ export function CourseEditor({
         setTermCourses(newnewCourses);
     }*/
     function clearCourses() {
-        setTermCourses([]);
+        const updateSemester = {
+            ...semester,
+            courses: []
+        };
+        setSemester(updateSemester);
     }
 
     /*function flipVisibility(): void {
@@ -96,10 +110,12 @@ export function CourseEditor({
         const course = event.dataTransfer.getData("text");
         const newCourse: Course = findCourse(course);
         if (newCourse.code !== "") {
-            const updateTermCourses = [...termCourses, newCourse];
-            setTermCourses(updateTermCourses);
+            const updateSemester = {
+                ...semester,
+                courses: [...semester.courses, newCourse]
+            };
+            setSemester(updateSemester);
         }
-        console.log("BU");
     };
     const enableDropping = (event: React.DragEvent<HTMLDivElement>) => {
         event.preventDefault();
@@ -108,10 +124,11 @@ export function CourseEditor({
     return (
         <>
             <div onDragOver={enableDropping} onDrop={handleDrop}>
+                {semester.season}
                 <Container>
                     <ShowCourses
-                        listCourses={termCourses}
-                        setTermCourses={setTermCourses}
+                        semester={semester}
+                        /*setTermCourses={setTermCourses}*/
                     ></ShowCourses>
                     <Row>
                         <Button onClick={() => clearCourses()}>

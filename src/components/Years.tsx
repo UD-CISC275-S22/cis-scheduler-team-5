@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
+import { Term } from "../interfaces/term";
 import { ShowSemesters } from "./ShowSemesters";
 export function Years({
-    catalog
+    catalog,
+    semesters,
+    setSemesters
 }: {
     catalog: Record<string, Record<string, Course>>;
+    semesters: Term[];
+    setSemesters: (s: Term[]) => void;
 }): JSX.Element {
     const [year, setYear] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
@@ -53,7 +58,11 @@ export function Years({
                             </Col>
                         </Row>
                         <Row>
-                            <ShowSemesters catalog={catalog}></ShowSemesters>
+                            <ShowSemesters
+                                catalog={catalog}
+                                semesters={semesters}
+                                setSemesters={setSemesters}
+                            ></ShowSemesters>
                         </Row>
                     </Container>
                 </div>
