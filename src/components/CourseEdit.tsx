@@ -1,53 +1,55 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { EditText, EditTextarea } from "react-edit-text";
 import { Course } from "../interfaces/course";
-export function CourseEdit({ course }: { course: Course }) {
+//import { CourseEditor } from "./Courses";
+export function CourseEdit({
+    course,
+    termCourses,
+    setTermCourses
+}: {
+    course: Course;
+    termCourses: Course[];
+    setTermCourses: Dispatch<SetStateAction<Course[]>>;
+}) {
     //Modal from https://react-bootstrap.github.io/components/modal/
     const [show, setShow] = useState(true);
 
     //const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-    /*interface save {
+    interface save {
         name: string;
         value: string;
         previousValue: string;
-    }*/
+    }
 
-    /*
-    const handleSave = ({ name, value, previousValue }: save) => {
+    const handleSave = ({ name, value /*previousValue*/ }: save) => {
         const newEdit: Course = course;
-        if (name !== course.name) {
+        console.log(name);
+        if (name === "name") {
             newEdit.name = value;
-        }
-        if (name !== course.descr) {
+        } else if (name === "descr") {
             newEdit.descr = value;
-        }
-        if (name !== course.credits) {
+        } else if (name === "credits") {
             newEdit.credits = value;
-        }
-        if (name !== course.preReq) {
+        } else if (name === "prereq") {
             newEdit.preReq = value;
-        }
-        if (name !== course.restrict) {
+        } else if (name === "restr") {
             newEdit.restrict = value;
-        }
-        if (name !== course.breadth) {
+        } else if (name === "breath") {
             newEdit.breadth = value;
-        }
-        if (name !== course.typ) {
+        } else if (name === "typ") {
             newEdit.typ = value;
         }
     };
 
     function handleSaveChanges(): void {
-        const newSem: Semester = semester;
-        newSem.courses[
-            semester.courses.findIndex((c) => c.code == course.code)
-        ] = mod;
-        setSemester(newSem);
-    }*/
+        const newCourses: Course[] = termCourses;
+        newCourses[termCourses.findIndex((c) => c.code == course.code)] =
+            course;
+        setTermCourses(newCourses);
+    }
 
     return (
         <>
@@ -57,30 +59,80 @@ export function CourseEdit({ course }: { course: Course }) {
                         {course.code}
                         <br></br>
                         <EditText
+                            name="name"
+                            style={{ width: "100%" }}
                             defaultValue={course.name}
-                            //onSave={handleSave}
+                            onSave={handleSave}
                         ></EditText>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Container>
                         <Row>
-                            <Col md="2">Course Description:</Col>
+                            <Col md="3">Course Description:</Col>
                             <Col>
                                 <EditTextarea
+                                    name="descr"
                                     defaultValue={course.descr}
                                     rows={10}
-                                    //onSave={handleSave}
+                                    style={{ width: "100%" }}
+                                    onSave={handleSave}
                                 ></EditTextarea>
                             </Col>
                         </Row>
                         <Row>
-                            <Col md="2">Course Credits:</Col>
+                            <Col md="3">Course Credits:</Col>
                             <Col>
                                 <EditText
+                                    name="credits"
+                                    style={{ width: "15%" }}
                                     defaultValue={course.credits}
-                                    //onSave={handleSave}
+                                    onSave={handleSave}
                                 ></EditText>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="3">Course PreRequisites:</Col>
+                            <Col>
+                                <EditTextarea
+                                    name="prereq"
+                                    style={{ width: "100%" }}
+                                    defaultValue={course.preReq}
+                                    onSave={handleSave}
+                                ></EditTextarea>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="3">Course Restrictions:</Col>
+                            <Col>
+                                <EditTextarea
+                                    name="restr"
+                                    style={{ width: "100%" }}
+                                    defaultValue={course.restrict}
+                                    onSave={handleSave}
+                                ></EditTextarea>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="3">Course Breath:</Col>
+                            <Col>
+                                <EditTextarea
+                                    name="breath"
+                                    style={{ width: "100%" }}
+                                    defaultValue={course.breadth}
+                                    onSave={handleSave}
+                                ></EditTextarea>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md="3">Semester Offered:</Col>
+                            <Col>
+                                <EditTextarea
+                                    name="typ"
+                                    style={{ width: "100%" }}
+                                    defaultValue={course.typ}
+                                    onSave={handleSave}
+                                ></EditTextarea>
                             </Col>
                         </Row>
                     </Container>
@@ -92,7 +144,7 @@ export function CourseEdit({ course }: { course: Course }) {
                     <Button
                         variant="primary"
                         onClick={() => {
-                            //handleSaveChanges();
+                            handleSaveChanges();
                             setShow(false);
                         }}
                     >

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Col, Container, Row, Table, Button } from "react-bootstrap";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import { Col, Container, Row, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { CourseEdit } from "./CourseEdit";
 // adding a year will automatically have 4 terms, this addSemester is for ppl who wanna add to their 4 years
@@ -41,9 +41,11 @@ import { CourseEdit } from "./CourseEdit";
 */
 
 export function ShowCourses({
-    listCourses
+    listCourses,
+    setTermCourses
 }: {
     listCourses: Course[];
+    setTermCourses: Dispatch<SetStateAction<Course[]>>;
 }): JSX.Element {
     // have functions here like editCourse that use state and are called w button/editable radio switch? then put in rows?
     // state, control, view
@@ -88,7 +90,9 @@ export function ShowCourses({
                                     <tr key={course.code}>
                                         {visible && (
                                             <CourseEdit
+                                                setTermCourses={setTermCourses}
                                                 course={course}
+                                                termCourses={listCourses}
                                             ></CourseEdit>
                                         )}
                                         <td onClick={flipVisibility}>

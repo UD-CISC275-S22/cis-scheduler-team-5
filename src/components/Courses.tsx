@@ -109,7 +109,10 @@ export function CourseEditor({
         <>
             <div onDragOver={enableDropping} onDrop={handleDrop}>
                 <Container>
-                    <ShowCourses listCourses={termCourses}></ShowCourses>
+                    <ShowCourses
+                        listCourses={termCourses}
+                        setTermCourses={setTermCourses}
+                    ></ShowCourses>
                     <Row>
                         <Button onClick={() => clearCourses()}>
                             {" "}
