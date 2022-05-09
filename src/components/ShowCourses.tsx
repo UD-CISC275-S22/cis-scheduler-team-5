@@ -18,6 +18,29 @@ import { CourseEdit } from "./CourseEdit";
 // have button that onclick calls addsemester function
 //materializes form that allows you to say the year, season from a dropdown,
 
+/* 
+/////delete semester button trying to lift state
+    interface SemesterVisibleProps {
+        setSemesterVisible: (semestervisible: boolean) => void;
+    }
+    const [semestervisible, setSemesterVisible] = useState<boolean>(true);
+    function flipSemesterVisibility(): void {
+        listCourses = [];
+        setSemesterVisible(!semestervisible);
+    }
+    <div>
+        <Button
+            style={{
+                margin: "8px",
+                backgroundColor: "purple"
+            }}
+            onClick={flipSemesterVisibility}
+        >
+            Remove Semester
+        </Button>
+    </div>;
+*/
+
 export function ShowCourses({
     semester
 }: /*setTermCourses*/
@@ -29,53 +52,16 @@ export function ShowCourses({
     // state, control, view
     // an array of Courses, fn that adds a Course to the array, a table view of resulting courses including added
 
-    // this is a const array of Course objects you'll use here for now
-    /*const courses: Course[] = [
-        {
-            code: "CISC 101",
-            name: "Principles of Computing",
-            descr: "Introduces students to the central ideas of computing and computer science including programs, algorithms, abstraction, the internet, and information systems. Instills ideas and practices of computational thinking and engages students in activities that show how computing and computer science change the world. Explores computing as a creative activity and empowers students to apply computational thinking to all disciplines including the arts, humanities, business, social and physical sciences, health, and entertainment.",
-            credits: " 3",
-            preReq: "",
-            restrict: "",
-            breadth:
-                "University: Mathematics, Natural Sciences and Technology; A&S: GROUP D: A&S Math, Nat Sci & Technology",
-            typ: "Fall, Winter and Spring"
-        },
-        {
-            code: "CISC 103",
-            name: "Introduction to Computer Science with Web Applications",
-            descr: "Principles of computer science illustrated through programming in scripting languages such as JavaScript and VBScript. Topics include control structures, arrays, functions, and procedures. Programming projects illustrate web-based applications.",
-            credits: " 3",
-            preReq: "",
-            restrict: "Open to non-majors.",
-            breadth:
-                "University: Mathematics, Natural Sciences and Technology; A&S: GROUP D: A&S Math, Nat Sci & Technology",
-            typ: "Fall and Spring"
-        },
-        {
-            code: "CISC 106",
-            name: "General Computer Science for Engineers",
-            descr: "Principles of computer science illustrated and applied through programming in a general-purpose language. Programming projects illustrate computational problems, styles, and issues that arise in engineering.",
-            credits: " 3",
-            preReq: "",
-            restrict: "",
-            breadth:
-                "University: Mathematics, Natural Sciences and Technology; A&S: GROUP D: A&S Math, Nat Sci & Technology",
-            typ: "Fall, Summer and Spring"
-        }
-    ];*/
-
     // map fn to make the course have CISC in front of ID
     // const termCourses= courses.map(
     //     (course: Course): Course => ({...course, courseid: INSERTCISC})
     // )
     const [show, setShow] = useState<boolean>(false); //To show Modal when Course is clicked
-    //const [visible, setVisible] = useState<boolean>(false);
-    /*function flipVisibility(): void {
+    const [visible, setVisible] = useState<boolean>(false);
+    function flipVisibility(): void {
         // Set visible to be the logical opposite of its previous value
         setVisible(!visible);
-    }*/
+    }
     return (
         <div>
             <Container>

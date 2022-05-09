@@ -4,6 +4,7 @@ import "./App.css";
 import { ChooseCourse } from "./components/ChooseCourse";
 //import { CourseEditor } from "./components/Courses";
 import { CreatePlan } from "./components/CreatePlan";
+import { CVSFile } from "./components/CSVFile";
 import { Requirements } from "./components/Requirements";
 //import { ShowCourses } from "./components/ShowCourses";
 import Catalog from "./data/catalog.json";
@@ -42,6 +43,9 @@ function App(): JSX.Element {
                         setSemesters={setSemesters}*/
                     ></Requirements>
                 </Col>
+            </Row>
+            <Row>
+                <CVSFile></CVSFile>
             </Row>
         </div>
     );
