@@ -129,6 +129,7 @@ FAIL src/components/Requirements.test.tsx
         [36m<div[39m
           [33mclass[39m=[32m"sidecolumns container"[39m
           [33mid[39m=[32m"move-when-scroll"[39m
+          [33mstyle[39m=[32m"top: 0px; position: sticky;"[39m
         [36m>[39m
           [36m<h2[39m
             [33mclass[39m=[32m"subtitle"[39m
@@ -507,7 +508,9 @@ FAIL src/App.test.tsx
     Here are the matching elements:
 
     Ignored nodes: comments, <script />, <style />
-    [36m<div>[39m
+    [36m<div[39m
+      [33mstyle[39m=[32m"top: 0px; position: sticky;"[39m
+    [36m>[39m
       [0mChoose the courses you want to insert, drag them to the right semester![0m
       [36m<div[39m
         [33mclass[39m=[32m"container"[39m
@@ -678,7 +681,9 @@ FAIL src/App.test.tsx
             [36m<div[39m
               [33mclass[39m=[32m"col-md-2"[39m
             [36m>[39m
-              [36m<div>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"top: 0px; position: sticky;"[39m
+              [36m>[39m
                 [0mChoose the courses you want to insert, drag them to the right semester![0m
                 [36m<div[39m
                   [33mclass[39m=[32m"container"[39m
@@ -806,21 +811,28 @@ FAIL src/App.test.tsx
             [36m<div[39m
               [33mclass[39m=[32m"col"[39m
             [36m>[39m
-              [36m<div[39m
-                [33mstyle[39m=[32m"border: 3px solid black; padding: 4px; background-color: rgb(187, 222, 251); height: 100%; margin: 10px;"[39m
-              [36m>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mAdd a plan[0m
-                [36m</button>[39m
-                [36m<button[39m
-                  [33mclass[39m=[32m"btn btn-primary"[39m
-                  [33mtype[39m=[32m"button"[39m
-                [36m>[39m
-                  [0mDelete All Plans[0m
-                [36m</button>[39m
+              [36m<div>[39m
+                [36m<div>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mAdd a plan[0m
+                  [36m</button>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mDelete All Plans[0m
+                  [36m</button>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"btn btn-primary"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mExport / Import Plan[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<div />[39m
               [36m</div>[39m
             [36m</div>[39m
             [36m<div[39m
@@ -829,6 +841,7 @@ FAIL src/App.test.tsx
               [36m<div[39m
                 [33mclass[39m=[32m"sidecolumns container"[39m
                 [33mid[39m=[32m"move-when-scroll"[39m
+                [33mstyle[39m=[32m"top: 0px; position: sticky;"[39m
               [36m>[39m
                 [36m<h2[39m
                   [33mclass[39m=[32m"subtitle"[39m
@@ -1186,19 +1199,20 @@ FAIL src/App.test.tsx
 --------------------|---------|----------|---------|---------|--------------------------
 File                | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s        
 --------------------|---------|----------|---------|---------|--------------------------
-All files           |   19.04 |     3.57 |   17.02 |   18.69 |                          
+All files           |   16.44 |     5.88 |   13.79 |      16 |                          
  src                |     100 |      100 |     100 |     100 |                          
   App.tsx           |     100 |      100 |     100 |     100 |                          
- src/components     |    18.4 |     3.57 |   15.21 |   18.03 |                          
+ src/components     |   15.33 |     5.88 |   12.28 |   14.86 |                          
   CSVFile.tsx       |   16.66 |      100 |   33.33 |   16.66 | 9-21                     
-  ChooseCourse.tsx  |   41.17 |        0 |   27.27 |   39.39 | 40-88,92,103-138,149-153 
-  CourseEdit.tsx    |       0 |        0 |       0 |       0 | 16-148                   
-  Courses.tsx       |       0 |        0 |       0 |       0 | 17-117                   
-  CreatePlan.tsx    |   36.36 |       50 |   14.28 |   36.36 | 18-29,49-53              
+  CourseModal.tsx   |       0 |        0 |       0 |       0 | 30-162                   
+  CoursePool.tsx    |   41.17 |        0 |   27.27 |   39.39 | 40-88,92,108-143,154-158 
+  Courses.tsx       |       0 |        0 |       0 |       0 | 33-134                   
+  CreatePlan.tsx    |   36.36 |       50 |   14.28 |   36.36 | 24-35,55-76              
   Requirements.tsx  |     100 |      100 |     100 |     100 |                          
-  ShowCourses.tsx   |       0 |        0 |       0 |       0 | 59-90                    
-  ShowSemesters.tsx |       0 |      100 |       0 |       0 | 11                       
-  Years.tsx         |       0 |        0 |       0 |       0 | 10-48                    
+  ShowCourses.tsx   |       0 |        0 |       0 |       0 | 59-107                   
+  ShowSemesters.tsx |       0 |      100 |       0 |       0 | 16-51                    
+  Tabs.tsx          |       0 |        0 |       0 |       0 | 18-91                    
+  Years.tsx         |       0 |        0 |       0 |       0 | 15-53                    
  src/interfaces     |       0 |        0 |       0 |       0 |                          
   course.ts         |       0 |        0 |       0 |       0 |                          
   plan.ts           |       0 |        0 |       0 |       0 |                          
@@ -1208,5 +1222,5 @@ All files           |   19.04 |     3.57 |   17.02 |   18.69 |
 Test Suites: 3 failed, 3 total
 Tests:       2 failed, 2 total
 Snapshots:   0 total
-Time:        4.242 s
+Time:        4.981 s
 Ran all test suites.
