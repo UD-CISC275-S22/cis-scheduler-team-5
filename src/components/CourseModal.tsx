@@ -1,22 +1,25 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { EditText, EditTextarea } from "react-edit-text";
 import { Course } from "../interfaces/course";
+import { Term } from "../interfaces/term";
 //import { CourseEditor } from "./Courses";
 export function CourseEdit({
     course,
-    termCourses,
-    setTermCourses
-}: {
+    semester,
+    show,
+    setShow
+}: /*setTermCourses*/
+{
     course: Course;
-    termCourses: Course[];
-    setTermCourses: Dispatch<SetStateAction<Course[]>>;
+    semester: Term;
+    show: boolean;
+    setShow: (s: boolean) => void;
+    /*setTermCourses: Dispatch<SetStateAction<Course[]>>;*/
 }) {
     //Modal from https://react-bootstrap.github.io/components/modal/
-    const [show, setShow] = useState(true);
-
     //const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);
+    // const handleClose = () => setShow(false);
 
     interface save {
         name: string;
@@ -45,15 +48,21 @@ export function CourseEdit({
     };
 
     function handleSaveChanges(): void {
-        const newCourses: Course[] = termCourses;
-        newCourses[termCourses.findIndex((c) => c.code == course.code)] =
+        const newCourses: Course[] = semester.courses;
+        newCourses[semester.courses.findIndex((c) => c.code == course.code)] =
             course;
-        setTermCourses(newCourses);
+        semester.courses = newCourses;
     }
 
     return (
         <>
-            <Modal size="lg" show={show} onHide={handleClose}>
+            <Modal
+                size="lg"
+                show={show}
+                onHide={() => {
+                    setShow(false);
+                }}
+            >
                 <Modal.Header closeButton>
                     <Modal.Title>
                         {course.code}
@@ -138,7 +147,12 @@ export function CourseEdit({
                     </Container>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
+                    <Button
+                        variant="secondary"
+                        onClick={() => {
+                            setShow(false);
+                        }}
+                    >
                         Close
                     </Button>
                     <Button
