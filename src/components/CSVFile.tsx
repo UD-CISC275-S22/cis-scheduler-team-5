@@ -1,9 +1,15 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { CreatePlan } from "./CreatePlan";
+//import { CourseEditor } from "./Courses";
+//import { CreatePlan } from "./CreatePlan";
+import { Course } from "../interfaces/course";
 
-export function CVSFile(): JSX.Element {
-    const CSVPlan = [CreatePlan];
+export function CVSFile({
+    termCourses
+}: {
+    termCourses: Course[];
+}): JSX.Element {
+    const CSVPlan = [termCourses];
 
     function downloadFile() {
         let csv = "Code,Name,Desc,Credits\n";

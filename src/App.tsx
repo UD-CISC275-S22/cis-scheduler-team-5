@@ -35,7 +35,7 @@ function App(): JSX.Element {
                 </Col>
             </Row>
             <Row>
-                <CVSFile></CVSFile>
+                <CVSFile termCourses={[]}></CVSFile>
             </Row>
         </div>
     );
