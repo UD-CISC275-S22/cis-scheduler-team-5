@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Term } from "../interfaces/term";
-import { CourseEdit } from "./CourseEdit";
+import { CourseEdit } from "./CourseModal";
 // adding a year will automatically have 4 terms, this addSemester is for ppl who wanna add to their 4 years
 // export function addSemester(): JSX.Element {
 //     const [term, setTerm] = useState<Term>([]);
@@ -57,11 +57,11 @@ export function ShowCourses({
     //     (course: Course): Course => ({...course, courseid: INSERTCISC})
     // )
     const [show, setShow] = useState<boolean>(false); //To show Modal when Course is clicked
-    const [visible, setVisible] = useState<boolean>(false);
-    function flipVisibility(): void {
+    //const [visible, setVisible] = useState<boolean>(false);
+    /*function flipVisibility(): void {
         // Set visible to be the logical opposite of its previous value
         setVisible(!visible);
-    }
+    }*/
     return (
         <div>
             <Container>

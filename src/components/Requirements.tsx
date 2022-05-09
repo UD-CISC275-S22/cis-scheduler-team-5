@@ -25,7 +25,7 @@ export function Requirements(): JSX.Element {
         "Total 124 credits"
     ];
 
-    const BA: string[] = [
+    /*const BA: string[] = [
         "ENGL 110",
         "First Year Seminar",
         "Discovering Learning Experience",
@@ -47,9 +47,9 @@ export function Requirements(): JSX.Element {
         "MATH 210",
         "MATH 241",
         "Total 124 credits"
-    ];
+    ];*/
 
-    const BS: string[] = [
+    /*const BS: string[] = [
         "ENGL 110",
         "First Year Seminar",
         "Discovering Learning Experience",
@@ -81,7 +81,7 @@ export function Requirements(): JSX.Element {
         "6 credits CISC elective over 300",
         "12 credits focus area",
         "Total 124 credits"
-    ];
+    ];*/
     /*const COURSES = Object.values(EasyCatalog).map(
         (courses: Record<string, Course>): Course => ({
             Object.entries(courses).map(

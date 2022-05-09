@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import "./App.css";
-import { ChooseCourse } from "./components/ChooseCourse";
+import { ChooseCourse } from "./components/CoursePool";
 //import { CourseEditor } from "./components/Courses";
 import { CreatePlan } from "./components/CreatePlan";
 import { CVSFile } from "./components/CSVFile";
