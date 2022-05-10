@@ -1204,23 +1204,23 @@ All files           |   16.44 |     5.88 |   13.79 |      16 |
   App.tsx           |     100 |      100 |     100 |     100 |                          
  src/components     |   15.33 |     5.88 |   12.28 |   14.86 |                          
   CSVFile.tsx       |   16.66 |      100 |   33.33 |   16.66 | 9-21                     
+  ChooseCourse.tsx  |   41.17 |        0 |   27.27 |   39.39 | 40-88,92,108-143,154-158 
+  CourseAdder.tsx   |       0 |        0 |       0 |       0 | 33-134                   
   CourseModal.tsx   |       0 |        0 |       0 |       0 | 30-162                   
-  CoursePool.tsx    |   41.17 |        0 |   27.27 |   39.39 | 40-88,92,108-143,154-158 
-  Courses.tsx       |       0 |        0 |       0 |       0 | 33-134                   
   CreatePlan.tsx    |   36.36 |       50 |   14.28 |   36.36 | 24-35,55-76              
   Requirements.tsx  |     100 |      100 |     100 |     100 |                          
-  ShowCourses.tsx   |       0 |        0 |       0 |       0 | 40-93                    
+  ShowCourses.tsx   |       0 |        0 |       0 |       0 | 14-67                    
   ShowSemesters.tsx |       0 |      100 |       0 |       0 | 16-51                    
   Tabs.tsx          |       0 |        0 |       0 |       0 | 18-91                    
   Years.tsx         |       0 |        0 |       0 |       0 | 15-53                    
  src/interfaces     |       0 |        0 |       0 |       0 |                          
   course.ts         |       0 |        0 |       0 |       0 |                          
   plan.ts           |       0 |        0 |       0 |       0 |                          
-  term.ts           |       0 |        0 |       0 |       0 |                          
+  semester.ts       |       0 |        0 |       0 |       0 |                          
   year.ts           |       0 |        0 |       0 |       0 |                          
 --------------------|---------|----------|---------|---------|--------------------------
 Test Suites: 3 failed, 3 total
 Tests:       2 failed, 2 total
 Snapshots:   0 total
-Time:        4.756 s
+Time:        4.375 s
 Ran all test suites.
