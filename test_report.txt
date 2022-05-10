@@ -1209,7 +1209,7 @@ All files           |   16.44 |     5.88 |   13.79 |      16 |
   Courses.tsx       |       0 |        0 |       0 |       0 | 33-134                   
   CreatePlan.tsx    |   36.36 |       50 |   14.28 |   36.36 | 24-35,55-76              
   Requirements.tsx  |     100 |      100 |     100 |     100 |                          
-  ShowCourses.tsx   |       0 |        0 |       0 |       0 | 59-107                   
+  ShowCourses.tsx   |       0 |        0 |       0 |       0 | 40-93                    
   ShowSemesters.tsx |       0 |      100 |       0 |       0 | 16-51                    
   Tabs.tsx          |       0 |        0 |       0 |       0 | 18-91                    
   Years.tsx         |       0 |        0 |       0 |       0 | 15-53                    
@@ -1222,5 +1222,5 @@ All files           |   16.44 |     5.88 |   13.79 |      16 |
 Test Suites: 3 failed, 3 total
 Tests:       2 failed, 2 total
 Snapshots:   0 total
-Time:        4.981 s
+Time:        4.756 s
 Ran all test suites.
