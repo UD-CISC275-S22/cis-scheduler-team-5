@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Table } from "react-bootstrap";
+import { Col, Container, Row, Table, Button } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Term } from "../interfaces/term";
 import { CourseEdit } from "./CourseModal";
@@ -28,17 +28,6 @@ import { CourseEdit } from "./CourseModal";
         listCourses = [];
         setSemesterVisible(!semestervisible);
     }
-    <div>
-        <Button
-            style={{
-                margin: "8px",
-                backgroundColor: "purple"
-            }}
-            onClick={flipSemesterVisibility}
-        >
-            Remove Semester
-        </Button>
-    </div>;
 */
 
 export function ShowCourses({
@@ -48,20 +37,17 @@ export function ShowCourses({
     semester: Term;
     /*setTermCourses: Dispatch<SetStateAction<Course[]>>;*/
 }): JSX.Element {
-    // have functions here like editCourse that use state and are called w button/editable radio switch? then put in rows?
-    // state, control, view
-    // an array of Courses, fn that adds a Course to the array, a table view of resulting courses including added
-
-    // map fn to make the course have CISC in front of ID
-    // const termCourses= courses.map(
-    //     (course: Course): Course => ({...course, courseid: INSERTCISC})
-    // )
     const [show, setShow] = useState<boolean>(false); //To show Modal when Course is clicked
-    //const [visible, setVisible] = useState<boolean>(false);
-    /*function flipVisibility(): void {
-        // Set visible to be the logical opposite of its previous value
-        setVisible(!visible);
-    }*/
+    /*
+    // Remove Single Course Button
+    const [termCourses, setTerm] = useState<Course[]>(semester.courses); // stores semester courses passed in so delete is an option
+    function deleteCourse() {
+        const updatedTermCourses = termCourses.filter(
+            (course: Course): boolean => course.code === course.code
+        );
+        setTerm(updatedTermCourses);
+    }
+    */
     return (
         <div>
             <Container>
@@ -118,6 +104,21 @@ export function ShowCourses({
                                                 semester={semester}
                                             ></CourseEdit>
                                         )}
+                                        <td>
+                                            {" "}
+                                            <Button
+                                                style={{
+                                                    color: "red"
+                                                }}
+                                                variant="outline-primary"
+                                                size="sm"
+                                                /*onClick={() => {
+                                                    deleteCourse;
+                                                }}*/
+                                            >
+                                                X
+                                            </Button>
+                                        </td>
                                     </tr>
                                 ))}
                             </tbody>
