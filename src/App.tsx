@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import "./App.css";
-import { ChooseCourse } from "./components/CoursePool";
+import { ChooseCourse } from "./components/ChooseCourse";
 //import { CourseEditor } from "./components/Courses";
 import { CreatePlan } from "./components/CreatePlan";
-import { CVSFile } from "./components/CSVFile";
+import { CSVFile } from "./components/CSVFile";
 import { Requirements } from "./components/Requirements";
 //import { ShowCourses } from "./components/ShowCourses";
 import Catalog from "./data/catalog.json";
-import { Term } from "./interfaces/term";
+import { Semester } from "./interfaces/semester";
 //import { Course } from "./interfaces/course";
 
 function App(): JSX.Element {
-    const [semesters, setSemesters] = useState<Term[]>([]);
+    const [semesters, setSemesters] = useState<Semester[]>([]);
     /*const COURSES = Object.values(EasyCatalog).map(
         (courses: Record<string, Course>): Course => ({
             Object.entries(courses).map(
@@ -45,7 +45,7 @@ function App(): JSX.Element {
                 </Col>
             </Row>
             <Row>
-                <CVSFile></CVSFile>
+                <CSVFile></CSVFile>
             </Row>
         </div>
     );

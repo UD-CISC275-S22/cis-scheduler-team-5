@@ -2,20 +2,20 @@ import React from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { EditText, EditTextarea } from "react-edit-text";
 import { Course } from "../interfaces/course";
-import { Term } from "../interfaces/term";
+import { Semester } from "../interfaces/semester";
 //import { CourseEditor } from "./Courses";
-export function CourseEdit({
+export function CourseModal({
     course,
     semester,
     show,
     setShow
-}: /*setTermCourses*/
+}: /*setSemesterCourses*/
 {
     course: Course;
-    semester: Term;
+    semester: Semester;
     show: boolean;
     setShow: (s: boolean) => void;
-    /*setTermCourses: Dispatch<SetStateAction<Course[]>>;*/
+    /*setSemesterCourses: Dispatch<SetStateAction<Course[]>>;*/
 }) {
     //Modal from https://react-bootstrap.github.io/components/modal/
     //const handleShow = () => setShow(true);

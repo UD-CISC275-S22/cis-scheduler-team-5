@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import { CreatePlan } from "./CreatePlan";
 
-export function CVSFile(): JSX.Element {
+export function CSVFile(): JSX.Element {
     const CSVPlan = [CreatePlan];
 
     function downloadFile() {

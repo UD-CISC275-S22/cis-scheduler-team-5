@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 import { Course } from "../interfaces/course";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Years } from "./Years";
-import { Term } from "../interfaces/term";
+import { Semester } from "../interfaces/semester";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -48,8 +48,8 @@ export default function BasicTabs({
     plan
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Term[];
-    setSemesters: (s: Term[]) => void;
+    semesters: Semester[];
+    setSemesters: (s: Semester[]) => void;
     plan: string[];
 }) {
     let loadedData = plan;

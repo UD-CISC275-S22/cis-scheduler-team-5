@@ -1,51 +1,25 @@
 import React, { useState } from "react";
 import { Col, Container, Row, Table, Button } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Term } from "../interfaces/term";
-import { CourseEdit } from "./CourseModal";
-// adding a year will automatically have 4 terms, this addSemester is for ppl who wanna add to their 4 years
-// export function addSemester(): JSX.Element {
-//     const [term, setTerm] = useState<Term>([]);
-//     //should i use state for each of the updated fields in the term interface?
-//     const [year, setYear]=useState<number>(2022);
-//     const [season, setSeason]=useState<TermSeason>("Fall");
-
-//     function setSemester(event: React.ChangeEvent<HTMLInputElement>){
-//         setYear(event.target.value);
-//     }
-// }
-
-// have button that onclick calls addsemester function
-//materializes form that allows you to say the year, season from a dropdown,
-
-/* 
-/////delete semester button trying to lift state
-    interface SemesterVisibleProps {
-        setSemesterVisible: (semestervisible: boolean) => void;
-    }
-    const [semestervisible, setSemesterVisible] = useState<boolean>(true);
-    function flipSemesterVisibility(): void {
-        listCourses = [];
-        setSemesterVisible(!semestervisible);
-    }
-*/
+import { Semester } from "../interfaces/semester";
+import { CourseModal } from "./CourseModal";
 
 export function ShowCourses({
     semester
-}: /*setTermCourses*/
+}: /*setSemesterCourses*/
 {
-    semester: Term;
-    /*setTermCourses: Dispatch<SetStateAction<Course[]>>;*/
+    semester: Semester;
+    /*setSemesterCourses: Dispatch<SetStateAction<Course[]>>;*/
 }): JSX.Element {
     const [show, setShow] = useState<boolean>(false); //To show Modal when Course is clicked
-    /*
+
     // Remove Single Course Button
-    const [termCourses, setTerm] = useState<Course[]>(semester.courses); // stores semester courses passed in so delete is an option
-    function deleteCourse() {
-        const updatedTermCourses = termCourses.filter(
-            (course: Course): boolean => course.code === course.code
+    /*
+    function deleteCourse(deleteCourseCode: string) {
+        const updatedSemesterCourses = semester.courses.filter(
+            (course: Course): boolean => course.code !== deleteCourseCode
         );
-        setTerm(updatedTermCourses);
+        return updatedSemesterCourses;
     }
     */
     return (
@@ -96,13 +70,13 @@ export function ShowCourses({
                                             {course.credits}
                                         </td>
                                         {show && (
-                                            <CourseEdit
-                                                /*setTermCourses={setTermCourses}*/
+                                            <CourseModal
+                                                /*setSemesterCourses={setSemesterCourses}*/
                                                 show={show}
                                                 setShow={setShow}
                                                 course={course}
                                                 semester={semester}
-                                            ></CourseEdit>
+                                            ></CourseModal>
                                         )}
                                         <td>
                                             {" "}
@@ -112,9 +86,11 @@ export function ShowCourses({
                                                 }}
                                                 variant="outline-primary"
                                                 size="sm"
-                                                /*onClick={() => {
-                                                    deleteCourse;
-                                                }}*/
+                                                /*
+                                                onClick={() => {
+                                                    deleteCourse(course.code);
+                                                }}
+                                                */
                                             >
                                                 X
                                             </Button>
