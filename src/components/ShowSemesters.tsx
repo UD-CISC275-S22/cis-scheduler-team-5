@@ -1,26 +1,26 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { CourseEditor } from "./Courses";
+import { CourseAdder } from "./CourseAdder";
 //import { ShowCourses } from "./ShowCourses";
 import { Course } from "../interfaces/course";
-import { Term } from "../interfaces/term";
+import { Semester } from "../interfaces/semester";
 export function ShowSemesters({
     catalog,
     semesters,
     setSemesters
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Term[];
-    setSemesters: (s: Term[]) => void;
+    semesters: Semester[];
+    setSemesters: (s: Semester[]) => void;
 }): JSX.Element {
-    const newTerm: Term = { season: "Fall", courses: [] };
-    const newTerm2: Term = { season: "Winter", courses: [] };
-    const newTerm3: Term = { season: "Spring", courses: [] };
-    const newTerm4: Term = { season: "Summer", courses: [] };
-    //const newSemesters = [...semesters, newTerm, newTerm2, newTerm3, newTerm4];
+    const newSemester: Semester = { season: "Fall", courses: [] };
+    const newSemester2: Semester = { season: "Winter", courses: [] };
+    const newSemester3: Semester = { season: "Spring", courses: [] };
+    const newSemester4: Semester = { season: "Summer", courses: [] };
+    //const newSemesters = [...semesters, newSemester, newSemester2, newSemester3, newSemester4];
 
-    const col1 = [...semesters, newTerm, newTerm2];
-    const col2 = [newTerm3, newTerm4];
+    const col1 = [...semesters, newSemester, newSemester2];
+    const col2 = [newSemester3, newSemester4];
 
     return (
         <div>
@@ -36,13 +36,13 @@ export function ShowSemesters({
                         {col1.map((sem) => (
                             <Col key={sem.season}>
                                 {" "}
-                                <CourseEditor
+                                <CourseAdder
                                     key={sem.season}
                                     sem={sem}
                                     setSemesters={setSemesters}
                                     semesters={semesters}
                                     catalog={catalog}
-                                ></CourseEditor>
+                                ></CourseAdder>
                             </Col>
                         ))}
                     </Col>
@@ -50,13 +50,13 @@ export function ShowSemesters({
                         {col2.map((sem) => (
                             <Col key={sem.season}>
                                 {" "}
-                                <CourseEditor
+                                <CourseAdder
                                     key={sem.season}
                                     sem={sem}
                                     setSemesters={setSemesters}
                                     semesters={semesters}
                                     catalog={catalog}
-                                ></CourseEditor>
+                                ></CourseAdder>
                             </Col>
                         ))}
                     </Col>

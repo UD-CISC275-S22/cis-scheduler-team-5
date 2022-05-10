@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Button, Container, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Term } from "../interfaces/term";
+import { Semester } from "../interfaces/semester";
 import { ShowCourses } from "./ShowCourses";
 //https://lo-victoria.com/making-draggable-components-in-react DRAGGABLE
 //https://medium.com/nmc-techblog/easy-drag-and-drop-in-react-22778b30ba37 DROP DRAGGABLE
 
 //https://www.kennethlange.com/drag-and-drop-in-pure-typescript-and-react/ DRAG AND DROP
 
-export function CourseEditor({
+export function CourseAdder({
     catalog,
     /*semesters,
     setSemesters,*/
@@ -16,21 +16,21 @@ export function CourseEditor({
 }: /*key*/
 {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Term[];
-    setSemesters: (s: Term[]) => void;
-    sem: Term;
+    semesters: Semester[];
+    setSemesters: (s: Semester[]) => void;
+    sem: Semester;
     key: string;
 }): JSX.Element {
     //const COURSES = getAllCourses();
     //const [course] = useState<string>("");
-    //const [termCourses, setTermCourses] = useState<Term["courses"]>([]);
+    //const [SemesterCourses, setSemesterCourses] = useState<Semester["courses"]>([]);
     //const [isShown, setIsShown] = useState<boolean>(false);
     //const [visible, setVisible] = useState<boolean>(false);
     //const [value, setValue] = React.useState<string | null>(COURSES[0]);
     //const [inpu, setInpu] = useState<string>(""); //string value for input for class
     //const [name, setName] = useState<string>("");
     //const [modalShow, setModalShow] = React.useState(false);
-    const [semester, setSemester] = useState<Term>(sem);
+    const [semester, setSemester] = useState<Semester>(sem);
 
     function findCourse(name: string): Course {
         const code = name.substring(0, 4); //gets department, Ex ACCT
@@ -73,16 +73,16 @@ export function CourseEditor({
     /*function addCourse(course: string) {
         const newCourse: Course = findCourse(course);
         if (newCourse.code !== "") {
-            const updateTermCourses = [...termCourses, newCourse];
-            setTermCourses(updateTermCourses);
+            const updateSemesterCourses = [...SemesterCourses, newCourse];
+            setSemesterCourses(updateSemesterCourses);
         }
     }
     function removeCourse(courseCode: string) {
-        const newTermCourses = termCourses;
-        const newnewCourses = newTermCourses.filter(
+        const newSemesterCourses = SemesterCourses;
+        const newnewCourses = newSemesterCourses.filter(
             (deleteCourse) => deleteCourse.code !== courseCode
         );
-        setTermCourses(newnewCourses);
+        setSemesterCourses(newnewCourses);
     }*/
     function clearCourses() {
         const updateSemester = {
@@ -128,7 +128,7 @@ export function CourseEditor({
                 <Container>
                     <ShowCourses
                         semester={semester}
-                        /*setTermCourses={setTermCourses}*/
+                        /*setSemesterCourses={setSemesterCourses}*/
                     ></ShowCourses>
                     <Row>
                         <Button onClick={() => clearCourses()}>

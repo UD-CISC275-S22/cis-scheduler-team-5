@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Term } from "../interfaces/term";
+import { Semester } from "../interfaces/semester";
 import BasicTabs from "./Tabs";
 //import { Course } from "../interfaces/course";
 import { Years } from "./Years";
@@ -13,8 +13,8 @@ export function CreatePlan({
     setSemesters
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Term[];
-    setSemesters: (s: Term[]) => void;
+    semesters: Semester[];
+    setSemesters: (s: Semester[]) => void;
 }): JSX.Element {
     const [plan, setPlan] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
