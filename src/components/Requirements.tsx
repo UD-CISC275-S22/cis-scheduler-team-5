@@ -1,36 +1,31 @@
-import React from "react";
-import { Container, Form } from "react-bootstrap";
+import { ButtonGroup } from "@mui/material";
+import React, { useState } from "react";
+import { Button, Container, Dropdown, Form } from "react-bootstrap";
 import "../App.css";
+import { Course } from "../interfaces/course";
+import { Semester } from "../interfaces/semester";
 //import { Course } from "../interfaces/course";
-//import { Term } from "../interfaces/term";
+//import { Semesterter} from "../interfaces/term";
 
-export function Requirements(): JSX.Element {
-    //const BSdata = BS;
-    const requirementsBS: string[] = [
-        "CISC 108",
-        "CISC 181",
-        "CISC 210",
-        "CISC 220",
-        "CISC 260",
-        "CISC 275",
-        "CISC 303",
-        "CISC 320",
-        "CISC 361",
-        "CISC 372",
-        "MATH 210",
-        "MATH 241",
-        "MATH 242",
-        "6 credits 300",
-        "Other requirements",
-        "Total 124 credits"
-    ];
+export function Requirements({
+    semesters,
+    setSemesters
+}: {
+    semesters: Semester[];
+    setSemesters: (s: Semester[]) => void;
+}): JSX.Element {
+    const ALLCOURSES = semesters.map((semester: Semester) =>
+        semester.courses.map((oneCourse: Course): string => {
+            return oneCourse.code;
+        })
+    );
 
-    /*const BA: string[] = [
+    const BA: string[] = [
         "ENGL 110",
         "First Year Seminar",
         "Discovering Learning Experience",
         "Multicultural Requirement",
-        "3 credits Group A Breadth",
+        "3crd Group A Breadth",
         "3 credits Group B Breadth",
         "3 credits Group C Breadth",
         "3 credits Group D Breadth",
@@ -47,14 +42,14 @@ export function Requirements(): JSX.Element {
         "MATH 210",
         "MATH 241",
         "Total 124 credits"
-    ];*/
+    ];
 
-    /*const BS: string[] = [
+    const BS: string[] = [
         "ENGL 110",
         "First Year Seminar",
         "Discovering Learning Experience",
         "Multicultural Requirement",
-        "3 credits Group A Breadth",
+        "3crd Breadth",
         "3 credits Group B Breadth",
         "3 credits Group C Breadth",
         "3 credits Group D Breadth",
@@ -81,7 +76,7 @@ export function Requirements(): JSX.Element {
         "6 credits CISC elective over 300",
         "12 credits focus area",
         "Total 124 credits"
-    ];*/
+    ];
     /*const COURSES = Object.values(EasyCatalog).map(
         (courses: Record<string, Course>): Course => ({
             Object.entries(courses).map(
@@ -89,6 +84,10 @@ export function Requirements(): JSX.Element {
             )
         })
     );*/
+    const [major, setMajor] = useState<string>("Major");
+    const [bsba, setBSBA] = useState<string>("BS");
+    const [conc, setConc] = useState<string>("Traditional Program");
+
     return (
         <Container
             className="sidecolumns"
@@ -98,17 +97,150 @@ export function Requirements(): JSX.Element {
                 position: "sticky"
             }}
         >
-            <h2 className="subtitle">Degree Requirements</h2>
-            {requirementsBS.map((req: string) => (
-                <div key={req}>
-                    {" "}
-                    <Form.Check
-                        type="checkbox"
-                        id="is-student-check"
-                        label={req}
-                    />
-                </div>
-            ))}
+            <div>
+                <ButtonGroup>
+                    <Dropdown>
+                        <Dropdown.Toggle
+                            data-testid="dropdown-basic"
+                            className="dropdown-basic"
+                        >
+                            {major}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Header>Major or Minor?</Dropdown.Header>
+                            <Dropdown.Item
+                                data-testid="option-minor"
+                                onClick={() => {
+                                    setMajor("Minor");
+                                    setConc("Traditional Program");
+                                    setBSBA("BS");
+                                }}
+                            >
+                                Minor
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                data-testid="option-major"
+                                onClick={() => setMajor("Major")}
+                            >
+                                Major
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    {major === "Major" && (
+                        <Dropdown data-testid="concentration-row">
+                            <Dropdown.Toggle
+                                data-testid="dropdown-bsba"
+                                className="dropdown-basic"
+                            >
+                                {bsba}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Header>Degree Type</Dropdown.Header>
+                                <Dropdown.Item
+                                    data-testid="option"
+                                    onClick={() => setBSBA("BS")}
+                                >
+                                    BS
+                                </Dropdown.Item>
+                                <Dropdown.Item
+                                    data-testid="option"
+                                    onClick={() => {
+                                        setBSBA("BA");
+                                        setConc("Traditional Program");
+                                    }}
+                                >
+                                    BA
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    )}
+                </ButtonGroup>
+                {major === "Major" && bsba === "BS" && (
+                    <Dropdown
+                        data-testid="concentration-dropdown"
+                        className="dropdown-basic"
+                    >
+                        <Dropdown.Toggle id="dropdown-basic">
+                            {conc}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Header>Concentration</Dropdown.Header>
+                            <Dropdown.Item
+                                data-testid="option"
+                                onClick={() => setConc("Traditional Program")}
+                            >
+                                Traditional Program
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                data-testid="option"
+                                onClick={() => setConc("AI and Robotics")}
+                            >
+                                Artificial Intelligence and Robotics
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                data-testid="option"
+                                onClick={() => setConc("Bioinformatics")}
+                            >
+                                Bioinformatics
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                data-testid="option"
+                                onClick={() => setConc("Cybersecurity")}
+                            >
+                                Cybersecurity
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                data-testid="option"
+                                onClick={() => setConc("Data Science")}
+                            >
+                                Data Science{" "}
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                data-testid="option"
+                                onClick={() => setConc("HP Computing")}
+                            >
+                                High Performance Computing
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                data-testid="option"
+                                onClick={() => setConc("Systems & Networks")}
+                            >
+                                Systems and Networks Concentration
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                data-testid="option"
+                                onClick={() => setConc("Theory & Computation")}
+                            >
+                                Theory and Computation
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                )}
+                {major === "Major" &&
+                    bsba === "BS" &&
+                    BS.map((req: string) => (
+                        <div key={req}>
+                            {" "}
+                            <Form.Check
+                                type="checkbox"
+                                id="is-student-check"
+                                label={req}
+                            />
+                        </div>
+                    ))}
+                {major === "Major" &&
+                    bsba === "BA" &&
+                    BA.map((req: string) => (
+                        <div key={req}>
+                            {" "}
+                            <Form.Check
+                                type="checkbox"
+                                id="is-student-check"
+                                label={req}
+                            />
+                        </div>
+                    ))}
+            </div>
         </Container>
     );
 }

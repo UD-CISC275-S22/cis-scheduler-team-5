@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Term } from "../interfaces/term";
-import BasicTabs from "./Tabs";
+import { Plan } from "../interfaces/plan";
+import { Semester } from "../interfaces/semester";
+//import BasicTabs from "./Tabs";
 //import { Course } from "../interfaces/course";
 import { Years } from "./Years";
 //import { Plan } from "../interfaces/plan";
@@ -10,22 +11,28 @@ import { Years } from "./Years";
 export function CreatePlan({
     catalog,
     semesters,
-    setSemesters
+    setSemesters,
+    plans,
+    setPlans
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Term[];
-    setSemesters: (s: Term[]) => void;
+    semesters: Semester[];
+    setSemesters: (s: Semester[]) => void;
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
 }): JSX.Element {
-    const [plan, setPlan] = useState<string[]>([]);
+    //const [plan, setPlan] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
     const [visible, setVisible] = useState<boolean>(false);
 
-    function addPlan(option: string) {
-        setPlan([...plan, option]);
+    function addPlan(namePlan: string) {
+        const newPlan: Plan = { name: namePlan, years: [] };
+        const update: Plan[] = [...plans, newPlan];
+        setPlans(update);
         flipVisibility();
     }
     function clearPlan() {
-        setPlan([]);
+        setPlans([]);
     }
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
@@ -56,7 +63,7 @@ export function CreatePlan({
                     </>
                 )}
             </div>
-            {plan.length > 0 ? (
+            {plans.length > 0 ? (
                 <div
                     style={{
                         border: "3px solid black",
@@ -66,22 +73,22 @@ export function CreatePlan({
                         margin: "10px"
                     }}
                 >
-                    <BasicTabs
-                        plan={plan}
-                        catalog={catalog}
-                        semesters={semesters}
-                        setSemesters={setSemesters}
-                    ></BasicTabs>
-                    {plan.map((onePlan: string) => (
-                        <div key={onePlan} style={{ marginBottom: "40px" }}>
+                    {plans.map((currentPlan: Plan) => (
+                        <div
+                            key={currentPlan.name}
+                            style={{ marginBottom: "40px" }}
+                        >
                             <Container>
                                 <Row>
                                     <Col>
-                                        <h1>{onePlan}</h1>
+                                        <h1>{currentPlan.name}</h1>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Years
+                                        currentPlan={currentPlan}
+                                        plans={plans}
+                                        setPlans={setPlans}
                                         catalog={catalog}
                                         semesters={semesters}
                                         setSemesters={setSemesters}

@@ -2,17 +2,19 @@ import React from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { EditText, EditTextarea } from "react-edit-text";
 import { Course } from "../interfaces/course";
-import { Term } from "../interfaces/term";
+import { Semester } from "../interfaces/semester";
+import Catalog from "../data/catalog.json";
+
 //import { CourseEditor } from "./Courses";
 export function CourseEdit({
     course,
-    semester,
+    currentSemester,
     show,
     setShow
 }: /*setTermCourses*/
 {
     course: Course;
-    semester: Term;
+    currentSemester: Semester;
     show: boolean;
     setShow: (s: boolean) => void;
     /*setTermCourses: Dispatch<SetStateAction<Course[]>>;*/
@@ -27,7 +29,62 @@ export function CourseEdit({
         previousValue: string;
     }
 
-    const handleSave = ({ name, value /*previousValue*/ }: save) => {
+    /*function findCourse(name: string): Course {
+        const code = name.substring(0, 4); //gets department, Ex ACCT
+        const CATALOG_DATA: Record<string, Record<string, Course>> = catalog; //converting json to record type
+        let course: Course;
+        try {
+            course = CATALOG_DATA[code][name];
+        } catch {
+            course = {
+                code: "",
+                name: "",
+                descr: "",
+                credits: "",
+                preReq: "",
+                restrict: "",
+                breadth: "",
+                typ: ""
+            };
+        }
+        //exception handling
+        if (course === undefined) {
+            course = {
+                code: "",
+                name: "",
+                descr: "",
+                credits: "",
+                preReq: "",
+                restrict: "",
+                breadth: "",
+                typ: ""
+            };
+        }
+        return course;
+    }*/
+
+    function findCourse(name: string): Course {
+        const code = name.substring(0, 4); //gets department, Ex ACCT
+        const CATALOG_DATA: Record<string, Record<string, Course>> = Catalog; //converting json to record type
+        let course: Course;
+        try {
+            course = CATALOG_DATA[code][name];
+        } catch {
+            course = {
+                code: "",
+                name: "",
+                descr: "",
+                credits: "",
+                preReq: "",
+                restrict: "",
+                breadth: "",
+                typ: ""
+            };
+        }
+        return course;
+    }
+
+    const handleSave = ({ name, value }: save) => {
         const newEdit: Course = course;
         console.log(name);
         if (name === "name") {
@@ -48,10 +105,20 @@ export function CourseEdit({
     };
 
     function handleSaveChanges(): void {
-        const newCourses: Course[] = semester.courses;
-        newCourses[semester.courses.findIndex((c) => c.code == course.code)] =
-            course;
-        semester.courses = newCourses;
+        const newCourses: Course[] = currentSemester.courses;
+        newCourses[
+            currentSemester.courses.findIndex((c) => c.code == course.code)
+        ] = course;
+        currentSemester.courses = newCourses;
+    }
+
+    function handlePrevious(): void {
+        const newCourses: Course[] = currentSemester.courses;
+        const previuousCourse = findCourse(course.code);
+        newCourses[
+            currentSemester.courses.findIndex((c) => c.code == course.code)
+        ] = previuousCourse;
+        currentSemester.courses = newCourses;
     }
 
     return (
@@ -163,6 +230,15 @@ export function CourseEdit({
                         }}
                     >
                         Save Changes
+                    </Button>
+                    <Button
+                        variant="primary"
+                        onClick={() => {
+                            handlePrevious();
+                            setShow(false);
+                        }}
+                    >
+                        Default Course
                     </Button>
                 </Modal.Footer>
             </Modal>

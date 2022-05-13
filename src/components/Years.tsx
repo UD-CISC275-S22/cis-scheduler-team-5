@@ -1,27 +1,55 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Term } from "../interfaces/term";
+import { Plan } from "../interfaces/plan";
+import { Semester } from "../interfaces/semester";
+import { Year } from "../interfaces/year";
 import { ShowSemesters } from "./ShowSemesters";
 export function Years({
     catalog,
     semesters,
-    setSemesters
+    setSemesters,
+    plans,
+    setPlans,
+    currentPlan
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Term[];
-    setSemesters: (s: Term[]) => void;
+    semesters: Semester[];
+    setSemesters: (s: Semester[]) => void;
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
+    currentPlan: Plan;
 }): JSX.Element {
-    const [year, setYear] = useState<string[]>([]);
+    //const [year, setYear] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
     const [visible, setVisible] = useState<boolean>(false);
 
-    function addYear(option: string) {
-        setYear([...year, option]);
+    function addYear(nameYear: string) {
+        const updatePlans = plans.map((plan: Plan): Plan => {
+            if (plan.name !== currentPlan.name) {
+                return plan;
+            } else {
+                return {
+                    ...plan,
+                    years: [...plan.years, { name: nameYear, semesters: [] }]
+                };
+            }
+        });
+        setPlans(updatePlans);
         flipVisibility();
     }
     function clearYears() {
-        setYear([]);
+        const updatePlans = plans.map((plan: Plan) => {
+            if (plan.name !== currentPlan.name) {
+                return plan;
+            } else {
+                return {
+                    ...plan,
+                    years: []
+                };
+            }
+        });
+        setPlans(updatePlans);
     }
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
@@ -49,24 +77,29 @@ export function Years({
                     <Button onClick={() => addYear(name)}>Confirm</Button>
                 </>
             )}
-            {year.map((oneYear: string) => (
-                <div key={oneYear} style={{ marginBottom: "4px" }}>
-                    <Container>
-                        <Row>
-                            <Col>
-                                <h2>{oneYear} </h2>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <ShowSemesters
-                                catalog={catalog}
-                                semesters={semesters}
-                                setSemesters={setSemesters}
-                            ></ShowSemesters>
-                        </Row>
-                    </Container>
-                </div>
-            ))}
+            {plans.map((plan: Plan) =>
+                plan.years.map((currentYear: Year) => (
+                    <div key={currentYear.name} style={{ marginBottom: "4px" }}>
+                        <Container>
+                            <Row>
+                                <Col>
+                                    <h2>{currentYear.name} </h2>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <ShowSemesters
+                                    currentYear={currentYear}
+                                    plans={plans}
+                                    setPlans={setPlans}
+                                    catalog={catalog}
+                                    semesters={semesters}
+                                    setSemesters={setSemesters}
+                                ></ShowSemesters>
+                            </Row>
+                        </Container>
+                    </div>
+                ))
+            )}
         </div>
     );
 }
