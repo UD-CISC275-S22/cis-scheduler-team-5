@@ -102,53 +102,6 @@ export function ShowCourses({
                                         </tr>
                                     )
                                 )}
-
-                                {/*currentSemester.courses.map(
-                                    (course: Course) => (
-                                        <tr key={course.code}>
-                                            <td
-                                                onClick={() => {
-                                                    setShow(true);
-                                                }}
-                                            >
-                                                {course.code}
-                                            </td>
-                                            <td
-                                                onClick={() => {
-                                                    setShow(true);
-                                                }}
-                                            >
-                                                {course.name}{" "}
-                                                {course.preReq !== "" && (
-                                                    <WarningIcon
-                                                        sx={{
-                                                            color: red[800],
-                                                            fontSize: 20
-                                                        }}
-                                                    ></WarningIcon>
-                                                )}
-                                            </td>
-                                            <td
-                                                onClick={() => {
-                                                    setShow(true);
-                                                }}
-                                            >
-                                                {course.credits}
-                                            </td>
-                                            {show && (
-                                                <CourseEdit
-                                                    setTermCourses={setTermCourses}
-                                                    show={show}
-                                                    setShow={setShow}
-                                                    course={course}
-                                                    currentSemester={
-                                                        currentSemester
-                                                    }
-                                                ></CourseEdit>
-                                            )}
-                                        </tr>
-                                    )
-                                                )*/}
                             </tbody>
                         </Table>
                     </Col>
