@@ -1,4 +1,3 @@
-import { Icon } from "@mui/material";
 import React, { useState } from "react";
 import { Col, Container, Row, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
@@ -7,7 +6,6 @@ import { CourseEdit } from "./CourseModal";
 import WarningIcon from "@mui/icons-material/Warning";
 import { red } from "@mui/material/colors";
 import { Plan } from "../interfaces/plan";
-import { Year } from "../interfaces/year";
 
 export function ShowCourses({
     catalog,
@@ -58,70 +56,53 @@ export function ShowCourses({
                                 </tr>
                             </thead>
                             <tbody>
-                                {plans.map((plan: Plan) =>
-                                    plan.years.map((year: Year) =>
-                                        year.semesters.map(
-                                            (semester: Semester) =>
-                                                semester.courses.map(
-                                                    (course: Course) => (
-                                                        <tr key={course.code}>
-                                                            <td
-                                                                onClick={() => {
-                                                                    setShow(
-                                                                        true
-                                                                    );
-                                                                }}
-                                                            >
-                                                                {course.code}
-                                                            </td>
-                                                            <td
-                                                                onClick={() => {
-                                                                    setShow(
-                                                                        true
-                                                                    );
-                                                                }}
-                                                            >
-                                                                {course.name}{" "}
-                                                                {course.preReq !==
-                                                                    "" && (
-                                                                    <WarningIcon
-                                                                        sx={{
-                                                                            color: red[800],
-                                                                            fontSize: 20
-                                                                        }}
-                                                                    ></WarningIcon>
-                                                                )}
-                                                            </td>
-                                                            <td
-                                                                onClick={() => {
-                                                                    setShow(
-                                                                        true
-                                                                    );
-                                                                }}
-                                                            >
-                                                                {course.credits}
-                                                            </td>
-                                                            {show && (
-                                                                <CourseEdit
-                                                                    /*setTermCourses={setTermCourses}*/
-                                                                    show={show}
-                                                                    setShow={
-                                                                        setShow
-                                                                    }
-                                                                    course={
-                                                                        course
-                                                                    }
-                                                                    currentSemester={
-                                                                        currentSemester
-                                                                    }
-                                                                ></CourseEdit>
-                                                            )}
-                                                        </tr>
-                                                    )
-                                                )
-                                        )
+                                {currentSemester.courses.map(
+                                    (course: Course) => (
+                                        <tr key={course.code}>
+                                            <td
+                                                onClick={() => {
+                                                    setShow(true);
+                                                }}
+                                            >
+                                                {course.code}
+                                            </td>
+                                            <td
+                                                onClick={() => {
+                                                    setShow(true);
+                                                }}
+                                            >
+                                                {course.name}{" "}
+                                                {course.preReq !== "" && (
+                                                    <WarningIcon
+                                                        sx={{
+                                                            color: red[800],
+                                                            fontSize: 20
+                                                        }}
+                                                    ></WarningIcon>
+                                                )}
+                                            </td>
+                                            <td
+                                                onClick={() => {
+                                                    setShow(true);
+                                                }}
+                                            >
+                                                {course.credits}
+                                            </td>
+                                            {show && (
+                                                <CourseEdit
+                                                    /*setTermCourses={setTermCourses}*/
+                                                    show={show}
+                                                    setShow={setShow}
+                                                    course={course}
+                                                    currentSemester={
+                                                        currentSemester
+                                                    }
+                                                ></CourseEdit>
+                                            )}
+                                        </tr>
                                     )
                                 )}
+
                                 {/*currentSemester.courses.map(
                                     (course: Course) => (
                                         <tr key={course.code}>

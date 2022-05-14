@@ -1,7 +1,6 @@
 import { ButtonGroup } from "@mui/material";
-import { red } from "@mui/material/colors";
 import React, { useState } from "react";
-import { Button, Container, Dropdown, Form } from "react-bootstrap";
+import { Container, Dropdown, Form } from "react-bootstrap";
 import "../App.css";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";

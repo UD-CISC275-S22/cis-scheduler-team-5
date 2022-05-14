@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { CourseEditor } from "./CourseEditor";
 //import { ShowCourses } from "./ShowCourses";
@@ -6,7 +6,6 @@ import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 import { Plan } from "../interfaces/plan";
 import { Year } from "../interfaces/year";
-import { ShowCourses } from "./ShowCourses";
 export function ShowSemesters({
     catalog,
     plans,
@@ -19,8 +18,9 @@ export function ShowSemesters({
     currentYear: Year;
 }): JSX.Element {
     //const newSemesters = [...semesters, newTerm, newTerm2, newTerm3, newTerm4];
-    console.log(currentYear.name);
+    const [visible, setVisible] = useState<boolean>(true);
     function addSemesters() {
+        setVisible(false);
         const newTerm: Semester = {
             id: currentYear.name + "Fall",
             season: "Fall",
@@ -92,23 +92,23 @@ export function ShowSemesters({
                             </Col>
                         ))}
                         </Col>*/}
-                    <Button onClick={addSemesters}>ADD</Button>
-                    {plans.map((plan: Plan) =>
-                        plan.years.map((year: Year) =>
-                            year.semesters.map((currentSemester: Semester) => {
-                                return (
-                                    <Col key={currentSemester.id}>
-                                        <CourseEditor
-                                            currentSemester={currentSemester}
-                                            plans={plans}
-                                            setPlans={setPlans}
-                                            catalog={catalog}
-                                        ></CourseEditor>
-                                    </Col>
-                                );
-                            })
-                        )
+                    {visible && (
+                        <Button onClick={addSemesters}>
+                            4-Semester Default
+                        </Button>
                     )}
+                    {currentYear.semesters.map((currentSemester: Semester) => {
+                        return (
+                            <Col key={currentSemester.id}>
+                                <CourseEditor
+                                    currentSemester={currentSemester}
+                                    plans={plans}
+                                    setPlans={setPlans}
+                                    catalog={catalog}
+                                ></CourseEditor>
+                            </Col>
+                        );
+                    })}
                 </Row>
             </Container>
         </div>

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
-import { Semester } from "../interfaces/semester";
 //import BasicTabs from "./Tabs";
 //import { Course } from "../interfaces/course";
 import { Years } from "./Years";

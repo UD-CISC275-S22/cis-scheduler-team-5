@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
-import { Semester } from "../interfaces/semester";
 import { Year } from "../interfaces/year";
 import { ShowSemesters } from "./ShowSemesters";
 export function Years({
@@ -73,27 +72,53 @@ export function Years({
                     <Button onClick={() => addYear(name)}>Confirm</Button>
                 </>
             )}
-            {plans.map((plan: Plan) =>
-                plan.years.map((currentYear: Year) => (
-                    <div key={currentYear.name} style={{ marginBottom: "4px" }}>
-                        <Container>
-                            <Row>
-                                <Col>
-                                    <h2>{currentYear.name} </h2>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <ShowSemesters
-                                    currentYear={currentYear}
-                                    plans={plans}
-                                    setPlans={setPlans}
-                                    catalog={catalog}
-                                ></ShowSemesters>
-                            </Row>
-                        </Container>
-                    </div>
-                ))
-            )}
+            {/*plans.map((plan: Plan) => {
+                if (plan.name !== currentPlan.name) {
+                    return "";
+                } else {
+                    plan.years.map((currentYear: Year) => (
+                        <div
+                            key={currentYear.name}
+                            style={{ marginBottom: "4px" }}
+                        >
+                            <Container>
+                                <Row>
+                                    <Col>
+                                        <h2>{currentYear.name} </h2>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <ShowSemesters
+                                        currentYear={currentYear}
+                                        plans={plans}
+                                        setPlans={setPlans}
+                                        catalog={catalog}
+                                    ></ShowSemesters>
+                                </Row>
+                            </Container>
+                        </div>
+                    ));
+                }
+            })*/}
+            {currentPlan.years.map((currentYear: Year) => (
+                <div key={currentYear.name} style={{ marginBottom: "4px" }}>
+                    <Container>
+                        <Row>
+                            <Col>
+                                <h2>{currentYear.name} </h2>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <ShowSemesters
+                                currentYear={currentYear}
+                                plans={plans}
+                                setPlans={setPlans}
+                                catalog={catalog}
+                            ></ShowSemesters>
+                        </Row>
+                    </Container>
+                </div>
+            ))}
         </div>
     );
 }
