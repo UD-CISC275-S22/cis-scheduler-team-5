@@ -1,24 +1,29 @@
 import { ButtonGroup } from "@mui/material";
+import { red } from "@mui/material/colors";
 import React, { useState } from "react";
 import { Button, Container, Dropdown, Form } from "react-bootstrap";
 import "../App.css";
 import { Course } from "../interfaces/course";
+import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
+import { Year } from "../interfaces/year";
 //import { Course } from "../interfaces/course";
 //import { Semesterter} from "../interfaces/term";
 
 export function Requirements({
-    semesters,
-    setSemesters
+    catalog,
+    plans,
+    setPlans
 }: {
-    semesters: Semester[];
-    setSemesters: (s: Semester[]) => void;
+    catalog: Record<string, Record<string, Course>>;
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
 }): JSX.Element {
-    const ALLCOURSES = semesters.map((semester: Semester) =>
+    /*const ALLCOURSES = semesters.map((semester: Semester) =>
         semester.courses.map((oneCourse: Course): string => {
             return oneCourse.code;
         })
-    );
+    );*/
 
     const BA: string[] = [
         "ENGL 110",
@@ -87,6 +92,17 @@ export function Requirements({
     const [major, setMajor] = useState<string>("Major");
     const [bsba, setBSBA] = useState<string>("BS");
     const [conc, setConc] = useState<string>("Traditional Program");
+    const redCourses: string[] = [];
+    const greenCourses: string[] = [];
+    const ALLCOURSES = plans.map((plan: Plan) =>
+        plan.years.map((year: Year) =>
+            year.semesters.map((semester: Semester) =>
+                semester.courses.map((course: Course) => {
+                    return course.code;
+                })
+            )
+        )
+    );
 
     return (
         <Container
@@ -230,16 +246,41 @@ export function Requirements({
                     ))}
                 {major === "Major" &&
                     bsba === "BA" &&
-                    BA.map((req: string) => (
-                        <div key={req}>
-                            {" "}
-                            <Form.Check
-                                type="checkbox"
-                                id="is-student-check"
-                                label={req}
-                            />
-                        </div>
-                    ))}
+                    BA.map((req: string) => {
+                        {
+                            ALLCOURSES.map((first: string[][][]) =>
+                                first.map((second: string[][]) =>
+                                    second.map((third: string[]) =>
+                                        third.map((fourth: string) => {
+                                            {
+                                                if (fourth !== req) {
+                                                    return [
+                                                        ...redCourses,
+                                                        fourth
+                                                    ];
+                                                } else {
+                                                    return [
+                                                        ...greenCourses,
+                                                        fourth
+                                                    ];
+                                                }
+                                            }
+                                        })
+                                    )
+                                )
+                            );
+                        }
+                    })}
+                {major === "Major" &&
+                    bsba === "BA" &&
+                    greenCourses.map((req: string) => {
+                        return req;
+                    })}
+                {major === "Major" &&
+                    bsba === "BA" &&
+                    redCourses.map((req: string) => {
+                        return req;
+                    })}
             </div>
         </Container>
     );

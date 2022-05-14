@@ -161,7 +161,7 @@ export function CourseEdit({
                             <Col>
                                 <EditText
                                     name="credits"
-                                    style={{ width: "15%" }}
+                                    style={{ width: "100%" }}
                                     defaultValue={course.credits}
                                     onSave={handleSave}
                                 ></EditText>

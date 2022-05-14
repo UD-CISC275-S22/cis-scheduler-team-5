@@ -12,20 +12,14 @@ import { ShowCourses } from "./ShowCourses";
 
 export function CourseEditor({
     catalog,
-    semesters,
-    setSemesters,
     plans,
     setPlans,
-    currentSemester,
-    key
+    currentSemester
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Semester[];
-    setSemesters: (s: Semester[]) => void;
     plans: Plan[];
     setPlans: (s: Plan[]) => void;
     currentSemester: Semester;
-    key: string;
 }): JSX.Element {
     //const COURSES = getAllCourses();
     //const [course] = useState<string>("");
@@ -173,7 +167,9 @@ export function CourseEditor({
                 <Container>
                     <ShowCourses
                         currentSemester={currentSemester}
-                        /*setTermCourses={setTermCourses}*/
+                        plans={plans}
+                        setPlans={setPlans}
+                        catalog={catalog}
                     ></ShowCourses>
                     <Row>
                         <Button onClick={() => clearCourses()}>

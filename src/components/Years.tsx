@@ -7,15 +7,11 @@ import { Year } from "../interfaces/year";
 import { ShowSemesters } from "./ShowSemesters";
 export function Years({
     catalog,
-    semesters,
-    setSemesters,
     plans,
     setPlans,
     currentPlan
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Semester[];
-    setSemesters: (s: Semester[]) => void;
     plans: Plan[];
     setPlans: (s: Plan[]) => void;
     currentPlan: Plan;
@@ -92,8 +88,6 @@ export function Years({
                                     plans={plans}
                                     setPlans={setPlans}
                                     catalog={catalog}
-                                    semesters={semesters}
-                                    setSemesters={setSemesters}
                                 ></ShowSemesters>
                             </Row>
                         </Container>

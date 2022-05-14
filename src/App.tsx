@@ -12,11 +12,12 @@ import Catalog from "./data/catalog.json";
 import { Course } from "./interfaces/course";
 import { Plan } from "./interfaces/plan";
 import { Semester } from "./interfaces/semester";
+import { Year } from "./interfaces/year";
 //import { Course } from "./interfaces/course";
 
 function App(): JSX.Element {
     //const plan1: Plan = { name: "MAR", years: [] };
-    const [semesters, setSemesters] = useState<Semester[]>([]);
+    //const [semesters, setSemesters] = useState<Semester[]>([]);
     const [plans, setPlans] = useState<Plan[]>([]);
     /*const COURSES = Object.values(EasyCatalog).map(
         (courses: Record<string, Course>): Course => ({
@@ -25,10 +26,14 @@ function App(): JSX.Element {
             )
         })
     );*/
-    const ALLCOURSES = semesters.map((semester: Semester) =>
-        semester.courses.map((oneCourse: Course): string => {
-            return oneCourse.code;
-        })
+    const ALLCOURSES = plans.map((plan: Plan) =>
+        plan.years.map((year: Year) =>
+            year.semesters.map((semester: Semester) =>
+                semester.courses.map((course: Course) => {
+                    return course.code;
+                })
+            )
+        )
     );
     return (
         <div className="App">
@@ -54,10 +59,16 @@ function App(): JSX.Element {
             <Row>
                 <Col md="2">
                     {"Hi!"}
-                    {ALLCOURSES.map((first: string[]) =>
-                        first.map((second: string) => {
-                            <div key={second}>{second}</div>;
-                        })
+                    {ALLCOURSES.map((first: string[][][]) =>
+                        first.map((second: string[][]) =>
+                            second.map((third: string[]) =>
+                                third.map((fourth: string) => {
+                                    {
+                                        return fourth;
+                                    }
+                                })
+                            )
+                        )
                     )}
                     <ChooseCourse catalog={Catalog}></ChooseCourse>
                 </Col>
@@ -66,15 +77,13 @@ function App(): JSX.Element {
                         plans={plans}
                         setPlans={setPlans}
                         catalog={Catalog}
-                        semesters={semesters}
-                        setSemesters={setSemesters}
                     ></CreatePlan>
                 </Col>
                 <Col md="2">
                     <Requirements
-                        /*catalog={Catalog}*/
-                        semesters={semesters}
-                        setSemesters={setSemesters}
+                        plans={plans}
+                        setPlans={setPlans}
+                        catalog={Catalog}
                     ></Requirements>
                 </Col>
             </Row>

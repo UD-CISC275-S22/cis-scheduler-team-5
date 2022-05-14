@@ -10,14 +10,10 @@ import { Years } from "./Years";
 
 export function CreatePlan({
     catalog,
-    semesters,
-    setSemesters,
     plans,
     setPlans
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Semester[];
-    setSemesters: (s: Semester[]) => void;
     plans: Plan[];
     setPlans: (s: Plan[]) => void;
 }): JSX.Element {
@@ -90,8 +86,6 @@ export function CreatePlan({
                                         plans={plans}
                                         setPlans={setPlans}
                                         catalog={catalog}
-                                        semesters={semesters}
-                                        setSemesters={setSemesters}
                                     ></Years>
                                 </Row>
                             </Container>

@@ -6,13 +6,19 @@ import { Semester } from "../interfaces/semester";
 import { CourseEdit } from "./CourseModal";
 import WarningIcon from "@mui/icons-material/Warning";
 import { red } from "@mui/material/colors";
+import { Plan } from "../interfaces/plan";
+import { Year } from "../interfaces/year";
 
 export function ShowCourses({
+    catalog,
+    plans,
+    setPlans,
     currentSemester
-}: /*setTermCourses*/
-{
+}: {
+    catalog: Record<string, Record<string, Course>>;
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
     currentSemester: Semester;
-    /*setTermCourses: Dispatch<SetStateAction<Course[]>>;*/
 }): JSX.Element {
     // have functions here like editCourse that use state and are called w button/editable radio switch? then put in rows?
     // state, control, view
@@ -52,7 +58,71 @@ export function ShowCourses({
                                 </tr>
                             </thead>
                             <tbody>
-                                {currentSemester.courses.map(
+                                {plans.map((plan: Plan) =>
+                                    plan.years.map((year: Year) =>
+                                        year.semesters.map(
+                                            (semester: Semester) =>
+                                                semester.courses.map(
+                                                    (course: Course) => (
+                                                        <tr key={course.code}>
+                                                            <td
+                                                                onClick={() => {
+                                                                    setShow(
+                                                                        true
+                                                                    );
+                                                                }}
+                                                            >
+                                                                {course.code}
+                                                            </td>
+                                                            <td
+                                                                onClick={() => {
+                                                                    setShow(
+                                                                        true
+                                                                    );
+                                                                }}
+                                                            >
+                                                                {course.name}{" "}
+                                                                {course.preReq !==
+                                                                    "" && (
+                                                                    <WarningIcon
+                                                                        sx={{
+                                                                            color: red[800],
+                                                                            fontSize: 20
+                                                                        }}
+                                                                    ></WarningIcon>
+                                                                )}
+                                                            </td>
+                                                            <td
+                                                                onClick={() => {
+                                                                    setShow(
+                                                                        true
+                                                                    );
+                                                                }}
+                                                            >
+                                                                {course.credits}
+                                                            </td>
+                                                            {show && (
+                                                                <CourseEdit
+                                                                    /*setTermCourses={setTermCourses}*/
+                                                                    show={show}
+                                                                    setShow={
+                                                                        setShow
+                                                                    }
+                                                                    course={
+                                                                        course
+                                                                    }
+                                                                    currentSemester={
+                                                                        currentSemester
+                                                                    }
+                                                                ></CourseEdit>
+                                                            )}
+                                                        </tr>
+                                                    )
+                                                )
+                                        )
+                                    )
+                                )}
+                                {/*currentSemester.courses.map(
                                     (course: Course) => (
                                         <tr key={course.code}>
                                             <td
@@ -86,7 +156,7 @@ export function ShowCourses({
                                             </td>
                                             {show && (
                                                 <CourseEdit
-                                                    /*setTermCourses={setTermCourses}*/
+                                                    setTermCourses={setTermCourses}
                                                     show={show}
                                                     setShow={setShow}
                                                     course={course}
@@ -97,7 +167,7 @@ export function ShowCourses({
                                             )}
                                         </tr>
                                     )
-                                )}
+                                                )*/}
                             </tbody>
                         </Table>
                     </Col>
