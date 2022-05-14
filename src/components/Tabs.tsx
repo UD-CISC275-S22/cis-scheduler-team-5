@@ -53,9 +53,13 @@ export default function BasicTabs({
     catalog: Record<string, Record<string, Course>>;
     semesters: Semester[];
     setSemesters: (s: Semester[]) => void;
+<<<<<<< HEAD
     plans: Plan[];
     setPlans: (s: Plan[]) => void;
     currenPlan: Plan;
+=======
+    plan: string[];
+>>>>>>> main
 }) {
     let loadedData = currentPlan;
     const [value, setValue] = React.useState(0);

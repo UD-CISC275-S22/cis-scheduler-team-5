@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { CourseEditor } from "./CourseEditor";
-//import { ShowCourses } from "./ShowCourses";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 import { Plan } from "../interfaces/plan";
 import { Year } from "../interfaces/year";
+import { CourseAdder } from "./CourseAdder";
 export function ShowSemesters({
     catalog,
     plans,
@@ -82,13 +81,13 @@ export function ShowSemesters({
                         {col1.map((sem) => (
                             <Col key={sem.season}>
                                 {" "}
-                                <CourseEditor
+                                <CourseAdder
                                     key={sem.season}
                                     sem={sem}
                                     setSemesters={setSemesters}
                                     semesters={semesters}
                                     catalog={catalog}
-                                ></CourseEditor>
+                                ></CourseAdder>
                             </Col>
                         ))}
                         </Col>*/}
@@ -100,12 +99,12 @@ export function ShowSemesters({
                     {currentYear.semesters.map((currentSemester: Semester) => {
                         return (
                             <Col key={currentSemester.id}>
-                                <CourseEditor
+                                <CourseAdder
                                     currentSemester={currentSemester}
                                     plans={plans}
                                     setPlans={setPlans}
                                     catalog={catalog}
-                                ></CourseEditor>
+                                ></CourseAdder>
                             </Col>
                         );
                     })}

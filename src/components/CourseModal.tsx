@@ -6,18 +6,18 @@ import { Semester } from "../interfaces/semester";
 import Catalog from "../data/catalog.json";
 
 //import { CourseEditor } from "./Courses";
-export function CourseEdit({
+export function CourseModal({
     course,
     currentSemester,
     show,
     setShow
-}: /*setTermCourses*/
+}: /*setSemesterCourses*/
 {
     course: Course;
     currentSemester: Semester;
     show: boolean;
     setShow: (s: boolean) => void;
-    /*setTermCourses: Dispatch<SetStateAction<Course[]>>;*/
+    /*setSemesterCourses: Dispatch<SetStateAction<Course[]>>;*/
 }) {
     //Modal from https://react-bootstrap.github.io/components/modal/
     //const handleShow = () => setShow(true);

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Table } from "react-bootstrap";
+import { Col, Container, Row, Table, Button } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
-import { CourseEdit } from "./CourseModal";
+import { CourseModal } from "./CourseModal";
 import WarningIcon from "@mui/icons-material/Warning";
 import { red } from "@mui/material/colors";
 import { Plan } from "../interfaces/plan";
@@ -18,20 +18,17 @@ export function ShowCourses({
     setPlans: (s: Plan[]) => void;
     currentSemester: Semester;
 }): JSX.Element {
-    // have functions here like editCourse that use state and are called w button/editable radio switch? then put in rows?
-    // state, control, view
-    // an array of Courses, fn that adds a Course to the array, a table view of resulting courses including added
-
-    // map fn to make the course have CISC in front of ID
-    // const termCourses= courses.map(
-    //     (course: Course): Course => ({...course, courseid: INSERTCISC})
-    // )
     const [show, setShow] = useState<boolean>(false); //To show Modal when Course is clicked
-    //const [visible, setVisible] = useState<boolean>(false);
-    /*function flipVisibility(): void {
-        // Set visible to be the logical opposite of its previous value
-        setVisible(!visible);
-    }*/
+
+    // Remove Single Course Button
+    /*
+    function deleteCourse(deleteCourseCode: string) {
+        const updatedSemesterCourses = semester.courses.filter(
+            (course: Course): boolean => course.code !== deleteCourseCode
+        );
+        return updatedSemesterCourses;
+    }
+    */
     return (
         <div>
             <Container>
@@ -89,7 +86,7 @@ export function ShowCourses({
                                                 {course.credits}
                                             </td>
                                             {show && (
-                                                <CourseEdit
+                                                <CourseModal
                                                     /*setTermCourses={setTermCourses}*/
                                                     show={show}
                                                     setShow={setShow}
@@ -97,7 +94,7 @@ export function ShowCourses({
                                                     currentSemester={
                                                         currentSemester
                                                     }
-                                                ></CourseEdit>
+                                                ></CourseModal>
                                             )}
                                         </tr>
                                     )
