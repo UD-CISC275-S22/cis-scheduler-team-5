@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
-import { Semester } from "../interfaces/semester";
-import { Year } from "../interfaces/year";
 import { CSVFile } from "./CSVFile";
 //import BasicTabs from "./Tabs";
 //import { Course } from "../interfaces/course";
@@ -22,7 +20,7 @@ export function CreatePlan({
     //const [plan, setPlan] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
     const [visible, setVisible] = useState<boolean>(false);
-    const Credits = plans.map((plan: Plan) =>
+    /*const Credits = plans.map((plan: Plan) =>
         plan.years.map((year: Year) => {
             year.semesters.map((semester: Semester) =>
                 semester.courses.map((course: Course) => {
@@ -30,7 +28,7 @@ export function CreatePlan({
                 })
             );
         })
-    );
+    );*/
     function addPlan(namePlan: string) {
         if (namePlan !== "") {
             const newPlan: Plan = { name: namePlan, years: [] };

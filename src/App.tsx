@@ -4,7 +4,7 @@ import "./App.css";
 import { ChooseCourse } from "./components/ChooseCourse";
 //import { CourseEditor } from "./components/Courses";
 import { CreatePlan } from "./components/CreatePlan";
-import { CSVFile } from "./components/CSVFile";
+//import { CSVFile } from "./components/CSVFile";
 import { HelpModal } from "./components/HelpModal";
 import { Requirements } from "./components/Requirements";
 //import { ShowCourses } from "./components/ShowCourses";
@@ -73,11 +73,7 @@ function App(): JSX.Element {
                     ></CreatePlan>
                 </Col>
                 <Col md="2">
-                    <Requirements
-                        plans={plans}
-                        setPlans={setPlans}
-                        catalog={Catalog}
-                    ></Requirements>
+                    <Requirements plans={plans}></Requirements>
                 </Col>
             </Row>
         </div>

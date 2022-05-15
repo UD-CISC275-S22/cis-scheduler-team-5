@@ -136,7 +136,7 @@ export function CourseModal({
         currentSemester.courses = newCourses;
     }
 
-    function handlePrevious(): void {
+    /*function handlePrevious(): void {
         const newCourses: Course[] = currentSemester.courses;
         const previuousCourse = findCourse(course.code);
         /*currentSemester.courses.map((course: Course) => {
@@ -155,11 +155,11 @@ export function CourseModal({
                 };
             }
         });*/
-        newCourses[
+    /*newCourses[
             currentSemester.courses.findIndex((c) => c.code == course.code)
         ] = previuousCourse;
         currentSemester.courses = newCourses;
-    }
+    }*/
 
     return (
         <>

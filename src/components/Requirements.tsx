@@ -1,12 +1,12 @@
 import { ButtonGroup } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { Button, Container, Dropdown, Form } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Dropdown } from "react-bootstrap";
 import "../App.css";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { Year } from "../interfaces/year";
-import { BS } from "../data/BS";
+/*import { BS } from "../data/BS";
 import { BA } from "../data/BA";
 import { Minor } from "../data/Minor";
 import { BSai } from "../data/BSai";
@@ -15,25 +15,17 @@ import { BStheory } from "../data/BStheory";
 import { BSbioinf } from "../data/BSbioinf";
 import { BSsystems } from "../data/BSsystems";
 import { BShpcomputing } from "../data/BShpcompuing";
-import { BScyber } from "../data/BScyber";
+import { BScyber } from "../data/BScyber";*/
 import Minor2 from "../data/Minor.json";
 import BA2 from "../data/BA.json";
 //import { Course } from "../interfaces/course";
 //import { Semesterter} from "../interfaces/term";
 
-export function Requirements({
-    catalog,
-    plans,
-    setPlans
-}: {
-    catalog: Record<string, Record<string, Course>>;
-    plans: Plan[];
-    setPlans: (s: Plan[]) => void;
-}): JSX.Element {
+export function Requirements({ plans }: { plans: Plan[] }): JSX.Element {
     const [major, setMajor] = useState<string>("Major");
     const [bsba, setBSBA] = useState<string>("BS");
     const [conc, setConc] = useState<string>("Traditional Program");
-    const ALLCOURSES = plans.map((plan: Plan) =>
+    /*const ALLCOURSES = plans.map((plan: Plan) =>
         plan.years.map((year: Year) =>
             year.semesters.map((semester: Semester) =>
                 semester.courses.map((course: Course) => {
@@ -41,7 +33,7 @@ export function Requirements({
                 })
             )
         )
-    );
+    );*/
     const [toDoListMinor, setToDoListMinor] = useState(Minor2);
     const [toDoBA, setToDoBA] = useState(BA2);
 
