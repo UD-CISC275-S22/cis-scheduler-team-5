@@ -7,7 +7,8 @@ import { Course } from "../interfaces/course";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Years } from "./Years";
 import { Semester } from "../interfaces/semester";
-
+import { Plan } from "../interfaces/plan";
+/*
 interface TabPanelProps {
     children?: React.ReactNode;
     index: number;
@@ -45,14 +46,22 @@ export default function BasicTabs({
     catalog,
     semesters,
     setSemesters,
-    plan
+    plans,
+    setPlans,
+    currentPlan
 }: {
     catalog: Record<string, Record<string, Course>>;
     semesters: Semester[];
     setSemesters: (s: Semester[]) => void;
+<<<<<<< HEAD
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
+    currenPlan: Plan;
+=======
     plan: string[];
+>>>>>>> main
 }) {
-    let loadedData = plan;
+    let loadedData = currentPlan;
     const [value, setValue] = React.useState(0);
     const [data, setData] = React.useState<string[]>(loadedData);
     setData;
@@ -96,6 +105,9 @@ export default function BasicTabs({
                                 <Col>
                                     <h1>{onePlan}</h1>
                                     <Years
+                                        currentPlan={currentPlan}
+                                        plans={plans}
+                                        setPlans={setPlans}
                                         catalog={catalog}
                                         semesters={semesters}
                                         setSemesters={setSemesters}
@@ -111,3 +123,4 @@ export default function BasicTabs({
         </Box>
     );
 }
+*/

@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Table, Button } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 import { CourseModal } from "./CourseModal";
+import WarningIcon from "@mui/icons-material/Warning";
+import { red } from "@mui/material/colors";
+import { Plan } from "../interfaces/plan";
 
 export function ShowCourses({
-    semester
-}: /*setSemesterCourses*/
-{
-    semester: Semester;
-    /*setSemesterCourses: Dispatch<SetStateAction<Course[]>>;*/
+    catalog,
+    plans,
+    setPlans,
+    currentSemester
+}: {
+    catalog: Record<string, Record<string, Course>>;
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
+    currentSemester: Semester;
 }): JSX.Element {
     const [show, setShow] = useState<boolean>(false); //To show Modal when Course is clicked
 
@@ -46,57 +53,52 @@ export function ShowCourses({
                                 </tr>
                             </thead>
                             <tbody>
-                                {semester.courses.map((course: Course) => (
-                                    <tr key={course.code}>
-                                        <td
-                                            onClick={() => {
-                                                setShow(true);
-                                            }}
-                                        >
-                                            {course.code}
-                                        </td>
-                                        <td
-                                            onClick={() => {
-                                                setShow(true);
-                                            }}
-                                        >
-                                            {course.name}
-                                        </td>
-                                        <td
-                                            onClick={() => {
-                                                setShow(true);
-                                            }}
-                                        >
-                                            {course.credits}
-                                        </td>
-                                        {show && (
-                                            <CourseModal
-                                                /*setSemesterCourses={setSemesterCourses}*/
-                                                show={show}
-                                                setShow={setShow}
-                                                course={course}
-                                                semester={semester}
-                                            ></CourseModal>
-                                        )}
-                                        <td>
-                                            {" "}
-                                            <Button
-                                                style={{
-                                                    color: "red"
-                                                }}
-                                                variant="outline-primary"
-                                                size="sm"
-                                                /*
+                                {currentSemester.courses.map(
+                                    (course: Course) => (
+                                        <tr key={course.code}>
+                                            <td
                                                 onClick={() => {
-                                                    deleteCourse(course.code);
+                                                    setShow(true);
                                                 }}
-                                                */
                                             >
-                                                X
-                                            </Button>
-                                        </td>
-                                    </tr>
-                                ))}
+                                                {course.code}
+                                            </td>
+                                            <td
+                                                onClick={() => {
+                                                    setShow(true);
+                                                }}
+                                            >
+                                                {course.name}{" "}
+                                                {course.preReq !== "" && (
+                                                    <WarningIcon
+                                                        sx={{
+                                                            color: red[800],
+                                                            fontSize: 20
+                                                        }}
+                                                    ></WarningIcon>
+                                                )}
+                                            </td>
+                                            <td
+                                                onClick={() => {
+                                                    setShow(true);
+                                                }}
+                                            >
+                                                {course.credits}
+                                            </td>
+                                            {show && (
+                                                <CourseModal
+                                                    /*setTermCourses={setTermCourses}*/
+                                                    show={show}
+                                                    setShow={setShow}
+                                                    course={course}
+                                                    currentSemester={
+                                                        currentSemester
+                                                    }
+                                                ></CourseModal>
+                                            )}
+                                        </tr>
+                                    )
+                                )}
                             </tbody>
                         </Table>
                     </Col>

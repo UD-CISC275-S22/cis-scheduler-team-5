@@ -3,16 +3,18 @@ import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { EditText, EditTextarea } from "react-edit-text";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
+import Catalog from "../data/catalog.json";
+
 //import { CourseEditor } from "./Courses";
 export function CourseModal({
     course,
-    semester,
+    currentSemester,
     show,
     setShow
 }: /*setSemesterCourses*/
 {
     course: Course;
-    semester: Semester;
+    currentSemester: Semester;
     show: boolean;
     setShow: (s: boolean) => void;
     /*setSemesterCourses: Dispatch<SetStateAction<Course[]>>;*/
@@ -27,11 +29,68 @@ export function CourseModal({
         previousValue: string;
     }
 
-    const handleSave = ({ name, value /*previousValue*/ }: save) => {
+    /*function findCourse(name: string): Course {
+        const code = name.substring(0, 4); //gets department, Ex ACCT
+        const CATALOG_DATA: Record<string, Record<string, Course>> = catalog; //converting json to record type
+        let course: Course;
+        try {
+            course = CATALOG_DATA[code][name];
+        } catch {
+            course = {
+                code: "",
+                name: "",
+                descr: "",
+                credits: "",
+                preReq: "",
+                restrict: "",
+                breadth: "",
+                typ: ""
+            };
+        }
+        //exception handling
+        if (course === undefined) {
+            course = {
+                code: "",
+                name: "",
+                descr: "",
+                credits: "",
+                preReq: "",
+                restrict: "",
+                breadth: "",
+                typ: ""
+            };
+        }
+        return course;
+    }*/
+
+    function findCourse(name: string): Course {
+        const code = name.substring(0, 4); //gets department, Ex ACCT
+        const CATALOG_DATA: Record<string, Record<string, Course>> = Catalog; //converting json to record type
+        let course: Course;
+        try {
+            course = CATALOG_DATA[code][name];
+        } catch {
+            course = {
+                code: "",
+                name: "",
+                descr: "",
+                credits: "",
+                preReq: "",
+                restrict: "",
+                breadth: "",
+                typ: ""
+            };
+        }
+        return course;
+    }
+
+    const handleSave = ({ name, value }: save) => {
         const newEdit: Course = course;
         console.log(name);
         if (name === "name") {
             newEdit.name = value;
+        } else if (name === "code") {
+            newEdit.code = value;
         } else if (name === "descr") {
             newEdit.descr = value;
         } else if (name === "credits") {
@@ -47,12 +106,60 @@ export function CourseModal({
         }
     };
 
+    const handleSafePrevious = (changeCourse: Course) => {
+        const newEdit: Course = course;
+        const prevCourse: Course = findCourse(changeCourse.code);
+        newEdit.name = prevCourse.name;
+        newEdit.code = prevCourse.code;
+        newEdit.descr = prevCourse.descr;
+        newEdit.credits = prevCourse.credits;
+        newEdit.preReq = prevCourse.preReq;
+        newEdit.restrict = prevCourse.restrict;
+        newEdit.breadth = prevCourse.breadth;
+        newEdit.typ = prevCourse.typ;
+        handlePreviousChanges(newEdit);
+    };
+
     function handleSaveChanges(): void {
-        const newCourses: Course[] = semester.courses;
-        newCourses[semester.courses.findIndex((c) => c.code == course.code)] =
-            course;
-        semester.courses = newCourses;
+        const newCourses: Course[] = currentSemester.courses;
+        newCourses[
+            currentSemester.courses.findIndex((c) => c.code == course.code)
+        ] = course;
+        currentSemester.courses = newCourses;
     }
+
+    function handlePreviousChanges(newEdit: Course): void {
+        const newCourses: Course[] = currentSemester.courses;
+        newCourses[
+            currentSemester.courses.findIndex((c) => c.code == newEdit.code)
+        ] = newEdit;
+        currentSemester.courses = newCourses;
+    }
+
+    /*function handlePrevious(): void {
+        const newCourses: Course[] = currentSemester.courses;
+        const previuousCourse = findCourse(course.code);
+        /*currentSemester.courses.map((course: Course) => {
+            if (course.code !== previuousCourse.code) {
+                return course;
+            } else {
+                return {
+                    ...course,
+                    name: previuousCourse.name,
+                    credits: previuousCourse.credits,
+                    descr: previuousCourse.descr,
+                    breadth: previuousCourse.breadth,
+                    preReq: previuousCourse.preReq,
+                    restrict: previuousCourse.restrict,
+                    typ: previuousCourse.typ
+                };
+            }
+        });*/
+    /*newCourses[
+            currentSemester.courses.findIndex((c) => c.code == course.code)
+        ] = previuousCourse;
+        currentSemester.courses = newCourses;
+    }*/
 
     return (
         <>
@@ -65,7 +172,12 @@ export function CourseModal({
             >
                 <Modal.Header closeButton>
                     <Modal.Title>
-                        {course.code}
+                        <EditText
+                            name="code"
+                            style={{ width: "100%" }}
+                            defaultValue={course.code}
+                            onSave={handleSave}
+                        ></EditText>
                         <br></br>
                         <EditText
                             name="name"
@@ -94,7 +206,7 @@ export function CourseModal({
                             <Col>
                                 <EditText
                                     name="credits"
-                                    style={{ width: "15%" }}
+                                    style={{ width: "100%" }}
                                     defaultValue={course.credits}
                                     onSave={handleSave}
                                 ></EditText>
@@ -154,6 +266,15 @@ export function CourseModal({
                         }}
                     >
                         Close
+                    </Button>
+                    <Button
+                        variant="primary"
+                        onClick={() => {
+                            handleSafePrevious(course);
+                            setShow(false);
+                        }}
+                    >
+                        Default Course
                     </Button>
                     <Button
                         variant="primary"

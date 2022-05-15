@@ -1,27 +1,73 @@
+import { Group } from "@mui/icons-material";
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Semester } from "../interfaces/semester";
+import { Plan } from "../interfaces/plan";
+import { Year } from "../interfaces/year";
 import { ShowSemesters } from "./ShowSemesters";
 export function Years({
     catalog,
-    semesters,
-    setSemesters
+    plans,
+    setPlans,
+    currentPlan
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Semester[];
-    setSemesters: (s: Semester[]) => void;
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
+    currentPlan: Plan;
 }): JSX.Element {
-    const [year, setYear] = useState<string[]>([]);
+    //const [year, setYear] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
     const [visible, setVisible] = useState<boolean>(false);
 
-    function addYear(option: string) {
-        setYear([...year, option]);
-        flipVisibility();
+    function addYear(nameYear: string) {
+        if (nameYear !== "") {
+            const updatePlans = plans.map((plan: Plan): Plan => {
+                if (plan.name !== currentPlan.name) {
+                    return plan;
+                } else {
+                    return {
+                        ...plan,
+                        years: [
+                            ...plan.years,
+                            { name: nameYear, semesters: [] }
+                        ]
+                    };
+                }
+            });
+            setPlans(updatePlans);
+            flipVisibility();
+        }
     }
     function clearYears() {
-        setYear([]);
+        const updatePlans = plans.map((plan: Plan) => {
+            if (plan.name !== currentPlan.name) {
+                return plan;
+            } else {
+                return {
+                    ...plan,
+                    years: []
+                };
+            }
+        });
+        setPlans(updatePlans);
+    }
+    function deleteOneYear(YearName: string) {
+        const updatePlans = plans.map((plan: Plan) => {
+            if (plan.name !== currentPlan.name) {
+                return plan;
+            } else {
+                const temp = { ...plan };
+                const updateYear = temp.years.filter(
+                    (year: Year): boolean => year.name !== YearName
+                );
+                return {
+                    ...plan,
+                    years: updateYear
+                };
+            }
+        });
+        setPlans(updatePlans);
     }
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
@@ -49,19 +95,40 @@ export function Years({
                     <Button onClick={() => addYear(name)}>Confirm</Button>
                 </>
             )}
-            {year.map((oneYear: string) => (
-                <div key={oneYear} style={{ marginBottom: "4px" }}>
+            {currentPlan.years.map((currentYear: Year) => (
+                <div key={currentYear.name} style={{ marginBottom: "4px" }}>
                     <Container>
                         <Row>
-                            <Col>
-                                <h2>{oneYear} </h2>
+                            <Col
+                                style={{
+                                    display: "flex",
+                                    marginLeft: "44%"
+                                }}
+                            >
+                                <h2>{currentYear.name} </h2>
+                                <Button
+                                    style={{
+                                        display: "flex",
+                                        marginLeft: "auto",
+                                        height: "min-content",
+                                        backgroundColor: "white",
+                                        borderColor: "#127845",
+                                        color: "red"
+                                    }}
+                                    onClick={() =>
+                                        deleteOneYear(currentYear.name)
+                                    }
+                                >
+                                    X
+                                </Button>
                             </Col>
                         </Row>
                         <Row>
                             <ShowSemesters
+                                currentYear={currentYear}
+                                plans={plans}
+                                setPlans={setPlans}
                                 catalog={catalog}
-                                semesters={semesters}
-                                setSemesters={setSemesters}
                             ></ShowSemesters>
                         </Row>
                     </Container>

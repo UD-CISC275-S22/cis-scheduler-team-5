@@ -1,26 +1,71 @@
-import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import { CourseAdder } from "./CourseAdder";
-//import { ShowCourses } from "./ShowCourses";
+import React, { useState } from "react";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
+import { Plan } from "../interfaces/plan";
+import { Year } from "../interfaces/year";
+import { CourseAdder } from "./CourseAdder";
 export function ShowSemesters({
     catalog,
-    semesters,
-    setSemesters
+    plans,
+    setPlans,
+    currentYear
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Semester[];
-    setSemesters: (s: Semester[]) => void;
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
+    currentYear: Year;
 }): JSX.Element {
-    const newSemester: Semester = { season: "Fall", courses: [] };
-    const newSemester2: Semester = { season: "Winter", courses: [] };
-    const newSemester3: Semester = { season: "Spring", courses: [] };
-    const newSemester4: Semester = { season: "Summer", courses: [] };
-    //const newSemesters = [...semesters, newSemester, newSemester2, newSemester3, newSemester4];
+    //const newSemesters = [...semesters, newTerm, newTerm2, newTerm3, newTerm4];
+    const [visible, setVisible] = useState<boolean>(true);
+    function addSemesters() {
+        setVisible(false);
+        const newTerm: Semester = {
+            id: currentYear.name + "Fall",
+            season: "Fall",
+            courses: []
+        };
+        const newTerm2: Semester = {
+            id: currentYear.name + "Winter",
+            season: "Winter",
+            courses: []
+        };
+        const newTerm3: Semester = {
+            id: currentYear.name + "Spring",
+            season: "Spring",
+            courses: []
+        };
+        const newTerm4: Semester = {
+            id: currentYear.name + "Summer",
+            season: "Summer",
+            courses: []
+        };
+        const updateSemesters: Plan[] = plans.map(
+            (plan: Plan): Plan => ({
+                ...plan,
+                years: plan.years.map((year: Year): Year => {
+                    if (year.name !== currentYear.name) {
+                        return year;
+                    } else {
+                        return {
+                            ...year,
+                            semesters: [
+                                ...year.semesters,
+                                newTerm,
+                                newTerm3,
+                                newTerm2,
+                                newTerm4
+                            ]
+                        };
+                    }
+                })
+            })
+        );
+        setPlans(updateSemesters);
+    }
 
-    const col1 = [...semesters, newSemester, newSemester2];
-    const col2 = [newSemester3, newSemester4];
+    //const col1 = [...semesters, newTerm, newTerm2];
+    //const col2 = [newTerm3, newTerm4];
 
     return (
         <div>
@@ -32,7 +77,7 @@ export function ShowSemesters({
                 }}
             >
                 <Row>
-                    <Col>
+                    {/*<Col>
                         {col1.map((sem) => (
                             <Col key={sem.season}>
                                 {" "}
@@ -45,21 +90,24 @@ export function ShowSemesters({
                                 ></CourseAdder>
                             </Col>
                         ))}
-                    </Col>
-                    <Col>
-                        {col2.map((sem) => (
-                            <Col key={sem.season}>
-                                {" "}
+                        </Col>*/}
+                    {visible && (
+                        <Button onClick={addSemesters}>
+                            4-Semester Default
+                        </Button>
+                    )}
+                    {currentYear.semesters.map((currentSemester: Semester) => {
+                        return (
+                            <Col key={currentSemester.id}>
                                 <CourseAdder
-                                    key={sem.season}
-                                    sem={sem}
-                                    setSemesters={setSemesters}
-                                    semesters={semesters}
+                                    currentSemester={currentSemester}
+                                    plans={plans}
+                                    setPlans={setPlans}
                                     catalog={catalog}
                                 ></CourseAdder>
                             </Col>
-                        ))}
-                    </Col>
+                        );
+                    })}
                 </Row>
             </Container>
         </div>

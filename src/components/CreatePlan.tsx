@@ -1,31 +1,52 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
-import { Semester } from "../interfaces/semester";
-import BasicTabs from "./Tabs";
+import { Plan } from "../interfaces/plan";
+import { CSVFile } from "./CSVFile";
+//import BasicTabs from "./Tabs";
 //import { Course } from "../interfaces/course";
 import { Years } from "./Years";
 //import { Plan } from "../interfaces/plan";
 
 export function CreatePlan({
     catalog,
-    semesters,
-    setSemesters
+    plans,
+    setPlans
 }: {
     catalog: Record<string, Record<string, Course>>;
-    semesters: Semester[];
-    setSemesters: (s: Semester[]) => void;
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
 }): JSX.Element {
-    const [plan, setPlan] = useState<string[]>([]);
+    //const [plan, setPlan] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
     const [visible, setVisible] = useState<boolean>(false);
-
-    function addPlan(option: string) {
-        setPlan([...plan, option]);
-        flipVisibility();
+    /*const Credits = plans.map((plan: Plan) =>
+        plan.years.map((year: Year) => {
+            year.semesters.map((semester: Semester) =>
+                semester.courses.map((course: Course) => {
+                    return parseInt(course.credits);
+                })
+            );
+        })
+    );*/
+    function addPlan(namePlan: string) {
+        if (namePlan !== "") {
+            const newPlan: Plan = { name: namePlan, years: [] };
+            const update: Plan[] = [...plans, newPlan];
+            setPlans(update);
+            flipVisibility();
+        }
     }
+
     function clearPlan() {
-        setPlan([]);
+        setPlans([]);
+    }
+    function deleteOnePlan(PlanName: string) {
+        const temp = [...plans];
+        const updatePlans = temp.filter(
+            (plan: Plan): boolean => plan.name !== PlanName
+        );
+        setPlans(updatePlans);
     }
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
@@ -56,7 +77,7 @@ export function CreatePlan({
                     </>
                 )}
             </div>
-            {plan.length > 0 ? (
+            {plans.length > 0 ? (
                 <div
                     style={{
                         border: "3px solid black",
@@ -66,26 +87,46 @@ export function CreatePlan({
                         margin: "10px"
                     }}
                 >
-                    <BasicTabs
-                        plan={plan}
-                        catalog={catalog}
-                        semesters={semesters}
-                        setSemesters={setSemesters}
-                    ></BasicTabs>
-                    {plan.map((onePlan: string) => (
-                        <div key={onePlan} style={{ marginBottom: "40px" }}>
+                    {plans.map((currentPlan: Plan) => (
+                        <div
+                            key={currentPlan.name}
+                            style={{ marginBottom: "40px" }}
+                        >
                             <Container>
                                 <Row>
-                                    <Col>
-                                        <h1>{onePlan}</h1>
+                                    <Col
+                                        style={{
+                                            display: "flex",
+                                            marginLeft: "43%"
+                                        }}
+                                    >
+                                        <h1>{currentPlan.name}</h1>
+                                        <Button
+                                            style={{
+                                                display: "flex",
+                                                marginLeft: "auto",
+                                                height: "min-content",
+                                                backgroundColor: "white",
+                                                color: "red"
+                                            }}
+                                            onClick={() =>
+                                                deleteOnePlan(currentPlan.name)
+                                            }
+                                        >
+                                            X
+                                        </Button>
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Years
+                                        currentPlan={currentPlan}
+                                        plans={plans}
+                                        setPlans={setPlans}
                                         catalog={catalog}
-                                        semesters={semesters}
-                                        setSemesters={setSemesters}
                                     ></Years>
+                                </Row>
+                                <Row>
+                                    <CSVFile></CSVFile>
                                 </Row>
                             </Container>
                         </div>

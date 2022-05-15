@@ -103,7 +103,7 @@
         "ACCT 316": {
             "code": "ACCT 316",
             "name": "Intermediate Accounting II",
-            "descr": "Continuation of ACCT 315. Topics include: recognition and measurement of investments, long-term liabilities and stockholders\u2019 equity; dilutive securities and earning per share calculations; revenue recognition; accounting for income taxes, pensions and leases; accounting changes and error analysis; financial reporting and changing prices; preparation of the statement of cash flows; and disclosure requirements in financial reporting.",
+            "descr": "Continuation of ACCT 315. Topics include: recognition and measurement of investments, long-Semesterterliabilities and stockholders\u2019 equity; dilutive securities and earning per share calculations; revenue recognition; accounting for income taxes, pensions and leases; accounting changes and error analysis; financial reporting and changing prices; preparation of the statement of cash flows; and disclosure requirements in financial reporting.",
             "credits": " 3",
             "preReq": "ACCT 315.",
             "restrict": "Requires junior status and a grade of C- or better in ACCT 315.",
@@ -173,7 +173,7 @@
         "ACCT 364": {
             "code": "ACCT 364",
             "name": "Accounting in Practice",
-            "descr": "Requires at least 120 hours of an accounting-related internship with verification by the hiring company. Term paper relating the real-world duties and experiences of the internship to principles learned in traditional accounting classes also required.",
+            "descr": "Requires at least 120 hours of an accounting-related internship with verification by the hiring company. Semesterterpaper relating the real-world duties and experiences of the internship to principles learned in traditional accounting classes also required.",
             "credits": " 1-3",
             "preReq": "ACCT 315, ACCT 327.",
             "restrict": "Requires permission of instructor.",
@@ -10053,7 +10053,7 @@
         "BISC 316": {
             "code": "BISC 316",
             "name": "Experimental Physiology",
-            "descr": "Short-term experimental research course in animal physiology. Conduct, in a group, an independent research project based on primary literature. Beginning with practicing basic skills on background information research, data collection and quantitative analysis, students construct a research question based on previous findings in the literature, conduct a series of experiment, and communicate the discoveries in formal writings and oral presentation.",
+            "descr": "Short-Semesterterexperimental research course in animal physiology. Conduct, in a group, an independent research project based on primary literature. Beginning with practicing basic skills on background information research, data collection and quantitative analysis, students construct a research question based on previous findings in the literature, conduct a series of experiment, and communicate the discoveries in formal writings and oral presentation.",
             "credits": " 3",
             "preReq": "BISC 208, CHEM 104 and CHEM 134, and BISC 306.",
             "restrict": "",
@@ -11901,7 +11901,7 @@
         "BUAD 364": {
             "code": "BUAD 364",
             "name": "Business Administration in Practice",
-            "descr": "Requires completion of at least 120 hours of a management, marketing, operations management, or international business internship with verification by the hiring company. Term paper relating the real-world duties and experiences of the internship to principles learned in traditional business courses also required.",
+            "descr": "Requires completion of at least 120 hours of a management, marketing, operations management, or international business internship with verification by the hiring company. Semesterterpaper relating the real-world duties and experiences of the internship to principles learned in traditional business courses also required.",
             "credits": " 3",
             "preReq": "",
             "restrict": "Registration by permission of instructor only.",
@@ -12341,7 +12341,7 @@
         "BUAD 482": {
             "code": "BUAD 482",
             "name": "Sales Enablement & Analytics",
-            "descr": "Organizations today have an influx of data which when used effectively can derive actionable insights for both the sales organization and their clients. Today\u2019s sales leaders need to systematically increase their sophistication in leveraging data, tools and domain expertise to provide customized insights, consulting and guidance to their strategic customers. In this course, you will explore concepts covered in the previous courses within the Enterprise Sales professional certificate, but through the lens of the tools and technologies which enable data-driven decisions. Using the appropriate tools and technologies will permit sales representatives and managers to create value for their clients, ultimately increasing customer satisfaction and likelihood of long-term client retention.",
+            "descr": "Organizations today have an influx of data which when used effectively can derive actionable insights for both the sales organization and their clients. Today\u2019s sales leaders need to systematically increase their sophistication in leveraging data, tools and domain expertise to provide customized insights, consulting and guidance to their strategic customers. In this course, you will explore concepts covered in the previous courses within the Enterprise Sales professional certificate, but through the lens of the tools and technologies which enable data-driven decisions. Using the appropriate tools and technologies will permit sales representatives and managers to create value for their clients, ultimately increasing customer satisfaction and likelihood of long-Semesterterclient retention.",
             "credits": " 3",
             "preReq": "BUAD 301, BUAD 309, and BUAD 470 or ENTR 452.",
             "restrict": "",
@@ -13525,7 +13525,7 @@
         "CHEG 652": {
             "code": "CHEG 652",
             "name": "Cell Culture Biomanufacturing",
-            "descr": "This course will introduce students to the essential scientific principles and their applications in cell-culture biomanufacturing. Starting with principles of cell biology and mammalian metabolism, it will cover cell-line development, media development, stoichiometry and kinetics of cell culture, metabolic flux analysis, bioreactor design and operation, scale up, process-analytical technology (PAT), protein glycosylation as related to manufacturing and product quality, genomics of production cell lines, genome editing, and protein purification and formulation. In addition, the course will include discussion and analysis of modern literature (led by students), and guest lectures. Graduate students will also work on a term research paper.",
+            "descr": "This course will introduce students to the essential scientific principles and their applications in cell-culture biomanufacturing. Starting with principles of cell biology and mammalian metabolism, it will cover cell-line development, media development, stoichiometry and kinetics of cell culture, metabolic flux analysis, bioreactor design and operation, scale up, process-analytical technology (PAT), protein glycosylation as related to manufacturing and product quality, genomics of production cell lines, genome editing, and protein purification and formulation. In addition, the course will include discussion and analysis of modern literature (led by students), and guest lectures. Graduate students will also work on a Semesterterresearch paper.",
             "credits": " 3",
             "preReq": "BISC207, BISC300, BISC305, BISC401, CHEM 527.",
             "restrict": "",
@@ -13955,7 +13955,7 @@
         "CHEG 852": {
             "code": "CHEG 852",
             "name": "Cell Culture Biomanufacturing",
-            "descr": "This course will introduce students to the essential scientific principles and their applications in cell-culture biomanufacturing. Starting with principles of cell biology and mammalian metabolism, it will cover cell-line development, media development, stoichiometry and kinetics of cell culture, metabolic flux analysis, bioreactor design and operation, scale up, process-analytical technology (PAT), protein glycosylation as related to manufacturing and product quality, genomics of production cell lines, genome editing, and protein purification and formulation. In addition, the course will include discussion and analysis of modern literature (led by students), and guest lectures. Graduate students will also work on a term research paper.",
+            "descr": "This course will introduce students to the essential scientific principles and their applications in cell-culture biomanufacturing. Starting with principles of cell biology and mammalian metabolism, it will cover cell-line development, media development, stoichiometry and kinetics of cell culture, metabolic flux analysis, bioreactor design and operation, scale up, process-analytical technology (PAT), protein glycosylation as related to manufacturing and product quality, genomics of production cell lines, genome editing, and protein purification and formulation. In addition, the course will include discussion and analysis of modern literature (led by students), and guest lectures. Graduate students will also work on a Semesterterresearch paper.",
             "credits": " 3",
             "preReq": "BISC207, BISC300, BISC305, BISC401, CHEM527.",
             "restrict": "",
@@ -22205,7 +22205,7 @@
         "CRJU 401": {
             "code": "CRJU 401",
             "name": "Senior Seminar",
-            "descr": "Culminates the legal studies minor by requiring an independent research project resulting in a term paper. Seminar focuses on a specific substantive issue, provides guidance from professor and chance to share ideas and problems with fellow students.",
+            "descr": "Culminates the legal studies minor by requiring an independent research project resulting in a Semesterterpaper. Seminar focuses on a specific substantive issue, provides guidance from professor and chance to share ideas and problems with fellow students.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -23251,7 +23251,7 @@
         "ECON 364": {
             "code": "ECON 364",
             "name": "Economics in Practice",
-            "descr": "Requires completion of at least 120 hours of an economics-related internship with verification by the hiring company. Term paper relating the real-world duties and experiences of the internship to principles learned in standard economics courses also required.",
+            "descr": "Requires completion of at least 120 hours of an economics-related internship with verification by the hiring company. Semesterterpaper relating the real-world duties and experiences of the internship to principles learned in standard economics courses also required.",
             "credits": " 3",
             "preReq": "ECON 300 or ECON 301",
             "restrict": "Requires permission of instructor.",
@@ -23861,7 +23861,7 @@
         "ECON 852": {
             "code": "ECON 852",
             "name": "Monetary Economics",
-            "descr": "Compares the role of money in various macroeconomic models: transactions demand for money, long term effects of inflation and government deficit finance decisions in intertemporal models, capital theory and the pricing of financial securities as well as theories of the term structure of interest rates.",
+            "descr": "Compares the role of money in various macroeconomic models: transactions demand for money, long Semestertereffects of inflation and government deficit finance decisions in intertemporal models, capital theory and the pricing of financial securities as well as theories of tSemestermesterstructure of interest rates.",
             "credits": " 3",
             "preReq": "ECON 812.",
             "restrict": "",
@@ -25883,7 +25883,7 @@
         "EDUC 850": {
             "code": "EDUC 850",
             "name": "Qualitative Research in Educational Settings",
-            "descr": "Theory and practice are combined as students critique exemplary qualitative studies, explore theoretical frameworks and conduct short-term field research activities designed to develop students\u2019 capacity to collect and analyze qualitative data. First part of a two-semester introduction to qualitative research.",
+            "descr": "Theory and practice are combined as students critique exemplary qualitative studies, explore theoretical frameworks and conduct short-Semesterterfield research activities designed to develop students\u2019 capacity to collect and analyze qualitative data. First part of a two-semester introduction to qualitative research.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -28017,7 +28017,7 @@
         "ENEP 862": {
             "code": "ENEP 862",
             "name": "Teaching Practicum",
-            "descr": "In consultation with ENEP faculty members and based on the student\u2019s long-term goals and professional background, the student participates in the development (or revision) and teaching of a course. This activity exposes PhD students who anticipate teaching careers to the pedagogical issues involved, and introduces them to the planning and implementation of course instruction.",
+            "descr": "In consultation with ENEP faculty members and based on the student\u2019s long-Semestertergoals and professional background, the student participates in the development (or revision) and teaching of a course. This activity exposes PhD students who anticipate teaching careers to the pedagogical issues involved, and introduces them to the planning and implementation of course instruction.",
             "credits": " 1-3",
             "preReq": "",
             "restrict": "Requires permission of academic advisor and faculty member sponsoring practicum. One semester of Ph.D. graduate study.",
@@ -29441,7 +29441,7 @@
         "ENGL 450": {
             "code": "ENGL 450",
             "name": "Legal Argument",
-            "descr": "This course familiarizes students with major forms and strategies of legal argumentation by combining analysis of legal arguments with writing assignments designed to offer students practical training in legal argumentation. This course may also focus on the construction of oral argument. Topics in the course may vary from term to term, and from instructor to instructor.",
+            "descr": "This course familiarizes students with major forms and strategies of legal argumentation by combining analysis of legal arguments with writing assignments designed to offer students practical training in legal argumentation. This course may also focus on the construction of oral argument. Topics in the course may vary from Semesterterto term, and from instructor to instructor.",
             "credits": " 3",
             "preReq": "ENGL 110.",
             "restrict": "",
@@ -30056,7 +30056,7 @@
             "descr": "Learn basic field skills and receive exposure to the careers, opportunities, and expectations for an ecologist.",
             "credits": " 1",
             "preReq": "",
-            "restrict": "First term majors.",
+            "restrict": "First Semestertermajors.",
             "breadth": "University: ; A&S: ",
             "typ": "Fall"
         },
@@ -30383,7 +30383,7 @@
         "ENWC 423": {
             "code": "ENWC 423",
             "name": "Pollination Ecology",
-            "descr": "Through the use of hands on field experiments and the development of educational outreach displays students learn basic science in the field of pollination ecology. Newark farm will be used to generate data for a long-term database of pollinator diversity and temporal nutrition assessment. Students will be involved in planting different flowering species on the farm, and colonies at the University of Delaware apiary will be tracked for pollen collection and hive health. Students will be involved in weekly pollen sampling and colony evaluations.",
+            "descr": "Through the use of hands on field experiments and the development of educational outreach displays students learn basic science in the field of pollination ecology. Newark farm will be used to generate data for a long-Semesterterdatabase of pollinator diversity and temporal nutrition assessment. Students will be involved in planting different flowering species on the farm, and colonies at the University of Delaware apiary will be tracked for pollen collection and hive health. Students will be involved in weekly pollen sampling and colony evaluations.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -30413,7 +30413,7 @@
         "ENWC 426": {
             "code": "ENWC 426",
             "name": "Aquatic Entomology",
-            "descr": "Students learn the biology, physiology and systematics of aquatic insects with emphasis on the fauna of North America. For labs we go to Grammies Run in Fair Hill and sample as part of a long-term data collection project.",
+            "descr": "Students learn the biology, physiology and systematics of aquatic insects with emphasis on the fauna of North America. For labs we go to Grammies Run in Fair Hill and sample as part of a long-Semesterterdata collection project.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -30683,7 +30683,7 @@
         "ENWC 623": {
             "code": "ENWC 623",
             "name": "Pollination Ecology",
-            "descr": "Through the use of hands on field experiments and the development of educational outreach displays students learn basic science in the field of pollination ecology. Newark farm will be used to generate data for a long-term database of pollinator diversity and temporal nutrition assessment. Students will be involved in planting different flowering species on the farm, and colonies at the University of Delaware apiary will be tracked for pollen collection and hive health. Students will be involved in weekly pollen sampling and colony evaluations.",
+            "descr": "Through the use of hands on field experiments and the development of educational outreach displays students learn basic science in the field of pollination ecology. Newark farm will be used to generate data for a long-Semesterterdatabase of pollinator diversity and temporal nutrition assessment. Students will be involved in planting different flowering species on the farm, and colonies at the University of Delaware apiary will be tracked for pollen collection and hive health. Students will be involved in weekly pollen sampling and colony evaluations.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -32101,7 +32101,7 @@
         "GEOG 341": {
             "code": "GEOG 341",
             "name": "Climate and Climate Change",
-            "descr": "Understanding the earth\u2019s climate and how the climate is changing is a fundamental part of modern earth system science. Explores the scientific basis for the study of climate and climate change, including long term and modern change, with a discussion of current topics.",
+            "descr": "Understanding the earth\u2019s climate and how the climate is changing is a fundamental part of modern earth system science. Explores the scientific basis for the study of climate and climate change, including long Semesterterand modern change, with a discussion of current topics.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -34155,7 +34155,7 @@
         "FINC 311": {
             "code": "FINC 311",
             "name": "Principles of Finance",
-            "descr": "Introduces fundamental techniques and concepts related to the financial management of business firms. Topics include the time value of money, valuation, capital budgeting, working capital management, cost of capital, capital structure analysis, short and long term financing.",
+            "descr": "Introduces fundamental techniques and concepts related to the financial management of business firms. Topics include the time value of money, valuation, capital budgeting, working capital management, cost of capital, capital structure analysis, short and long Semesterterfinancing.",
             "credits": " 3",
             "preReq": "ACCT 207 and STAT 200.",
             "restrict": "Not open to Freshmen. Open to students whose major requires this course.",
@@ -34205,7 +34205,7 @@
         "FINC 321": {
             "code": "FINC 321",
             "name": "Insurance Planning",
-            "descr": "Examines insurance and risk management decisions in personal financial planning. Topics include life, medical, disability, property, casualty, homeowners, liability, and auto insurance. Other topics include tax issues, annuities, group life insurance, long term care, and business insurance.",
+            "descr": "Examines insurance and risk management decisions in personal financial planning. Topics include life, medical, disability, property, casualty, homeowners, liability, and auto insurance. Other topics include tax issues, annuities, group life insurance, long Semestertercare, and business insurance.",
             "credits": " 3",
             "preReq": "FINC 311.",
             "restrict": "Grade of C- or better required in FINC 311. Required course for Financial Planning Major and may be a professional elective for Finance major.",
@@ -34235,7 +34235,7 @@
         "FINC 364": {
             "code": "FINC 364",
             "name": "Finance in Practice",
-            "descr": "Requires completion of at least 120 hours of finance-related internship with verification by the hiring company. Term paper relating the real-world duties and experiences of the internship to principles learned in the classroom also required.",
+            "descr": "Requires completion of at least 120 hours of finance-related internship with verification by the hiring company. Semesterterpaper relating the real-world duties and experiences of the internship to principles learned in the classroom also required.",
             "credits": " 3",
             "preReq": "FINC 311.",
             "restrict": "Registration by permission of the department only.",
@@ -35377,7 +35377,7 @@
         "FREN 875": {
             "code": "FREN 875",
             "name": "Topics: French Literature",
-            "descr": "Study of selected topics, authors and works in the various fields of French literature. Emphasizes preparation of seminar presentations and term paper.",
+            "descr": "Study of selected topics, authors and works in the various fields of French literature. Emphasizes preparation of seminar presentations and Semesterterpaper.",
             "credits": " 3",
             "preReq": "",
             "restrict": "May be repeated for credit when topics vary.",
@@ -35651,7 +35651,7 @@
         "GEOL 341": {
             "code": "GEOL 341",
             "name": "Climate and Climate Change",
-            "descr": "Understanding the earth\u2019s climate and how the climate is changing is a fundamental part of modern earth system science. Explores the scientific basis for the study of climate and climate change, including long term and modern change, with a discussion of current topics.",
+            "descr": "Understanding the earth\u2019s climate and how the climate is changing is a fundamental part of modern earth system science. Explores the scientific basis for the study of climate and climate change, including long Semesterterand modern change, with a discussion of current topics.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -37067,7 +37067,7 @@
         "HLPR 864": {
             "code": "HLPR 864",
             "name": "Internship",
-            "descr": "Up to a maximum of 450 hours of fieldwork experience in a health promotion setting, completed along with a performance evaluation and term paper.",
+            "descr": "Up to a maximum of 450 hours of fieldwork experience in a health promotion setting, completed along with a performance evaluation and Semesterterpaper.",
             "credits": " 3",
             "preReq": "",
             "restrict": "Open to graduate students only and successful completion of the qualifying examination.",
@@ -39415,7 +39415,7 @@
         "HIST 650": {
             "code": "HIST 650",
             "name": "Problems in Cultural History",
-            "descr": "Culture has been described as one of the two or three most complicated words in the English language, and the term is invoked today in a vast range of scholarship in the fields of history, anthropology, literary studies, communications, and others. Introduces students to the major themes and issues in the study of culture, especially from the historical perspective. With a mix of theoretical and historical readings, we will explore topics such as popular culture, hegemony, resistance, subcultures, the culture industry, visual culture, bodies, and space, from the eighteenth to the twentieth century (with an emphasis on the U.S.).",
+            "descr": "Culture has been described as one of the two or three most complicated words in the English language, and the Semesterteris invoked today in a vast range of scholarship in the fields of history, anthropology, literary studies, communications, and others. Introduces students to the major themes and issues in the study of culture, especially from the historical perspective. With a mix of theoretical and historical readings, we will explore topics such as popular culture, hegemony, resistance, subcultures, the culture industry, visual culture, bodies, and space, from the eighteenth to the twentieth century (with an emphasis on the U.S.).",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -42847,7 +42847,7 @@
         "JWST 482": {
             "code": "JWST 482",
             "name": "America in the Middle East",
-            "descr": "Examines history of America\u2019s engagement with an emphasis on issues since 1979. After brief intro portion on the mechanics of American foreign policy-making and America\u2019s global political and strategic position over time, we will spend most of the semester on America\u2019s involvement in regional oil politics, Middle East peace process, first and second Iraq Wars, relations with Iran, plans for Middle East democratization and the Bush II administration. Evaluation will be based upon a mid-term and final exam, a medium-length research paper, and one or two short writing assignments.",
+            "descr": "Examines history of America\u2019s engagement with an emphasis on issues since 1979. After brief intro portion on the mechanics of American foreign policy-making and America\u2019s global political and strategic position over time, we will spend most of the semester on America\u2019s involvement in regional oil politics, Middle East peace process, first and second Iraq Wars, relations with Iran, plans for Middle East democratization and the Bush II administration. Evaluation will be based upon a mid-Semesterterand final exam, a medium-length research paper, and one or two short writing assignments.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -43701,7 +43701,7 @@
         "KAAP 626": {
             "code": "KAAP 626",
             "name": "Physiological Signal Processing",
-            "descr": "The goal is for students to acquire a hands-on knowledge of signal processing techniques relevant to their day work in the research lab. We will first revisit some of the underlying mathematical tools with a focus on refreshing how to use them and forming an intuitive understanding of what they do and mean. Then we will introduce the main concepts and techniques of processing measured signals, including dealing with noise, estimating power spectra, extracting linear relationships and quantifying the relationship of two signals to each other. We will finish with a term project, where students apply the acquired skills to a problem from their own research. The course makes heavy use of MATLAB to process data and it is expected that students have decent knowledge of the basics of MATLAB or a similar language, such as acquired in the class \u201cIntroduction to Programming in MATLAB\u201d.",
+            "descr": "The goal is for students to acquire a hands-on knowledge of signal processing techniques relevant to their day work in the research lab. We will first revisit some of the underlying mathematical tools with a focus on refreshing how to use them and forming an intuitive understanding of what they do and mean. Then we will introduce the main concepts and techniques of processing measured signals, including dealing with noise, estimating power spectra, extracting linear relationships and quantifying the relationship of two signals to each other. We will finish with a Semesterterproject, where students apply the acquired skills to a problem from their own research. The course makes heavy use of MATLAB to process data and it is expected that students have decent knowledge of the basics of MATLAB or a similar language, such as acquired in the class \u201cIntroduction to Programming in MATLAB\u201d.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -45873,7 +45873,7 @@
         "LEST 401": {
             "code": "LEST 401",
             "name": "Senior Seminar",
-            "descr": "Culminates the legal studies minor by requiring an independent research project resulting in a term paper. Seminar focuses on a specific substantive issue, provides guidance from professor and chance to share ideas and problems with fellow students.",
+            "descr": "Culminates the legal studies minor by requiring an independent research project resulting in a Semesterterpaper. Seminar focuses on a specific substantive issue, provides guidance from professor and chance to share ideas and problems with fellow students.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -46897,7 +46897,7 @@
         "MISY 364": {
             "code": "MISY 364",
             "name": "Management Information Systems in Practice",
-            "descr": "Requires at least 120 hours of MIS-related assignments in an internship, verified by the hiring company. A term paper relating the real world duties and responsibilities of the internship to principles learned in traditional MIS classes is required.",
+            "descr": "Requires at least 120 hours of MIS-related assignments in an internship, verified by the hiring company. A Semesterterpaper relating the real world duties and responsibilities of the internship to principles learned in traditional MIS classes is required.",
             "credits": " 3",
             "preReq": "MISY 330",
             "restrict": "",
@@ -47429,7 +47429,7 @@
         "MAST 341": {
             "code": "MAST 341",
             "name": "Climate and Climate Change",
-            "descr": "Understanding the earth\u2019s climate and how the climate is changing is a fundamental part of modern earth system science. Explores the scientific basis for the study of climate and climate change, including long term and modern change, with a discussion of current topics.",
+            "descr": "Understanding the earth\u2019s climate and how the climate is changing is a fundamental part of modern earth system science. Explores the scientific basis for the study of climate and climate change, including long Semesterterand modern change, with a discussion of current topics.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -57931,7 +57931,7 @@
         "NURS 900": {
             "code": "NURS 900",
             "name": "DNP Project III: Implementation",
-            "descr": "Lead implementation of the DNP project in the practice setting under the guidance of the assigned DNP Project Faculty Mentor. Clinical experiences will be directed at monitoring the process of the implementation, making adjustments in the process to ensure success, and collecting data related to both process and health outcomes. Plans for the long-term sustainability of the project, if appropriate, will be refined. Course seminars will provide opportunities for peer review and feedback.",
+            "descr": "Lead implementation of the DNP project in the practice setting under the guidance of the assigned DNP Project Faculty Mentor. Clinical experiences will be directed at monitoring the process of the implementation, making adjustments in the process to ensure success, and collecting data related to both process and health outcomes. Plans for the long-Semestertersustainability of the project, if appropriate, will be refined. Course seminars will provide opportunities for peer review and feedback.",
             "credits": " 3",
             "preReq": "NURS 874.",
             "restrict": "Open to DNP students only.",
@@ -63033,7 +63033,7 @@
         "POSC 482": {
             "code": "POSC 482",
             "name": "America in the Middle East",
-            "descr": "Examines history of America\u2019s engagement with an emphasis on issues since 1979. After brief intro portion on the mechanics of American foreign policy-making and America\u2019s global political and strategic position over time, we will spend most of the semester on America\u2019s involvement in regional oil politics, Middle East peace process, first and second Iraq Wars, relations with Iran, plans for Middle East democratization and the Bush II administration. Evaluation will be based upon a mid-term and final exam, a medium-length research paper, and one or two short writing assignments.",
+            "descr": "Examines history of America\u2019s engagement with an emphasis on issues since 1979. After brief intro portion on the mechanics of American foreign policy-making and America\u2019s global political and strategic position over time, we will spend most of the semester on America\u2019s involvement in regional oil politics, Middle East peace process, first and second Iraq Wars, relations with Iran, plans for Middle East democratization and the Bush II administration. Evaluation will be based upon a mid-Semesterterand final exam, a medium-length research paper, and one or two short writing assignments.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -65803,7 +65803,7 @@
         "SOCI 401": {
             "code": "SOCI 401",
             "name": "Senior Seminar",
-            "descr": "Culminates the legal studies minor by requiring an independent research project resulting in a term paper. Seminar focuses on a specific substantive issue, provides guidance from professor and chance to share ideas and problems with fellow students.",
+            "descr": "Culminates the legal studies minor by requiring an independent research project resulting in a Semesterterpaper. Seminar focuses on a specific substantive issue, provides guidance from professor and chance to share ideas and problems with fellow students.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -66995,7 +66995,7 @@
         "SPAN 472": {
             "code": "SPAN 472",
             "name": "Sugar, Salsa & Santeria: Hispanic Caribbean",
-            "descr": "Explores Caribbean cultures through music, film, religion and other forms of expression. Focus on diaspora, slavery, colonialism, and the formation of present-day postcolonial cultures, and examine the articulation of Caribbean identities through such concepts as contrapunteo, calibanismo, zombiismo, negrismo, aplatanamiento, and insularismo. Taught in Spanish, with some Francophone and Anglophone texts in English. Students will prepare one presentation, weekly short writing assignments, midterm and final.",
+            "descr": "Explores Caribbean cultures through music, film, religion and other forms of expression. Focus on diaspora, slavery, colonialism, and the formation of present-day postcolonial cultures, and examine the articulation of Caribbean identities through such concepts as contrapunteo, calibanismo, zombiismo, negrismo, aplatanamiento, and insularismo. Taught in Spanish, with some Francophone and Anglophone texts in English. Students will prepare one presentation, weekly short writing assignments, midSemesterterand final.",
             "credits": " 3",
             "preReq": "SPAN301, SPAN302, SPAN303, SPAN304, SPAN 307, SPAN 308, SPAN 325, or SPAN 326.",
             "restrict": "",
@@ -67265,7 +67265,7 @@
         "SPAN 672": {
             "code": "SPAN 672",
             "name": "Sugar, Salsa & Santeria",
-            "descr": "Explores Caribbean cultures through music, film, religion and other forms of expression. Focus on diaspora, slavery, colonialism, and the formation of present-day postcolonial cultures, and examine the articulation of Caribbean identities through such concepts as contrapunteo, calibanismo, zombiismo, negrismo, aplatanamiento, and insularismo. Taught in Spanish, with some Francophone and Anglophone texts in English. Students will prepare one presentation, weekly short writing assignments, midterm and final.",
+            "descr": "Explores Caribbean cultures through music, film, religion and other forms of expression. Focus on diaspora, slavery, colonialism, and the formation of present-day postcolonial cultures, and examine the articulation of Caribbean identities through such concepts as contrapunteo, calibanismo, zombiismo, negrismo, aplatanamiento, and insularismo. Taught in Spanish, with some Francophone and Anglophone texts in English. Students will prepare one presentation, weekly short writing assignments, midSemesterterand final.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -67375,7 +67375,7 @@
         "SPAN 875": {
             "code": "SPAN 875",
             "name": "Seminar: Topics in Spanish Literature",
-            "descr": "Study of selected topics, authors and works in the various fields of Spanish literature. Variable content. Emphasizes preparation of seminar presentations and term papers. May be repeated for credit when topics vary.",
+            "descr": "Study of selected topics, authors and works in the various fields of Spanish literature. Variable content. Emphasizes preparation of seminar presentations and Semesterterpapers. May be repeated for credit when topics vary.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -70687,7 +70687,7 @@
         "UAPP 668": {
             "code": "UAPP 668",
             "name": "Government Budgets and Fiscal Federalism",
-            "descr": "Examines policy and management of U.S. fiscal institutions and practices, including process and politics of government budgeting; intergovernmental grants and fiscal relationships; long-term fiscal planning, entitlements, and debt finance; and the analysis and design of governmental and intergovernmental fiscal institutions.",
+            "descr": "Examines policy and management of U.S. fiscal institutions and practices, including process and politics of government budgeting; intergovernmental grants and fiscal relationships; long-Semesterterfiscal planning, entitlements, and debt finance; and the analysis and design of governmental and intergovernmental fiscal institutions.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -71137,7 +71137,7 @@
         "UAPP 862": {
             "code": "UAPP 862",
             "name": "Teaching Practicum in Urban Affairs and Public Policy",
-            "descr": "In consultation with a SUAPP faculty member and based on the student\u2019s long-term goals and professional background, the student participates in the development (or revision) and teaching of a course. Exposes Ph.D. students who anticipate teaching careers to the pedagogical issues, and planning and implementation of course instruction.",
+            "descr": "In consultation with a SUAPP faculty member and based on the student\u2019s long-Semestertergoals and professional background, the student participates in the development (or revision) and teaching of a course. Exposes Ph.D. students who anticipate teaching careers to the pedagogical issues, and planning and implementation of course instruction.",
             "credits": " 3",
             "preReq": "One semester of Ph.D. graduate study.",
             "restrict": "Requires permission of academic advisor and faculty member sponsoring practicum.",
@@ -72821,7 +72821,7 @@
         "BINF 640": {
             "code": "BINF 640",
             "name": "Databases for Bioinformatics",
-            "descr": "Introduces data modeling, database management, and web hosting of relational databases. Coupling lectures and a modular, semester-long term project, students will: (i) collect bioinformatics data and design a relational data model; (ii) implement a relational database and write SQL queries and stored procedures; and (iii) create a simple website to access backend database. Upon completion, students will have the basic database management concepts and skills to develop a relational database supporting real-world bioinformatics applications.",
+            "descr": "Introduces data modeling, database management, and web hosting of relational databases. Coupling lectures and a modular, semester-long Semesterterproject, students will: (i) collect bioinformatics data and design a relational data model; (ii) implement a relational database and write SQL queries and stored procedures; and (iii) create a simple website to access backend database. Upon completion, students will have the basic database management concepts and skills to develop a relational database supporting real-world bioinformatics applications.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -73053,7 +73053,7 @@
         "BMSC 626": {
             "code": "BMSC 626",
             "name": "Physiological Signal Processing",
-            "descr": "The goal is for students to acquire a hands-on knowledge of signal processing techniques relevant to their day work in the research lab. We will first revisit some of the underlying mathematical tools with a focus on refreshing how to use them and forming an intuitive understanding of what they do and mean. Then we will introduce the main concepts and techniques of processing measured signals, including dealing with noise, estimating power spectra, extracting linear relationships and quantifying the relationship of two signals to each other. We will finish with a term project, where students apply the acquired skills to a problem from their own research. The course makes heavy use of MATLAB to process data and it is expected that students have decent knowledge of the basics of MATLAB or a similar language, such as acquired in the class \u201cIntroduction to Programming in MATLAB\u201d.",
+            "descr": "The goal is for students to acquire a hands-on knowledge of signal processing techniques relevant to their day work in the research lab. We will first revisit some of the underlying mathematical tools with a focus on refreshing how to use them and forming an intuitive understanding of what they do and mean. Then we will introduce the main concepts and techniques of processing measured signals, including dealing with noise, estimating power spectra, extracting linear relationships and quantifying the relationship of two signals to each other. We will finish with a Semesterterproject, where students apply the acquired skills to a problem from their own research. The course makes heavy use of MATLAB to process data and it is expected that students have decent knowledge of the basics of MATLAB or a similar language, such as acquired in the class \u201cIntroduction to Programming in MATLAB\u201d.",
             "credits": " 3",
             "preReq": "",
             "restrict": "",
@@ -73459,7 +73459,7 @@
         "SMED 604": {
             "code": "SMED 604",
             "name": "STEM Ed Internship I",
-            "descr": "In this course, teacher candidates will be placed in a public school internshio and assigned to a secondary teacher for the fall term for mentorship. Schedules will follow the school\u2019s both in hours and days.",
+            "descr": "In this course, teacher candidates will be placed in a public school internshio and assigned to a secondary teacher for the fall Semesterterfor mentorship. Schedules will follow the school\u2019s both in hours and days.",
             "credits": " 4",
             "preReq": "SMED 602 and SMED 603.",
             "restrict": "",
@@ -73469,7 +73469,7 @@
         "SMED 605": {
             "code": "SMED 605",
             "name": "STEM Ed Internship II",
-            "descr": "In this course, teacher candidates will continue in their fall internship placements in a public school assigned to a secondary teacher for the fall term for mentorship. Schedules will follow the school\u2019s both in hours and days.",
+            "descr": "In this course, teacher candidates will continue in their fall internship placements in a public school assigned to a secondary teacher for the fall Semesterterfor mentorship. Schedules will follow the school\u2019s both in hours and days.",
             "credits": " 4",
             "preReq": "SMED 602, SMED 603, SMED 604, and SMED 606.",
             "restrict": "",
