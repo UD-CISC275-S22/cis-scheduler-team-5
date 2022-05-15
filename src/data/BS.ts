@@ -1,9 +1,9 @@
-[
+export const BS: string[] = [
     "ENGL 110",
     "First Year Seminar",
     "Discovering Learning Experience",
     "Multicultural Requirement",
-    "3 credits Group A Breadth",
+    "3crd Breadth",
     "3 credits Group B Breadth",
     "3 credits Group C Breadth",
     "3 credits Group D Breadth",

@@ -52,8 +52,8 @@ export function ShowSemesters({
                             semesters: [
                                 ...year.semesters,
                                 newTerm,
-                                newTerm2,
                                 newTerm3,
+                                newTerm2,
                                 newTerm4
                             ]
                         };

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
+import { Semester } from "../interfaces/semester";
+import { Year } from "../interfaces/year";
 //import BasicTabs from "./Tabs";
 //import { Course } from "../interfaces/course";
 import { Years } from "./Years";
@@ -19,15 +21,33 @@ export function CreatePlan({
     //const [plan, setPlan] = useState<string[]>([]);
     const [name, setName] = useState<string>("");
     const [visible, setVisible] = useState<boolean>(false);
-
+    const Credits = plans.map((plan: Plan) =>
+        plan.years.map((year: Year) => {
+            year.semesters.map((semester: Semester) =>
+                semester.courses.map((course: Course) => {
+                    return parseInt(course.credits);
+                })
+            );
+        })
+    );
     function addPlan(namePlan: string) {
-        const newPlan: Plan = { name: namePlan, years: [] };
-        const update: Plan[] = [...plans, newPlan];
-        setPlans(update);
-        flipVisibility();
+        if (namePlan !== "") {
+            const newPlan: Plan = { name: namePlan, years: [] };
+            const update: Plan[] = [...plans, newPlan];
+            setPlans(update);
+            flipVisibility();
+        }
     }
+
     function clearPlan() {
         setPlans([]);
+    }
+    function deleteOnePlan(PlanName: string) {
+        const temp = [...plans];
+        const updatePlans = temp.filter(
+            (plan: Plan): boolean => plan.name !== PlanName
+        );
+        setPlans(updatePlans);
     }
     function updateName(event: React.ChangeEvent<HTMLInputElement>) {
         setName(event.target.value);
@@ -75,8 +95,27 @@ export function CreatePlan({
                         >
                             <Container>
                                 <Row>
-                                    <Col>
+                                    <Col
+                                        style={{
+                                            display: "flex",
+                                            marginLeft: "45%"
+                                        }}
+                                    >
                                         <h1>{currentPlan.name}</h1>
+                                        <Button
+                                            style={{
+                                                display: "flex",
+                                                marginLeft: "auto",
+                                                height: "min-content",
+                                                backgroundColor: "white",
+                                                color: "red"
+                                            }}
+                                            onClick={() =>
+                                                deleteOnePlan(currentPlan.name)
+                                            }
+                                        >
+                                            X
+                                        </Button>
                                     </Col>
                                 </Row>
                                 <Row>

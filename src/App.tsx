@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Button, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import "./App.css";
 import { ChooseCourse } from "./components/ChooseCourse";
 //import { CourseEditor } from "./components/Courses";
 import { CreatePlan } from "./components/CreatePlan";
 import { CSVFile } from "./components/CSVFile";
+import { HelpModal } from "./components/HelpModal";
 import { Requirements } from "./components/Requirements";
 //import { ShowCourses } from "./components/ShowCourses";
 import Catalog from "./data/catalog.json";
@@ -34,6 +35,7 @@ function App(): JSX.Element {
             )
         )
     );
+
     return (
         <div className="App">
             <header className="App-header2">
@@ -41,15 +43,7 @@ function App(): JSX.Element {
                     className="col-md-12 text-right"
                     style={{ display: "flex" }}
                 >
-                    <Button
-                        style={{
-                            marginLeft: "auto",
-                            color: "blue",
-                            background: "#ffd200"
-                        }}
-                    >
-                        Help
-                    </Button>
+                    <HelpModal></HelpModal>
                 </div>
             </header>
             <header className="App-header">

@@ -6,6 +6,9 @@ import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { Year } from "../interfaces/year";
+import { BS } from "../data/BS";
+import { BA } from "../data/BA";
+import { Minor } from "../data/Minor";
 //import { Course } from "../interfaces/course";
 //import { Semesterter} from "../interfaces/term";
 
@@ -18,81 +21,9 @@ export function Requirements({
     plans: Plan[];
     setPlans: (s: Plan[]) => void;
 }): JSX.Element {
-    /*const ALLCOURSES = semesters.map((semester: Semester) =>
-        semester.courses.map((oneCourse: Course): string => {
-            return oneCourse.code;
-        })
-    );*/
-
-    const BA: string[] = [
-        "ENGL 110",
-        "First Year Seminar",
-        "Discovering Learning Experience",
-        "Multicultural Requirement",
-        "3crd Group A Breadth",
-        "3 credits Group B Breadth",
-        "3 credits Group C Breadth",
-        "3 credits Group D Breadth",
-        "Capstone",
-        "Language Course",
-        "Second Writing",
-        "CISC 108",
-        "CISC 181",
-        "CISC 210",
-        "CISC 220",
-        "CISC 260",
-        "CISC 275",
-        "15 credits 300",
-        "MATH 210",
-        "MATH 241",
-        "Total 124 credits"
-    ];
-
-    const BS: string[] = [
-        "ENGL 110",
-        "First Year Seminar",
-        "Discovering Learning Experience",
-        "Multicultural Requirement",
-        "3crd Breadth",
-        "3 credits Group B Breadth",
-        "3 credits Group C Breadth",
-        "3 credits Group D Breadth",
-        "9 credits Engineering Breadth",
-        "Capstone",
-        "Language Course",
-        "Second Writing",
-        "CISC 108",
-        "CISC 181",
-        "CISC 210",
-        "CISC 220",
-        "CISC 260",
-        "CISC 275",
-        "CISC 303",
-        "CISC 320",
-        "CISC 355",
-        "CISC 361",
-        "CISC 372",
-        "MATH 210",
-        "MATH 241",
-        "MATH 242",
-        "Lab Requirement",
-        "Advance Math",
-        "6 credits CISC elective over 300",
-        "12 credits focus area",
-        "Total 124 credits"
-    ];
-    /*const COURSES = Object.values(EasyCatalog).map(
-        (courses: Record<string, Course>): Course => ({
-            Object.entries(courses).map(
-                ([courseKey,course] : [string,Course]) => 
-            )
-        })
-    );*/
     const [major, setMajor] = useState<string>("Major");
     const [bsba, setBSBA] = useState<string>("BS");
     const [conc, setConc] = useState<string>("Traditional Program");
-    const redCourses: string[] = [];
-    const greenCourses: string[] = [];
     const ALLCOURSES = plans.map((plan: Plan) =>
         plan.years.map((year: Year) =>
             year.semesters.map((semester: Semester) =>
@@ -233,6 +164,39 @@ export function Requirements({
                 )}
                 {major === "Major" &&
                     bsba === "BS" &&
+                    ALLCOURSES.map((first: string[][][]) =>
+                        first.map((second: string[][]) =>
+                            second.map((third: string[]) =>
+                                third.map((fourth: string) =>
+                                    BS.map((req: string) => {
+                                        if (req === fourth) {
+                                            return (
+                                                <p
+                                                    style={{
+                                                        color: "green"
+                                                    }}
+                                                >
+                                                    {req}
+                                                </p>
+                                            );
+                                        } else {
+                                            return (
+                                                <p
+                                                    style={{
+                                                        color: "red"
+                                                    }}
+                                                >
+                                                    {req}
+                                                </p>
+                                            );
+                                        }
+                                    })
+                                )
+                            )
+                        )
+                    )}
+                {major === "Major" &&
+                    bsba === "BS" &&
                     BS.map((req: string) => (
                         <div key={req}>
                             {" "}
@@ -245,41 +209,71 @@ export function Requirements({
                     ))}
                 {major === "Major" &&
                     bsba === "BA" &&
-                    BA.map((req: string) => {
-                        {
-                            ALLCOURSES.map((first: string[][][]) =>
-                                first.map((second: string[][]) =>
-                                    second.map((third: string[]) =>
-                                        third.map((fourth: string) => {
-                                            {
-                                                if (fourth !== req) {
-                                                    return [
-                                                        ...redCourses,
-                                                        fourth
-                                                    ];
-                                                } else {
-                                                    return [
-                                                        ...greenCourses,
-                                                        fourth
-                                                    ];
-                                                }
-                                            }
-                                        })
-                                    )
+                    BA.map((req: string) => (
+                        <div key={req}>
+                            {" "}
+                            <Form.Check
+                                type="checkbox"
+                                id="is-student-check"
+                                label={req}
+                            />
+                        </div>
+                    ))}
+                {major === "Minor" &&
+                    Minor.map((req: string) => (
+                        <div key={req}>
+                            {" "}
+                            <Form.Check
+                                type="checkbox"
+                                id="is-student-check"
+                                label={req}
+                            />
+                        </div>
+                    ))}
+                {major === "Minor" &&
+                    ALLCOURSES.map((first: string[][][]) =>
+                        first.map((second: string[][]) =>
+                            second.map((third: string[]) =>
+                                third.map((fourth: string) =>
+                                    Minor.map((req: string) => {
+                                        if (req === fourth) {
+                                            return (
+                                                <p
+                                                    style={{
+                                                        color: "green"
+                                                    }}
+                                                >
+                                                    {req}
+                                                </p>
+                                            );
+                                        } else {
+                                            return (
+                                                <p
+                                                    style={{
+                                                        color: "red"
+                                                    }}
+                                                >
+                                                    {req}
+                                                </p>
+                                            );
+                                        }
+                                    })
                                 )
-                            );
-                        }
-                    })}
+                            )
+                        )
+                    )}
                 {major === "Major" &&
-                    bsba === "BA" &&
-                    greenCourses.map((req: string) => {
-                        return req;
-                    })}
-                {major === "Major" &&
-                    bsba === "BA" &&
-                    redCourses.map((req: string) => {
-                        return req;
-                    })}
+                    bsba === "BS" &&
+                    BS.map((req: string) => (
+                        <div key={req}>
+                            {" "}
+                            <Form.Check
+                                type="checkbox"
+                                id="is-student-check"
+                                label={req}
+                            />
+                        </div>
+                    ))}
             </div>
         </Container>
     );
