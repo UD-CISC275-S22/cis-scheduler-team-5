@@ -80,9 +80,6 @@ function App(): JSX.Element {
                     ></Requirements>
                 </Col>
             </Row>
-            <Row>
-                <CSVFile></CSVFile>
-            </Row>
         </div>
     );
 }

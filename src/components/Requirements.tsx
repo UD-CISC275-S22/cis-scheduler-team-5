@@ -1,6 +1,6 @@
 import { ButtonGroup } from "@mui/material";
-import React, { useState } from "react";
-import { Container, Dropdown, Form } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Container, Dropdown, Form } from "react-bootstrap";
 import "../App.css";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
@@ -9,6 +9,15 @@ import { Year } from "../interfaces/year";
 import { BS } from "../data/BS";
 import { BA } from "../data/BA";
 import { Minor } from "../data/Minor";
+import { BSai } from "../data/BSai";
+import { BSdata } from "../data/BSdata";
+import { BStheory } from "../data/BStheory";
+import { BSbioinf } from "../data/BSbioinf";
+import { BSsystems } from "../data/BSsystems";
+import { BShpcomputing } from "../data/BShpcompuing";
+import { BScyber } from "../data/BScyber";
+import Minor2 from "../data/Minor.json";
+import BA2 from "../data/BA.json";
 //import { Course } from "../interfaces/course";
 //import { Semesterter} from "../interfaces/term";
 
@@ -33,6 +42,80 @@ export function Requirements({
             )
         )
     );
+    const [toDoListMinor, setToDoListMinor] = useState(Minor2);
+    const [toDoBA, setToDoBA] = useState(BA2);
+
+    const ToDoListMinor = () => {
+        return (
+            <div>
+                {toDoListMinor.map((todo) => {
+                    return (
+                        <div
+                            key={todo.code}
+                            className={todo.complete ? "strike" : ""}
+                            onClick={() => handleToggleMinor(todo.id)}
+                        >
+                            <ul>{todo.code}</ul>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+    const ToDoBA = () => {
+        return (
+            <div>
+                {toDoBA.map((todo) => {
+                    return (
+                        <div
+                            key={todo.code}
+                            className={todo.complete ? "strike" : ""}
+                            onClick={() => handleToggleBA(todo.id)}
+                        >
+                            <ul>{todo.code}</ul>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+
+    const handleToggleMinor = (id: number) => {
+        const mapped = toDoListMinor.map((task) => {
+            return task.id == id
+                ? { ...task, complete: !task.complete }
+                : { ...task };
+        });
+        setToDoListMinor(mapped);
+    };
+
+    const handleToggleBA = (id: number) => {
+        const mapped = toDoBA.map((task) => {
+            return task.id == id
+                ? { ...task, complete: !task.complete }
+                : { ...task };
+        });
+        setToDoBA(mapped);
+    };
+
+    /*useEffect(() => {
+        ALLCOURSES.map((first: string[][][]) =>
+            first.map((second: string[][]) =>
+                second.map((third: string[]) =>
+                    third.map((fourth: string) => {
+                        const update = Minor2.map((req) => {
+                            if (req.code === fourth) {
+                                return { ...req, complete: true };
+                            } else {
+                                return req;
+                            }
+                        });
+                        setToDoListMinor(update);
+                    })
+                )
+            )
+        );
+    }, []);*/
 
     return (
         <Container
@@ -44,6 +127,10 @@ export function Requirements({
             }}
         >
             <div>
+                <div>
+                    Choose your degree and click on it when the requirement is
+                    fullfilled!
+                </div>
                 <ButtonGroup>
                     <Dropdown>
                         <Dropdown.Toggle
@@ -162,41 +249,11 @@ export function Requirements({
                         </Dropdown.Menu>
                     </Dropdown>
                 )}
-                {major === "Major" &&
+                {major === "Minor" && <ToDoListMinor />}
+                {major === "Major" && bsba === "BA" && <ToDoBA />}
+                {/*major === "Major" &&
                     bsba === "BS" &&
-                    ALLCOURSES.map((first: string[][][]) =>
-                        first.map((second: string[][]) =>
-                            second.map((third: string[]) =>
-                                third.map((fourth: string) =>
-                                    BS.map((req: string) => {
-                                        if (req === fourth) {
-                                            return (
-                                                <p
-                                                    style={{
-                                                        color: "green"
-                                                    }}
-                                                >
-                                                    {req}
-                                                </p>
-                                            );
-                                        } else {
-                                            return (
-                                                <p
-                                                    style={{
-                                                        color: "red"
-                                                    }}
-                                                >
-                                                    {req}
-                                                </p>
-                                            );
-                                        }
-                                    })
-                                )
-                            )
-                        )
-                    )}
-                {major === "Major" &&
-                    bsba === "BS" &&
+                    conc === "Traditional Program" &&
                     BS.map((req: string) => (
                         <div key={req}>
                             {" "}
@@ -219,61 +276,36 @@ export function Requirements({
                             />
                         </div>
                     ))}
-                {major === "Minor" &&
+                {/*major === "Minor" &&
                     Minor.map((req: string) => (
                         <div key={req}>
                             {" "}
-                            <Form.Check
-                                type="checkbox"
-                                id="is-student-check"
-                                label={req}
-                            />
+                            <Button
+                                style={{
+                                    backgroundColor: toogle ? "red" : "green"
+                                }}
+                                onClick={flipToogle}
+                            >
+                                {req}
+                            </Button>
                         </div>
-                    ))}
-                {major === "Minor" &&
+                            ))*/}
+                {/*major === "Minor" &&
                     ALLCOURSES.map((first: string[][][]) =>
                         first.map((second: string[][]) =>
                             second.map((third: string[]) =>
                                 third.map((fourth: string) =>
-                                    Minor.map((req: string) => {
-                                        if (req === fourth) {
-                                            return (
-                                                <p
-                                                    style={{
-                                                        color: "green"
-                                                    }}
-                                                >
-                                                    {req}
-                                                </p>
-                                            );
+                                    Minor2.map((req) => {
+                                        if (req.task === fourth) {
+                                            return { ...req, complete: true };
                                         } else {
-                                            return (
-                                                <p
-                                                    style={{
-                                                        color: "red"
-                                                    }}
-                                                >
-                                                    {req}
-                                                </p>
-                                            );
+                                            return req;
                                         }
                                     })
                                 )
                             )
                         )
-                    )}
-                {major === "Major" &&
-                    bsba === "BS" &&
-                    BS.map((req: string) => (
-                        <div key={req}>
-                            {" "}
-                            <Form.Check
-                                type="checkbox"
-                                id="is-student-check"
-                                label={req}
-                            />
-                        </div>
-                    ))}
+                                )*/}
             </div>
         </Container>
     );

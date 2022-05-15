@@ -1,4 +1,4 @@
-export const BS: string[] = [
+export const BStheory: string[] = [
     "ENGL 110",
     "First Year Seminar",
     "Discovering Learning Experience",
@@ -8,7 +8,6 @@ export const BS: string[] = [
     "3 credits Group C Breadth",
     "3 credits Group D Breadth",
     "9 credits Engineering Breadth",
-    "Capstone",
     "Second Writing Requirement",
     "CISC 108",
     "CISC 181",
@@ -19,14 +18,18 @@ export const BS: string[] = [
     "CISC 303",
     "CISC 320",
     "CISC 355",
-    "CISC 361",
-    "CISC 372",
+    "CISC 304",
+    "CISC 401",
     "MATH 210",
     "MATH 241",
     "MATH 242",
-    "Lab Requirement",
-    "Advance Math",
-    "6 credits CISC elective over 300",
-    "12 credits focus area",
+    "MATH 349",
+    "CISC 498",
+    "CISC 499",
+    "Lab Science Requirement",
+    "Probability/Statistics Requirement",
+    "Track: Discrete or Continuous",
+    "6 credits Restricted Elective",
+    "CISC elective above 300",
     "Total 124 credits"
 ];

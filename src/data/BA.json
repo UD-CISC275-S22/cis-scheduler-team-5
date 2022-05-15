@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "code": "ENGL 110",
+        "complete": false
+    },
+    {
+        "id": 2,
+        "code": "First Year Seminar",
+        "complete": false
+    },
+    {
+        "id": 3,
+        "code": "Discovering Learning Experience",
+        "complete": false
+    },
+    {
+        "id": 4,
+        "code": "Multicultural Requirement",
+        "complete": false
+    },
+    {
+        "id": 5,
+        "code": "9 credits Group A Breadth",
+        "complete": false
+    },
+    {
+        "id": 6,
+        "code": "9 credits Group B Breadth",
+        "complete": false
+    },
+    {
+        "id": 7,
+        "code": "9 credits Group C Breadth",
+        "complete": false
+    },
+    {
+        "id": 8,
+        "code": "10 credits Group D Breadth",
+        "complete": false
+    },
+    {
+        "id": 9,
+        "code": "Capstone",
+        "complete": false
+    },
+    {
+        "id": 10,
+        "code": "Foreing Language",
+        "complete": false
+    },
+    {
+        "id": 11,
+        "code": "Second Writing Requirement",
+        "complete": false
+    },
+    {
+        "id": 12,
+        "code": "CISC 108",
+        "complete": false
+    },
+    {
+        "id": 13,
+        "code": "CISC 181",
+        "complete": false
+    },
+    {
+        "id": 14,
+        "code": "CISC 210",
+        "complete": false
+    },
+    {
+        "id": 15,
+        "code": "CISC 220",
+        "complete": false
+    },
+    {
+        "id": 16,
+        "code": "CISC 260",
+        "complete": false
+    },
+    {
+        "id": 17,
+        "code": "CISC 275",
+        "complete": false
+    },
+    {
+        "id": 18,
+        "code": "MATH 210",
+        "complete": false
+    },
+    {
+        "id": 19,
+        "code": "MATH 241",
+        "complete": false
+    },
+    {
+        "id": 20,
+        "code": "15 credits CISC above 300",
+        "complete": false
+    },
+    {
+        "id": 21,
+        "code": "Total 124 credits",
+        "complete": false
+    }
+]

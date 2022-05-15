@@ -69,3 +69,9 @@
     margin: 5px 5px;
     background-color: #00539f;
 }
+
+.strike {
+    text-decoration: line-through;
+    color: #ffd200;
+    line-height: "2px";
+}

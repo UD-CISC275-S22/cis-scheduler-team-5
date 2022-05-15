@@ -89,6 +89,8 @@ export function CourseModal({
         console.log(name);
         if (name === "name") {
             newEdit.name = value;
+        } else if (name === "code") {
+            newEdit.code = value;
         } else if (name === "descr") {
             newEdit.descr = value;
         } else if (name === "credits") {
@@ -104,6 +106,20 @@ export function CourseModal({
         }
     };
 
+    const handleSafePrevious = (changeCourse: Course) => {
+        const newEdit: Course = course;
+        const prevCourse: Course = findCourse(changeCourse.code);
+        newEdit.name = prevCourse.name;
+        newEdit.code = prevCourse.code;
+        newEdit.descr = prevCourse.descr;
+        newEdit.credits = prevCourse.credits;
+        newEdit.preReq = prevCourse.preReq;
+        newEdit.restrict = prevCourse.restrict;
+        newEdit.breadth = prevCourse.breadth;
+        newEdit.typ = prevCourse.typ;
+        handlePreviousChanges(newEdit);
+    };
+
     function handleSaveChanges(): void {
         const newCourses: Course[] = currentSemester.courses;
         newCourses[
@@ -112,9 +128,33 @@ export function CourseModal({
         currentSemester.courses = newCourses;
     }
 
+    function handlePreviousChanges(newEdit: Course): void {
+        const newCourses: Course[] = currentSemester.courses;
+        newCourses[
+            currentSemester.courses.findIndex((c) => c.code == newEdit.code)
+        ] = newEdit;
+        currentSemester.courses = newCourses;
+    }
+
     function handlePrevious(): void {
         const newCourses: Course[] = currentSemester.courses;
         const previuousCourse = findCourse(course.code);
+        /*currentSemester.courses.map((course: Course) => {
+            if (course.code !== previuousCourse.code) {
+                return course;
+            } else {
+                return {
+                    ...course,
+                    name: previuousCourse.name,
+                    credits: previuousCourse.credits,
+                    descr: previuousCourse.descr,
+                    breadth: previuousCourse.breadth,
+                    preReq: previuousCourse.preReq,
+                    restrict: previuousCourse.restrict,
+                    typ: previuousCourse.typ
+                };
+            }
+        });*/
         newCourses[
             currentSemester.courses.findIndex((c) => c.code == course.code)
         ] = previuousCourse;
@@ -132,7 +172,12 @@ export function CourseModal({
             >
                 <Modal.Header closeButton>
                     <Modal.Title>
-                        {course.code}
+                        <EditText
+                            name="code"
+                            style={{ width: "100%" }}
+                            defaultValue={course.code}
+                            onSave={handleSave}
+                        ></EditText>
                         <br></br>
                         <EditText
                             name="name"
@@ -225,20 +270,20 @@ export function CourseModal({
                     <Button
                         variant="primary"
                         onClick={() => {
+                            handleSafePrevious(course);
+                            setShow(false);
+                        }}
+                    >
+                        Default Course
+                    </Button>
+                    <Button
+                        variant="primary"
+                        onClick={() => {
                             handleSaveChanges();
                             setShow(false);
                         }}
                     >
                         Save Changes
-                    </Button>
-                    <Button
-                        variant="primary"
-                        onClick={() => {
-                            handlePrevious();
-                            setShow(false);
-                        }}
-                    >
-                        Default Course
                     </Button>
                 </Modal.Footer>
             </Modal>

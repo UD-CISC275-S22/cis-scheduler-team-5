@@ -4,6 +4,7 @@ import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
 import { Year } from "../interfaces/year";
+import { CSVFile } from "./CSVFile";
 //import BasicTabs from "./Tabs";
 //import { Course } from "../interfaces/course";
 import { Years } from "./Years";
@@ -98,7 +99,7 @@ export function CreatePlan({
                                     <Col
                                         style={{
                                             display: "flex",
-                                            marginLeft: "45%"
+                                            marginLeft: "43%"
                                         }}
                                     >
                                         <h1>{currentPlan.name}</h1>
@@ -125,6 +126,9 @@ export function CreatePlan({
                                         setPlans={setPlans}
                                         catalog={catalog}
                                     ></Years>
+                                </Row>
+                                <Row>
+                                    <CSVFile></CSVFile>
                                 </Row>
                             </Container>
                         </div>
