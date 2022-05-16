@@ -2,10 +2,7 @@ import { ButtonGroup } from "@mui/material";
 import React, { useState } from "react";
 import { Container, Dropdown } from "react-bootstrap";
 import "../App.css";
-import { Course } from "../interfaces/course";
-import { Plan } from "../interfaces/plan";
-import { Semester } from "../interfaces/semester";
-import { Year } from "../interfaces/year";
+//import { Plan } from "../interfaces/plan";
 /*import { BS } from "../data/BS";
 import { BA } from "../data/BA";
 import { Minor } from "../data/Minor";
@@ -18,10 +15,11 @@ import { BShpcomputing } from "../data/BShpcompuing";
 import { BScyber } from "../data/BScyber";*/
 import Minor2 from "../data/Minor.json";
 import BA2 from "../data/BA.json";
+import BS2 from "../data/BS.json";
 //import { Course } from "../interfaces/course";
 //import { Semesterter} from "../interfaces/term";
 
-export function Requirements({ plans }: { plans: Plan[] }): JSX.Element {
+export function Requirements(/*{ plans }: { plans: Plan[] }*/): JSX.Element {
     const [major, setMajor] = useState<string>("Major");
     const [bsba, setBSBA] = useState<string>("BS");
     const [conc, setConc] = useState<string>("Traditional Program");
@@ -36,6 +34,7 @@ export function Requirements({ plans }: { plans: Plan[] }): JSX.Element {
     );*/
     const [toDoListMinor, setToDoListMinor] = useState(Minor2);
     const [toDoBA, setToDoBA] = useState(BA2);
+    const [toDoBS, setToDoBS] = useState(BS2);
 
     const ToDoListMinor = () => {
         return (
@@ -89,6 +88,125 @@ export function Requirements({ plans }: { plans: Plan[] }): JSX.Element {
         });
         setToDoBA(mapped);
     };
+
+    const ToDoBS = () => {
+        return (
+            <div>
+                {toDoBS.map((todo) => {
+                    return (
+                        <div
+                            key={todo.code}
+                            className={todo.complete ? "strike" : ""}
+                            onClick={() => handleToggleBS(todo.id)}
+                        >
+                            <ul>{todo.code}</ul>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+
+    const handleToggleBS = (id: number) => {
+        const mapped = toDoBS.map((task) => {
+            return task.id == id
+                ? { ...task, complete: !task.complete }
+                : { ...task };
+        });
+        setToDoBS(mapped);
+    };
+
+    function DropDownMenu(): JSX.Element {
+        return (
+            <Dropdown data-testid="concentration-row">
+                <Dropdown.Toggle
+                    data-testid="dropdown-bsba"
+                    className="dropdown-basic"
+                >
+                    {bsba}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Header>Degree Type</Dropdown.Header>
+                    <Dropdown.Item
+                        data-testid="option"
+                        onClick={() => setBSBA("BS")}
+                    >
+                        BS
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                        data-testid="option"
+                        onClick={() => {
+                            setBSBA("BA");
+                            setConc("Traditional Program");
+                        }}
+                    >
+                        BA
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+        );
+    }
+    function DropDownMenuCon(): JSX.Element {
+        return (
+            <Dropdown
+                data-testid="concentration-dropdown"
+                className="dropdown-basic"
+            >
+                <Dropdown.Toggle id="dropdown-basic">{conc}</Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Header>Concentration</Dropdown.Header>
+                    <Dropdown.Item
+                        data-testid="option"
+                        onClick={() => setConc("Traditional Program")}
+                    >
+                        Traditional Program
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                        data-testid="option"
+                        onClick={() => setConc("AI and Robotics")}
+                    >
+                        Artificial Intelligence and Robotics
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                        data-testid="option"
+                        onClick={() => setConc("Bioinformatics")}
+                    >
+                        Bioinformatics
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                        data-testid="option"
+                        onClick={() => setConc("Cybersecurity")}
+                    >
+                        Cybersecurity
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                        data-testid="option"
+                        onClick={() => setConc("Data Science")}
+                    >
+                        Data Science{" "}
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                        data-testid="option"
+                        onClick={() => setConc("HP Computing")}
+                    >
+                        High Performance Computing
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                        data-testid="option"
+                        onClick={() => setConc("Systems & Networks")}
+                    >
+                        Systems and Networks Concentration
+                    </Dropdown.Item>
+                    <Dropdown.Item
+                        data-testid="option"
+                        onClick={() => setConc("Theory & Computation")}
+                    >
+                        Theory and Computation
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>
+        );
+    }
 
     /*useEffect(() => {
         ALLCOURSES.map((first: string[][][]) =>
@@ -151,98 +269,14 @@ export function Requirements({ plans }: { plans: Plan[] }): JSX.Element {
                             </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                    {major === "Major" && (
-                        <Dropdown data-testid="concentration-row">
-                            <Dropdown.Toggle
-                                data-testid="dropdown-bsba"
-                                className="dropdown-basic"
-                            >
-                                {bsba}
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Header>Degree Type</Dropdown.Header>
-                                <Dropdown.Item
-                                    data-testid="option"
-                                    onClick={() => setBSBA("BS")}
-                                >
-                                    BS
-                                </Dropdown.Item>
-                                <Dropdown.Item
-                                    data-testid="option"
-                                    onClick={() => {
-                                        setBSBA("BA");
-                                        setConc("Traditional Program");
-                                    }}
-                                >
-                                    BA
-                                </Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                    )}
+                    {major === "Major" && <DropDownMenu></DropDownMenu>}
                 </ButtonGroup>
-                {major === "Major" && bsba === "BS" && (
-                    <Dropdown
-                        data-testid="concentration-dropdown"
-                        className="dropdown-basic"
-                    >
-                        <Dropdown.Toggle id="dropdown-basic">
-                            {conc}
-                        </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            <Dropdown.Header>Concentration</Dropdown.Header>
-                            <Dropdown.Item
-                                data-testid="option"
-                                onClick={() => setConc("Traditional Program")}
-                            >
-                                Traditional Program
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                                data-testid="option"
-                                onClick={() => setConc("AI and Robotics")}
-                            >
-                                Artificial Intelligence and Robotics
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                                data-testid="option"
-                                onClick={() => setConc("Bioinformatics")}
-                            >
-                                Bioinformatics
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                                data-testid="option"
-                                onClick={() => setConc("Cybersecurity")}
-                            >
-                                Cybersecurity
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                                data-testid="option"
-                                onClick={() => setConc("Data Science")}
-                            >
-                                Data Science{" "}
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                                data-testid="option"
-                                onClick={() => setConc("HP Computing")}
-                            >
-                                High Performance Computing
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                                data-testid="option"
-                                onClick={() => setConc("Systems & Networks")}
-                            >
-                                Systems and Networks Concentration
-                            </Dropdown.Item>
-                            <Dropdown.Item
-                                data-testid="option"
-                                onClick={() => setConc("Theory & Computation")}
-                            >
-                                Theory and Computation
-                            </Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                )}
+                {major === "Major" && bsba === "BS" && <DropDownMenuCon />}
                 {major === "Minor" && <ToDoListMinor />}
                 {major === "Major" && bsba === "BA" && <ToDoBA />}
+                {major === "Major" &&
+                    bsba === "BS" &&
+                    conc === "Traditional Program" && <ToDoBS />}
                 {/*major === "Major" &&
                     bsba === "BS" &&
                     conc === "Traditional Program" &&

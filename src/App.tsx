@@ -73,7 +73,7 @@ function App(): JSX.Element {
                     ></CreatePlan>
                 </Col>
                 <Col md="2">
-                    <Requirements plans={plans}></Requirements>
+                    <Requirements /*plans={plans}*/></Requirements>
                 </Col>
             </Row>
         </div>

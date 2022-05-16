@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Container, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
@@ -95,9 +95,6 @@ export function CourseAdder({
                 <Container>
                     <ShowCourses
                         currentSemester={currentSemester}
-                        plans={plans}
-                        setPlans={setPlans}
-                        catalog={catalog}
                     ></ShowCourses>
                     <Row>
                         <Button onClick={() => clearCourses()}>
