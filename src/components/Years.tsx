@@ -1,4 +1,3 @@
-import { Group } from "@mui/icons-material";
 import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
@@ -76,6 +75,17 @@ export function Years({
         // Set visible to be the logical opposite of its previous value
         setVisible(!visible);
     }
+    function ShowForm(): JSX.Element {
+        return (
+            <>
+                <Form.Group controlId="forYearName">
+                    <Form.Label>New Year Name:</Form.Label>
+                    <Form.Control value={name} onChange={updateName} />
+                </Form.Group>
+                <Button onClick={() => addYear(name)}>Confirm</Button>
+            </>
+        );
+    }
     return (
         <div
             style={{
@@ -86,54 +96,48 @@ export function Years({
         >
             <Button onClick={flipVisibility}>Add a Year</Button>
             <Button onClick={clearYears}>Delete All Years</Button>
-            {visible && (
-                <>
-                    <Form.Group controlId="forYearName">
-                        <Form.Label>New Year Name:</Form.Label>
-                        <Form.Control value={name} onChange={updateName} />
-                    </Form.Group>
-                    <Button onClick={() => addYear(name)}>Confirm</Button>
-                </>
-            )}
-            {currentPlan.years.map((currentYear: Year) => (
-                <div key={currentYear.name} style={{ marginBottom: "4px" }}>
-                    <Container>
-                        <Row>
-                            <Col
-                                style={{
-                                    display: "flex",
-                                    marginLeft: "44%"
-                                }}
-                            >
-                                <h2>{currentYear.name} </h2>
-                                <Button
+            {visible && <ShowForm></ShowForm>}
+            {currentPlan.years.map((currentYear: Year) => {
+                return (
+                    <div key={currentYear.name} style={{ marginBottom: "4px" }}>
+                        <Container>
+                            <Row>
+                                <Col
                                     style={{
                                         display: "flex",
-                                        marginLeft: "auto",
-                                        height: "min-content",
-                                        backgroundColor: "white",
-                                        borderColor: "#127845",
-                                        color: "red"
+                                        marginLeft: "44%"
                                     }}
-                                    onClick={() =>
-                                        deleteOneYear(currentYear.name)
-                                    }
                                 >
-                                    X
-                                </Button>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <ShowSemesters
-                                currentYear={currentYear}
-                                plans={plans}
-                                setPlans={setPlans}
-                                catalog={catalog}
-                            ></ShowSemesters>
-                        </Row>
-                    </Container>
-                </div>
-            ))}
+                                    <h2>{currentYear.name} </h2>
+                                    <Button
+                                        style={{
+                                            display: "flex",
+                                            marginLeft: "auto",
+                                            height: "min-content",
+                                            backgroundColor: "white",
+                                            borderColor: "#127845",
+                                            color: "red"
+                                        }}
+                                        onClick={() =>
+                                            deleteOneYear(currentYear.name)
+                                        }
+                                    >
+                                        X
+                                    </Button>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <ShowSemesters
+                                    currentYear={currentYear}
+                                    plans={plans}
+                                    setPlans={setPlans}
+                                    catalog={catalog}
+                                ></ShowSemesters>
+                            </Row>
+                        </Container>
+                    </div>
+                );
+            })}
         </div>
     );
 }

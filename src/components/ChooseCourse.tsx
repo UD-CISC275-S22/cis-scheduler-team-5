@@ -91,35 +91,40 @@ export function ChooseCourse({
                 </p>
                 <Container>
                     <div>
-                        {termCourses.map((oneCourse: Course) => (
-                            <div
-                                key={oneCourse.code}
-                                style={{
-                                    padding: "5px",
-                                    margin: "4px"
-                                }}
-                            >
-                                <Container>
-                                    <Col>
-                                        <div>
-                                            <div
-                                                className="box"
-                                                id={oneCourse.code}
-                                                draggable="true"
-                                                onDragStart={handleDragStart}
-                                                style={{
-                                                    padding: "4px",
-                                                    backgroundColor: "#e1bee7"
-                                                }}
-                                            >
-                                                {oneCourse.code}{" "}
-                                                {oneCourse.name}
+                        {termCourses.map((oneCourse: Course) => {
+                            return (
+                                <div
+                                    key={oneCourse.code}
+                                    style={{
+                                        padding: "5px",
+                                        margin: "4px"
+                                    }}
+                                >
+                                    <Container>
+                                        <Col>
+                                            <div>
+                                                <div
+                                                    className="box"
+                                                    id={oneCourse.code}
+                                                    draggable="true"
+                                                    onDragStart={
+                                                        handleDragStart
+                                                    }
+                                                    style={{
+                                                        padding: "4px",
+                                                        backgroundColor:
+                                                            "#e1bee7"
+                                                    }}
+                                                >
+                                                    {oneCourse.code}{" "}
+                                                    {oneCourse.name}
+                                                </div>
                                             </div>
-                                        </div>
-                                    </Col>
-                                </Container>
-                            </div>
-                        ))}
+                                        </Col>
+                                    </Container>
+                                </div>
+                            );
+                        })}
                     </div>
                     <Row>
                         <Autocomplete
@@ -132,9 +137,9 @@ export function ChooseCourse({
                             }}
                             options={COURSES}
                             sx={{ width: 300 }}
-                            renderInput={(params) => (
-                                <TextField {...params} label="Course" />
-                            )}
+                            renderInput={(params) => {
+                                return <TextField {...params} label="Course" />;
+                            }}
                         />
                     </Row>
                     <Row>

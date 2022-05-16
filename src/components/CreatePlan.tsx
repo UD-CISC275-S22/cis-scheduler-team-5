@@ -55,29 +55,27 @@ export function CreatePlan({
         // Set visible to be the logical opposite of its previous value
         setVisible(!visible);
     }
-    return (
-        <div>
-            <div>
-                <Button onClick={flipVisibility}>Add a plan</Button>
-                <Button onClick={clearPlan}>Delete All Plans</Button>
-                <Button>Export / Import Plan</Button>
-                {visible && (
-                    <>
-                        <Form.Group controlId="dorPlanName">
-                            <Form.Label>New Plan Name:</Form.Label>
-                            <Form.Control
-                                style={{
-                                    width: "100%"
-                                }}
-                                value={name}
-                                onChange={updateName}
-                            />
-                        </Form.Group>
-                        <Button onClick={() => addPlan(name)}>Confirm</Button>
-                    </>
-                )}
-            </div>
-            {plans.length > 0 ? (
+    function YearContent(): JSX.Element {
+        return (
+            <>
+                {" "}
+                <Form.Group controlId="dorPlanName">
+                    <Form.Label>New Plan Name:</Form.Label>
+                    <Form.Control
+                        style={{
+                            width: "100%"
+                        }}
+                        value={name}
+                        onChange={updateName}
+                    />
+                </Form.Group>
+                <Button onClick={() => addPlan(name)}>Confirm</Button>
+            </>
+        );
+    }
+    function ShowPlan(): JSX.Element {
+        if (plans.length > 0) {
+            return (
                 <div
                     style={{
                         border: "3px solid black",
@@ -87,54 +85,69 @@ export function CreatePlan({
                         margin: "10px"
                     }}
                 >
-                    {plans.map((currentPlan: Plan) => (
-                        <div
-                            key={currentPlan.name}
-                            style={{ marginBottom: "40px" }}
-                        >
-                            <Container>
-                                <Row>
-                                    <Col
-                                        style={{
-                                            display: "flex",
-                                            marginLeft: "43%"
-                                        }}
-                                    >
-                                        <h1>{currentPlan.name}</h1>
-                                        <Button
+                    {plans.map((currentPlan: Plan) => {
+                        return (
+                            <div
+                                key={currentPlan.name}
+                                style={{ marginBottom: "40px" }}
+                            >
+                                <Container>
+                                    <Row>
+                                        <Col
                                             style={{
                                                 display: "flex",
-                                                marginLeft: "auto",
-                                                height: "min-content",
-                                                backgroundColor: "white",
-                                                color: "red"
+                                                marginLeft: "43%"
                                             }}
-                                            onClick={() =>
-                                                deleteOnePlan(currentPlan.name)
-                                            }
                                         >
-                                            X
-                                        </Button>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Years
-                                        currentPlan={currentPlan}
-                                        plans={plans}
-                                        setPlans={setPlans}
-                                        catalog={catalog}
-                                    ></Years>
-                                </Row>
-                                <Row>
-                                    <CSVFile></CSVFile>
-                                </Row>
-                            </Container>
-                        </div>
-                    ))}
+                                            <h1>{currentPlan.name}</h1>
+                                            <Button
+                                                style={{
+                                                    display: "flex",
+                                                    marginLeft: "auto",
+                                                    height: "min-content",
+                                                    backgroundColor: "white",
+                                                    color: "red"
+                                                }}
+                                                onClick={() =>
+                                                    deleteOnePlan(
+                                                        currentPlan.name
+                                                    )
+                                                }
+                                            >
+                                                X
+                                            </Button>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Years
+                                            currentPlan={currentPlan}
+                                            plans={plans}
+                                            setPlans={setPlans}
+                                            catalog={catalog}
+                                        ></Years>
+                                    </Row>
+                                    <Row>
+                                        <CSVFile></CSVFile>
+                                    </Row>
+                                </Container>
+                            </div>
+                        );
+                    })}
                 </div>
-            ) : (
-                <div></div>
-            )}
+            );
+        } else {
+            return <div></div>;
+        }
+    }
+
+    return (
+        <div>
+            <div>
+                <Button onClick={flipVisibility}>Add a plan</Button>
+                <Button onClick={clearPlan}>Delete All Plans</Button>
+                {visible && <YearContent />}
+            </div>
+            <ShowPlan></ShowPlan>
         </div>
     );
 }

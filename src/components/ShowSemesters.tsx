@@ -18,8 +18,20 @@ export function ShowSemesters({
 }): JSX.Element {
     //const newSemesters = [...semesters, newTerm, newTerm2, newTerm3, newTerm4];
     const [visible, setVisible] = useState<boolean>(true);
-    function addSemesters() {
+    function AddNewSemesters({ visible }: { visible: boolean }): JSX.Element {
+        if (visible) {
+            return <Button onClick={flipVisibility}>4-Semester Default</Button>;
+        } else {
+            return <></>;
+        }
+    }
+    function flipVisibility(): void {
+        addSemesters();
         setVisible(false);
+        // Set visible to be the logical opposite of its previous value
+    }
+    function addSemesters() {
+        //setVisible(false);
         const newTerm: Semester = {
             id: currentYear.name + "Fall",
             season: "Fall",
@@ -91,11 +103,7 @@ export function ShowSemesters({
                             </Col>
                         ))}
                         </Col>*/}
-                    {visible && (
-                        <Button onClick={addSemesters}>
-                            4-Semester Default
-                        </Button>
-                    )}
+                    <AddNewSemesters visible={visible}></AddNewSemesters>
                     {currentYear.semesters.map((currentSemester: Semester) => {
                         return (
                             <Col key={currentSemester.id}>
