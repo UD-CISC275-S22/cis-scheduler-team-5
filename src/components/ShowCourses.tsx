@@ -47,7 +47,7 @@ function ShowWarningIcon({ course }: { course: Course }): JSX.Element {
         return <></>;
     }
 }
-
+/* main function*/
 export function ShowCourses({
     currentSemester,
     plans,
@@ -59,53 +59,7 @@ export function ShowCourses({
 }): JSX.Element {
     const [show, setShow] = useState<boolean>(false); //To show Modal when Course is clicked
 
-    // Remove Single Course Button
-    /*
-    function deleteCourse(deleteCourseCode: string) {
-        const updatedSemesterCourses = semester.courses.filter(
-            (course: Course): boolean => course.code !== deleteCourseCode
-        );
-        return updatedSemesterCourses;
-    }
-    */
-    /*function deleteOneCourse(courseCode: string) {
-        const updatePlans: Plan[] = plans.map((plan: Plan) =>
-        {return(plan.years.map((year: Year) =>
-                year.semesters.map((semester: Semester) => {
-                    if (semester.id !== currentSemester.id) {
-                        plan;
-                    } else {
-                        const temp = { ...semester };
-                        const updateSemester = temp.courses.filter(
-                            (course: Course): boolean =>
-                                course.code !== courseCode
-                        );
-                        return {
-                            ...plan,
-                            ...year,
-                            ...semester,
-                            courses: updateSemester
-                        };
-                    }
-                })
-            )
-        );});}
-            
-        setPlans(updatePlans);
-    }*/
     function clearCourse(courseName: string) {
-        /*const updateSemester = {
-            ...semester,
-            courses: []
-        };
-        setSemester(updateSemester);
-        const index = semesters.map((seme: Semester): number => {
-            return seme.season === key ? semesters.indexOf(seme) : -1;
-        });
-        const newValue = index.filter((word) => word > -1);
-        const newSemesters = { ...semesters };
-        newSemesters.splice(newValue[0], 1, semester);
-        setSemesters(newSemesters);*/
         const updateCourse = plans.map((plan: Plan) => ({
             ...plan,
             years: plan.years.map((year: Year) => ({
