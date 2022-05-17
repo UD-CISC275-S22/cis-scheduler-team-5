@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Table } from "react-bootstrap";
+import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 import { CourseModal } from "./CourseModal";
 import WarningIcon from "@mui/icons-material/Warning";
 import { red } from "@mui/material/colors";
+import { Plan } from "../interfaces/plan";
+import { Year } from "../interfaces/year";
 
 function ShowCourseModal({
     course,
@@ -47,9 +49,13 @@ function ShowWarningIcon({ course }: { course: Course }): JSX.Element {
 }
 
 export function ShowCourses({
-    currentSemester
+    currentSemester,
+    plans,
+    setPlans
 }: {
     currentSemester: Semester;
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
 }): JSX.Element {
     const [show, setShow] = useState<boolean>(false); //To show Modal when Course is clicked
 
@@ -62,6 +68,31 @@ export function ShowCourses({
         return updatedSemesterCourses;
     }
     */
+    /*function deleteOneCourse(courseCode: string) {
+        const updatePlans: Plan[] = plans.map((plan: Plan) =>
+        {return(plan.years.map((year: Year) =>
+                year.semesters.map((semester: Semester) => {
+                    if (semester.id !== currentSemester.id) {
+                        plan;
+                    } else {
+                        const temp = { ...semester };
+                        const updateSemester = temp.courses.filter(
+                            (course: Course): boolean =>
+                                course.code !== courseCode
+                        );
+                        return {
+                            ...plan,
+                            ...year,
+                            ...semester,
+                            courses: updateSemester
+                        };
+                    }
+                })
+            )
+        );});}
+            
+        setPlans(updatePlans);
+    }*/
 
     return (
         <div>
@@ -123,6 +154,17 @@ export function ShowCourses({
                                                     setShow={setShow}
                                                     course={course}
                                                 ></ShowCourseModal>
+                                                <td>
+                                                    <Button
+                                                    /*onClick={() =>
+                                                            deleteOneCourse(
+                                                                course.code
+                                                            )
+                                                        }*/
+                                                    >
+                                                        X
+                                                    </Button>
+                                                </td>
                                             </tr>
                                         );
                                     }

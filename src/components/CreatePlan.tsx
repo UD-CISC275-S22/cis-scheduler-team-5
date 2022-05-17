@@ -127,7 +127,7 @@ export function CreatePlan({
                                         ></Years>
                                     </Row>
                                     <Row>
-                                        <CSVFile></CSVFile>
+                                        <CSVFile plan={currentPlan}></CSVFile>
                                     </Row>
                                 </Container>
                             </div>
@@ -145,7 +145,22 @@ export function CreatePlan({
             <div>
                 <Button onClick={flipVisibility}>Add a plan</Button>
                 <Button onClick={clearPlan}>Delete All Plans</Button>
-                {visible && <YearContent />}
+                {visible && (
+                    <>
+                        {" "}
+                        <Form.Group controlId="dorPlanName">
+                            <Form.Label>New Plan Name:</Form.Label>
+                            <Form.Control
+                                style={{
+                                    width: "100%"
+                                }}
+                                value={name}
+                                onChange={updateName}
+                            />
+                        </Form.Group>
+                        <Button onClick={() => addPlan(name)}>Confirm</Button>
+                    </>
+                )}
             </div>
             <ShowPlan></ShowPlan>
         </div>

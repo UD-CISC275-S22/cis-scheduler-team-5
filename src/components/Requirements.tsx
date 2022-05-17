@@ -2,20 +2,16 @@ import { ButtonGroup } from "@mui/material";
 import React, { useState } from "react";
 import { Container, Dropdown } from "react-bootstrap";
 import "../App.css";
-//import { Plan } from "../interfaces/plan";
-/*import { BS } from "../data/BS";
-import { BA } from "../data/BA";
-import { Minor } from "../data/Minor";
-import { BSai } from "../data/BSai";
-import { BSdata } from "../data/BSdata";
-import { BStheory } from "../data/BStheory";
-import { BSbioinf } from "../data/BSbioinf";
-import { BSsystems } from "../data/BSsystems";
-import { BShpcomputing } from "../data/BShpcompuing";
-import { BScyber } from "../data/BScyber";*/
-import Minor2 from "../data/Minor.json";
-import BA2 from "../data/BA.json";
-import BS2 from "../data/BS.json";
+import Minor from "../data/Minor.json";
+import BA from "../data/BA.json";
+import BS from "../data/BS.json";
+import BSai from "../data/BSai.json";
+import BSbioinf from "../data/BSbioinf.json";
+import BStheory from "../data/BStheory.json";
+import BSdata from "../data/BSdata.json";
+import BScyber from "../data/BScyber.json";
+import BShpcomputing from "../data/BShpcomputing.json";
+import BSsystems from "../data/BSsystems.json";
 //import { Course } from "../interfaces/course";
 //import { Semesterter} from "../interfaces/term";
 
@@ -32,9 +28,16 @@ export function Requirements(/*{ plans }: { plans: Plan[] }*/): JSX.Element {
             )
         )
     );*/
-    const [toDoListMinor, setToDoListMinor] = useState(Minor2);
-    const [toDoBA, setToDoBA] = useState(BA2);
-    const [toDoBS, setToDoBS] = useState(BS2);
+    const [toDoListMinor, setToDoListMinor] = useState(Minor);
+    const [toDoBA, setToDoBA] = useState(BA);
+    const [toDoBS, setToDoBS] = useState(BS);
+    const [toDoBSai, setToDoBSai] = useState(BSai);
+    const [toDoBSsystems, setToDoBSsystems] = useState(BSsystems);
+    const [toDoBStheory, setToDoBStheory] = useState(BStheory);
+    const [toDoBcyber, setToDoBScyber] = useState(BScyber);
+    const [toDoBSdata, setToDoBSdata] = useState(BSdata);
+    const [toDoBShpcomputing, setToDoBShpcomputing] = useState(BShpcomputing);
+    const [toDoBSbioinf, setToDoBSbioinf] = useState(BSbioinf);
 
     const ToDoListMinor = () => {
         return (
@@ -114,6 +117,190 @@ export function Requirements(/*{ plans }: { plans: Plan[] }*/): JSX.Element {
                 : { ...task };
         });
         setToDoBS(mapped);
+    };
+
+    const ToDoBSai = () => {
+        return (
+            <div>
+                {toDoBSai.map((todo) => {
+                    return (
+                        <div
+                            key={todo.code}
+                            className={todo.complete ? "strike" : ""}
+                            onClick={() => handleToggleBSai(todo.id)}
+                        >
+                            <ul>{todo.code}</ul>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+
+    const handleToggleBSai = (id: number) => {
+        const mapped = toDoBSai.map((task) => {
+            return task.id == id
+                ? { ...task, complete: !task.complete }
+                : { ...task };
+        });
+        setToDoBSai(mapped);
+    };
+
+    const ToDoBSdata = () => {
+        return (
+            <div>
+                {toDoBSdata.map((todo) => {
+                    return (
+                        <div
+                            key={todo.code}
+                            className={todo.complete ? "strike" : ""}
+                            onClick={() => handleToggleBSdata(todo.id)}
+                        >
+                            <ul>{todo.code}</ul>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+
+    const handleToggleBSdata = (id: number) => {
+        const mapped = toDoBSdata.map((task) => {
+            return task.id == id
+                ? { ...task, complete: !task.complete }
+                : { ...task };
+        });
+        setToDoBSdata(mapped);
+    };
+
+    const ToDoBScyber = () => {
+        return (
+            <div>
+                {toDoBcyber.map((todo) => {
+                    return (
+                        <div
+                            key={todo.code}
+                            className={todo.complete ? "strike" : ""}
+                            onClick={() => handleToggleBScyber(todo.id)}
+                        >
+                            <ul>{todo.code}</ul>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+
+    const handleToggleBScyber = (id: number) => {
+        const mapped = toDoBcyber.map((task) => {
+            return task.id == id
+                ? { ...task, complete: !task.complete }
+                : { ...task };
+        });
+        setToDoBScyber(mapped);
+    };
+
+    const ToDoBStheory = () => {
+        return (
+            <div>
+                {toDoBStheory.map((todo) => {
+                    return (
+                        <div
+                            key={todo.code}
+                            className={todo.complete ? "strike" : ""}
+                            onClick={() => handleToggleBStheory(todo.id)}
+                        >
+                            <ul>{todo.code}</ul>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+
+    const handleToggleBStheory = (id: number) => {
+        const mapped = toDoBStheory.map((task) => {
+            return task.id == id
+                ? { ...task, complete: !task.complete }
+                : { ...task };
+        });
+        setToDoBStheory(mapped);
+    };
+
+    const ToDoBShpcomputing = () => {
+        return (
+            <div>
+                {toDoBShpcomputing.map((todo) => {
+                    return (
+                        <div
+                            key={todo.code}
+                            className={todo.complete ? "strike" : ""}
+                            onClick={() => handleToggleBShpcomputing(todo.id)}
+                        >
+                            <ul>{todo.code}</ul>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+    const handleToggleBShpcomputing = (id: number) => {
+        const mapped = toDoBShpcomputing.map((task) => {
+            return task.id == id
+                ? { ...task, complete: !task.complete }
+                : { ...task };
+        });
+        setToDoBShpcomputing(mapped);
+    };
+    const ToDoBSsystems = () => {
+        return (
+            <div>
+                {toDoBSsystems.map((todo) => {
+                    return (
+                        <div
+                            key={todo.code}
+                            className={todo.complete ? "strike" : ""}
+                            onClick={() => handleToggleBSsystems(todo.id)}
+                        >
+                            <ul>{todo.code}</ul>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+    const handleToggleBSsystems = (id: number) => {
+        const mapped = toDoBSsystems.map((task) => {
+            return task.id == id
+                ? { ...task, complete: !task.complete }
+                : { ...task };
+        });
+        setToDoBSsystems(mapped);
+    };
+    const ToDoBSbioinf = () => {
+        return (
+            <div>
+                {toDoBSbioinf.map((todo) => {
+                    return (
+                        <div
+                            key={todo.code}
+                            className={todo.complete ? "strike" : ""}
+                            onClick={() => handleToggleBSbioinf(todo.id)}
+                        >
+                            <ul>{todo.code}</ul>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+    const handleToggleBSbioinf = (id: number) => {
+        const mapped = toDoBSbioinf.map((task) => {
+            return task.id == id
+                ? { ...task, complete: !task.complete }
+                : { ...task };
+        });
+        setToDoBSbioinf(mapped);
     };
 
     function DropDownMenu(): JSX.Element {
@@ -208,25 +395,6 @@ export function Requirements(/*{ plans }: { plans: Plan[] }*/): JSX.Element {
         );
     }
 
-    /*useEffect(() => {
-        ALLCOURSES.map((first: string[][][]) =>
-            first.map((second: string[][]) =>
-                second.map((third: string[]) =>
-                    third.map((fourth: string) => {
-                        const update = Minor2.map((req) => {
-                            if (req.code === fourth) {
-                                return { ...req, complete: true };
-                            } else {
-                                return req;
-                            }
-                        });
-                        setToDoListMinor(update);
-                    })
-                )
-            )
-        );
-    }, []);*/
-
     return (
         <Container
             className="sidecolumns"
@@ -277,61 +445,27 @@ export function Requirements(/*{ plans }: { plans: Plan[] }*/): JSX.Element {
                 {major === "Major" &&
                     bsba === "BS" &&
                     conc === "Traditional Program" && <ToDoBS />}
-                {/*major === "Major" &&
-                    bsba === "BS" &&
-                    conc === "Traditional Program" &&
-                    BS.map((req: string) => (
-                        <div key={req}>
-                            {" "}
-                            <Form.Check
-                                type="checkbox"
-                                id="is-student-check"
-                                label={req}
-                            />
-                        </div>
-                    ))}
                 {major === "Major" &&
-                    bsba === "BA" &&
-                    BA.map((req: string) => (
-                        <div key={req}>
-                            {" "}
-                            <Form.Check
-                                type="checkbox"
-                                id="is-student-check"
-                                label={req}
-                            />
-                        </div>
-                    ))}
-                {/*major === "Minor" &&
-                    Minor.map((req: string) => (
-                        <div key={req}>
-                            {" "}
-                            <Button
-                                style={{
-                                    backgroundColor: toogle ? "red" : "green"
-                                }}
-                                onClick={flipToogle}
-                            >
-                                {req}
-                            </Button>
-                        </div>
-                            ))*/}
-                {/*major === "Minor" &&
-                    ALLCOURSES.map((first: string[][][]) =>
-                        first.map((second: string[][]) =>
-                            second.map((third: string[]) =>
-                                third.map((fourth: string) =>
-                                    Minor2.map((req) => {
-                                        if (req.task === fourth) {
-                                            return { ...req, complete: true };
-                                        } else {
-                                            return req;
-                                        }
-                                    })
-                                )
-                            )
-                        )
-                                )*/}
+                    bsba === "BS" &&
+                    conc === "Data Science" && <ToDoBSdata />}
+                {major === "Major" &&
+                    bsba === "BS" &&
+                    conc === "AI and Robotics" && <ToDoBSai />}
+                {major === "Major" &&
+                    bsba === "BS" &&
+                    conc === "Cybersecurity" && <ToDoBScyber />}
+                {major === "Major" &&
+                    bsba === "BS" &&
+                    conc === "Theory & Computation" && <ToDoBStheory />}
+                {major === "Major" &&
+                    bsba === "BS" &&
+                    conc === "HP Computing" && <ToDoBShpcomputing />}
+                {major === "Major" &&
+                    bsba === "BS" &&
+                    conc === "Systems & Networks" && <ToDoBSsystems />}
+                {major === "Major" &&
+                    bsba === "BS" &&
+                    conc === "Bioinformatics" && <ToDoBSbioinf />}
             </div>
         </Container>
     );

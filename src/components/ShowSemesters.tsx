@@ -33,22 +33,22 @@ export function ShowSemesters({
     function addSemesters() {
         //setVisible(false);
         const newTerm: Semester = {
-            id: currentYear.name + "Fall",
+            id: "1",
             season: "Fall",
             courses: []
         };
         const newTerm2: Semester = {
-            id: currentYear.name + "Winter",
+            id: "2",
             season: "Winter",
             courses: []
         };
         const newTerm3: Semester = {
-            id: currentYear.name + "Spring",
+            id: "3",
             season: "Spring",
             courses: []
         };
         const newTerm4: Semester = {
-            id: currentYear.name + "Summer",
+            id: "4",
             season: "Summer",
             courses: []
         };

@@ -96,7 +96,15 @@ export function Years({
         >
             <Button onClick={flipVisibility}>Add a Year</Button>
             <Button onClick={clearYears}>Delete All Years</Button>
-            {visible && <ShowForm></ShowForm>}
+            {visible && (
+                <>
+                    <Form.Group controlId="forYearName">
+                        <Form.Label>New Year Name:</Form.Label>
+                        <Form.Control value={name} onChange={updateName} />
+                    </Form.Group>
+                    <Button onClick={() => addYear(name)}>Confirm</Button>
+                </>
+            )}
             {currentPlan.years.map((currentYear: Year) => {
                 return (
                     <div key={currentYear.name} style={{ marginBottom: "4px" }}>

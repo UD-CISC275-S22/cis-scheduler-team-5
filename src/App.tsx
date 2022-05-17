@@ -4,6 +4,7 @@ import "./App.css";
 import { ChooseCourse } from "./components/ChooseCourse";
 //import { CourseEditor } from "./components/Courses";
 import { CreatePlan } from "./components/CreatePlan";
+import { CSVImport } from "./components/CSVImport";
 //import { CSVFile } from "./components/CSVFile";
 import { HelpModal } from "./components/HelpModal";
 import { Requirements } from "./components/Requirements";
@@ -51,18 +52,6 @@ function App(): JSX.Element {
             </header>
             <Row>
                 <Col md="2">
-                    {"Hi!"}
-                    {ALLCOURSES.map((first: string[][][]) =>
-                        first.map((second: string[][]) =>
-                            second.map((third: string[]) =>
-                                third.map((fourth: string) => {
-                                    {
-                                        return fourth;
-                                    }
-                                })
-                            )
-                        )
-                    )}
                     <ChooseCourse catalog={Catalog}></ChooseCourse>
                 </Col>
                 <Col>
@@ -71,6 +60,11 @@ function App(): JSX.Element {
                         setPlans={setPlans}
                         catalog={Catalog}
                     ></CreatePlan>
+                    <CSVImport
+                        plans={plans}
+                        setPlans={setPlans}
+                        catalog={Catalog}
+                    ></CSVImport>
                 </Col>
                 <Col md="2">
                     <Requirements /*plans={plans}*/></Requirements>

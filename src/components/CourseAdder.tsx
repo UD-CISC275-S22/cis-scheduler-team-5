@@ -166,6 +166,8 @@ export function CourseAdder({
                 <Container>
                     <ShowCourses
                         currentSemester={currentSemester}
+                        plans={plans}
+                        setPlans={setPlans}
                     ></ShowCourses>
                     <Row>
                         <Button onClick={() => clearCourses()}>
