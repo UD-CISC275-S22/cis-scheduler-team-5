@@ -1,12 +1,23 @@
-import { GolfCourseSharp } from "@mui/icons-material";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
-import { Semester } from "../interfaces/semester";
-import { Year } from "../interfaces/year";
-import { ShowCourses } from "./ShowCourses";
-import { Years } from "./Years";
+
+function ShowButton({
+    uploadPlan,
+    content4,
+    visible
+}: {
+    uploadPlan: (b: string) => void;
+    content4: string;
+    visible: boolean;
+}): JSX.Element {
+    if (visible) {
+        return <Button onClick={() => uploadPlan(content4)}>Accept</Button>;
+    } else {
+        return <></>;
+    }
+}
 
 export function CSVImport({
     plans,
@@ -44,8 +55,7 @@ export function CSVImport({
         const newArr = passContent.split("\n").map(function (row) {
             return row.split(",");
         });
-        /*for (let i = 0; i < newArr.length; i++) {
-            const namePlans : string[] = plans.map((plan:Plan) => plan.name);*/
+
         const newPlan: Plan = {
             name: newArr[0][0],
             years: [
@@ -57,9 +67,21 @@ export function CSVImport({
                             season: "Fall",
                             courses: [findCourse(newArr[0][5])]
                         },
-                        { id: "2", season: "Winter", courses: [] },
-                        { id: "3", season: "Spring", courses: [] },
-                        { id: "4", season: "Summer", courses: [] }
+                        {
+                            id: "2",
+                            season: "Winter",
+                            courses: [findCourse(newArr[1][5])]
+                        },
+                        {
+                            id: "3",
+                            season: "Spring",
+                            courses: [findCourse(newArr[2][5])]
+                        },
+                        {
+                            id: "4",
+                            season: "Summer",
+                            courses: [findCourse(newArr[3][5])]
+                        }
                     ]
                 }
             ]
@@ -78,20 +100,6 @@ export function CSVImport({
         try {
             course = CATALOG_DATA[code][name];
         } catch {
-            console.log("catch");
-            course = {
-                code: "",
-                name: "",
-                descr: "",
-                credits: "",
-                preReq: "",
-                restrict: "",
-                breadth: "",
-                typ: ""
-            };
-        }
-        //exception handling
-        if (course === undefined) {
             course = {
                 code: "",
                 name: "",
@@ -106,7 +114,7 @@ export function CSVImport({
         return course;
     }
 
-    function ImportCourses(passContent: string) {
+    /*function ImportCourses(passContent: string) {
         const newArr = passContent.split("\n").map(function (row) {
             return row.split(",");
         });
@@ -160,7 +168,7 @@ export function CSVImport({
                 }
             });
         }
-    }
+    }*/
 
     function ShowImport(): JSX.Element {
         if (visible) {
@@ -184,9 +192,11 @@ export function CSVImport({
         <div>
             <Button onClick={flipVisibility}>Import Plan</Button>
             <ShowImport></ShowImport>
-            {visible && (
-                <Button onClick={() => uploadPlan(content4)}>Accept</Button>
-            )}
+            <ShowButton
+                uploadPlan={uploadPlan}
+                content4={content4}
+                visible={visible}
+            ></ShowButton>
         </div>
     );
 }

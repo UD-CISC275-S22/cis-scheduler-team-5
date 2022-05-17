@@ -5,7 +5,7 @@ import { Course } from "../interfaces/course";
 //https://lo-victoria.com/making-draggable-components-in-react DRAGGABLE
 //https://medium.com/nmc-techblog/easy-drag-and-drop-in-react-22778b30ba37 DROP DRAGGABLE
 
-export function ChooseCourse({
+export function CoursePool({
     catalog
 }: {
     catalog: Record<string, Record<string, Course>>;
@@ -13,8 +13,7 @@ export function ChooseCourse({
     const COURSES = getAllCourses();
     const [course] = useState<string>("");
     const [termCourses, setTermCourses] = useState<Course[]>([]);
-    const [inpu, setInpu] = useState<string>(""); //string value for input for class
-
+    const [inpu, setInpu] = useState<string>("");
     function getAllCourses(): string[] {
         const departments: string[] = Object.keys(catalog);
         const CATALOG_DATA: Record<string, Record<string, Course>> = catalog;
@@ -34,20 +33,6 @@ export function ChooseCourse({
         try {
             course = CATALOG_DATA[code][name];
         } catch {
-            console.log("catch");
-            course = {
-                code: "",
-                name: "",
-                descr: "",
-                credits: "",
-                preReq: "",
-                restrict: "",
-                breadth: "",
-                typ: ""
-            };
-        }
-        //exception handling
-        if (course === undefined) {
             course = {
                 code: "",
                 name: "",

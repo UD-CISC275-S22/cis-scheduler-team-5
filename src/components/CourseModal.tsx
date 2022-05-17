@@ -5,23 +5,18 @@ import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 import Catalog from "../data/catalog.json";
 
-//import { CourseEditor } from "./Courses";
 export function CourseModal({
     course,
     currentSemester,
     show,
     setShow
-}: /*setSemesterCourses*/
-{
+}: {
     course: Course;
     currentSemester: Semester;
     show: boolean;
     setShow: (s: boolean) => void;
-    /*setSemesterCourses: Dispatch<SetStateAction<Course[]>>;*/
 }) {
     //Modal from https://react-bootstrap.github.io/components/modal/
-    //const handleShow = () => setShow(true);
-    // const handleClose = () => setShow(false);
 
     interface save {
         name: string;
@@ -29,43 +24,9 @@ export function CourseModal({
         previousValue: string;
     }
 
-    /*function findCourse(name: string): Course {
-        const code = name.substring(0, 4); //gets department, Ex ACCT
-        const CATALOG_DATA: Record<string, Record<string, Course>> = catalog; //converting json to record type
-        let course: Course;
-        try {
-            course = CATALOG_DATA[code][name];
-        } catch {
-            course = {
-                code: "",
-                name: "",
-                descr: "",
-                credits: "",
-                preReq: "",
-                restrict: "",
-                breadth: "",
-                typ: ""
-            };
-        }
-        //exception handling
-        if (course === undefined) {
-            course = {
-                code: "",
-                name: "",
-                descr: "",
-                credits: "",
-                preReq: "",
-                restrict: "",
-                breadth: "",
-                typ: ""
-            };
-        }
-        return course;
-    }*/
-
     function findCourse(name: string): Course {
-        const code = name.substring(0, 4); //gets department, Ex ACCT
-        const CATALOG_DATA: Record<string, Record<string, Course>> = Catalog; //converting json to record type
+        const code = name.substring(0, 4);
+        const CATALOG_DATA: Record<string, Record<string, Course>> = Catalog;
         let course: Course;
         try {
             course = CATALOG_DATA[code][name];
@@ -135,31 +96,6 @@ export function CourseModal({
         ] = newEdit;
         currentSemester.courses = newCourses;
     }
-
-    /*function handlePrevious(): void {
-        const newCourses: Course[] = currentSemester.courses;
-        const previuousCourse = findCourse(course.code);
-        /*currentSemester.courses.map((course: Course) => {
-            if (course.code !== previuousCourse.code) {
-                return course;
-            } else {
-                return {
-                    ...course,
-                    name: previuousCourse.name,
-                    credits: previuousCourse.credits,
-                    descr: previuousCourse.descr,
-                    breadth: previuousCourse.breadth,
-                    preReq: previuousCourse.preReq,
-                    restrict: previuousCourse.restrict,
-                    typ: previuousCourse.typ
-                };
-            }
-        });*/
-    /*newCourses[
-            currentSemester.courses.findIndex((c) => c.code == course.code)
-        ] = previuousCourse;
-        currentSemester.courses = newCourses;
-    }*/
 
     return (
         <>

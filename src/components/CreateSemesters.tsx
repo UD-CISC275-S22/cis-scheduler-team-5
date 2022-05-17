@@ -5,7 +5,7 @@ import { Semester } from "../interfaces/semester";
 import { Plan } from "../interfaces/plan";
 import { Year } from "../interfaces/year";
 import { CourseAdder } from "./CourseAdder";
-export function ShowSemesters({
+export function CreateSemesters({
     catalog,
     plans,
     setPlans,
@@ -16,7 +16,6 @@ export function ShowSemesters({
     setPlans: (s: Plan[]) => void;
     currentYear: Year;
 }): JSX.Element {
-    //const newSemesters = [...semesters, newTerm, newTerm2, newTerm3, newTerm4];
     const [visible, setVisible] = useState<boolean>(true);
     function AddNewSemesters({ visible }: { visible: boolean }): JSX.Element {
         if (visible) {
@@ -28,27 +27,25 @@ export function ShowSemesters({
     function flipVisibility(): void {
         addSemesters();
         setVisible(false);
-        // Set visible to be the logical opposite of its previous value
     }
     function addSemesters() {
-        //setVisible(false);
         const newTerm: Semester = {
-            id: "1",
+            id: currentYear.name + "1",
             season: "Fall",
             courses: []
         };
         const newTerm2: Semester = {
-            id: "2",
+            id: currentYear.name + "2",
             season: "Winter",
             courses: []
         };
         const newTerm3: Semester = {
-            id: "3",
+            id: currentYear.name + "3",
             season: "Spring",
             courses: []
         };
         const newTerm4: Semester = {
-            id: "4",
+            id: currentYear.name + "4",
             season: "Summer",
             courses: []
         };
@@ -76,9 +73,6 @@ export function ShowSemesters({
         setPlans(updateSemesters);
     }
 
-    //const col1 = [...semesters, newTerm, newTerm2];
-    //const col2 = [newTerm3, newTerm4];
-
     return (
         <div>
             <Container
@@ -89,20 +83,6 @@ export function ShowSemesters({
                 }}
             >
                 <Row>
-                    {/*<Col>
-                        {col1.map((sem) => (
-                            <Col key={sem.season}>
-                                {" "}
-                                <CourseAdder
-                                    key={sem.season}
-                                    sem={sem}
-                                    setSemesters={setSemesters}
-                                    semesters={semesters}
-                                    catalog={catalog}
-                                ></CourseAdder>
-                            </Col>
-                        ))}
-                        </Col>*/}
                     <AddNewSemesters visible={visible}></AddNewSemesters>
                     {currentYear.semesters.map((currentSemester: Semester) => {
                         return (

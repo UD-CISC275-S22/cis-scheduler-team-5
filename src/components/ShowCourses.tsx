@@ -93,6 +93,40 @@ export function ShowCourses({
             
         setPlans(updatePlans);
     }*/
+    function clearCourse(courseName: string) {
+        /*const updateSemester = {
+            ...semester,
+            courses: []
+        };
+        setSemester(updateSemester);
+        const index = semesters.map((seme: Semester): number => {
+            return seme.season === key ? semesters.indexOf(seme) : -1;
+        });
+        const newValue = index.filter((word) => word > -1);
+        const newSemesters = { ...semesters };
+        newSemesters.splice(newValue[0], 1, semester);
+        setSemesters(newSemesters);*/
+        const updateCourse = plans.map((plan: Plan) => ({
+            ...plan,
+            years: plan.years.map((year: Year) => ({
+                ...year,
+                semesters: year.semesters.map((semester: Semester) => {
+                    if (semester.id !== currentSemester.id) {
+                        return semester;
+                    } else {
+                        const newCourses = semester.courses.filter(
+                            (course: Course) => course.code !== courseName
+                        );
+                        return {
+                            ...semester,
+                            courses: newCourses
+                        };
+                    }
+                })
+            }))
+        }));
+        setPlans(updateCourse);
+    }
 
     return (
         <div>
@@ -156,11 +190,17 @@ export function ShowCourses({
                                                 ></ShowCourseModal>
                                                 <td>
                                                     <Button
-                                                    /*onClick={() =>
-                                                            deleteOneCourse(
+                                                        style={{
+                                                            backgroundColor:
+                                                                "white",
+                                                            color: "red",
+                                                            borderColor: "grey"
+                                                        }}
+                                                        onClick={() =>
+                                                            clearCourse(
                                                                 course.code
                                                             )
-                                                        }*/
+                                                        }
                                                     >
                                                         X
                                                     </Button>
