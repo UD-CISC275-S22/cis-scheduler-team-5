@@ -18,7 +18,7 @@ function ShowButton({
         return <></>;
     }
 }
-
+/* main function*/
 export function CSVImport({
     plans,
     setPlans,
@@ -113,62 +113,6 @@ export function CSVImport({
         }
         return course;
     }
-
-    /*function ImportCourses(passContent: string) {
-        const newArr = passContent.split("\n").map(function (row) {
-            return row.split(",");
-        });
-        const key = newArr[0];
-        for (let i = 0; i < newArr.length; i++) {
-            plans.map((plan: Plan) => {
-                if (plan.name === newArr[i][0]) {
-                    return plan.years.map((year: Year) => {
-                        if (year.name === newArr[i][1]) {
-                            return year.semesters.map((semester: Semester) => {
-                                if (semester.season === newArr[i][3]) {
-                                    return {};
-                                }
-                            });
-                        } else {
-                            return {
-                                ...plan,
-                                years: [
-                                    ...plan.years,
-                                    {
-                                        name: newArr[1][1],
-                                        semesters: [
-                                            {
-                                                id: "1",
-                                                season: "Fall",
-                                                courses: [
-                                                    findCourse(newArr[i][5])
-                                                ]
-                                            },
-                                            {
-                                                id: "2",
-                                                season: "Winter",
-                                                courses: []
-                                            },
-                                            {
-                                                id: "3",
-                                                season: "Spring",
-                                                courses: []
-                                            },
-                                            {
-                                                id: "4",
-                                                season: "Summer",
-                                                courses: []
-                                            }
-                                        ]
-                                    }
-                                ]
-                            };
-                        }
-                    });
-                }
-            });
-        }
-    }*/
 
     function ShowImport(): JSX.Element {
         if (visible) {
