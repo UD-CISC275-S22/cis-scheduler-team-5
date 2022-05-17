@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
 import { Semester } from "../interfaces/semester";
@@ -7,7 +7,6 @@ import { Year } from "../interfaces/year";
 import { ShowCourses } from "./ShowCourses";
 //https://lo-victoria.com/making-draggable-components-in-react DRAGGABLE
 //https://medium.com/nmc-techblog/easy-drag-and-drop-in-react-22778b30ba37 DROP DRAGGABLE
-
 //https://www.kennethlange.com/drag-and-drop-in-pure-typescript-and-react/ DRAG AND DROP
 
 export function CourseAdder({
@@ -21,19 +20,9 @@ export function CourseAdder({
     setPlans: (s: Plan[]) => void;
     currentSemester: Semester;
 }): JSX.Element {
-    //const COURSES = getAllCourses();
-    //const [course] = useState<string>("");
-    //const [SemesterCourses, setSemesterCourses] = useState<Semester["courses"]>([]);
-    //const [isShown, setIsShown] = useState<boolean>(false);
-    //const [visible, setVisible] = useState<boolean>(false);
-    //const [value, setValue] = React.useState<string | null>(COURSES[0]);
-    //const [inpu, setInpu] = useState<string>(""); //string value for input for class
-    //const [name, setName] = useState<string>("");
-    //const [modalShow, setModalShow] = React.useState(false);
-
     function findCourse(name: string): Course {
-        const code = name.substring(0, 4); //gets department, Ex ACCT
-        const CATALOG_DATA: Record<string, Record<string, Course>> = catalog; //converting json to record type
+        const code = name.substring(0, 4);
+        const CATALOG_DATA: Record<string, Record<string, Course>> = catalog;
         let course: Course;
         try {
             course = CATALOG_DATA[code][name];
@@ -52,89 +41,10 @@ export function CourseAdder({
         return course;
     }
 
-    //function updateCourse(event: React.ChangeEvent<HTMLSelectElement>) {
-    //    setCourse(event.target.value);
-    //}
-    /*function addCourse(course: string) {
-        const newCourse: Course = findCourse(course);
-        if (newCourse.code !== "") {
-            const updateSemesterCourses = [...SemesterCourses, newCourse];
-            setSemesterCourses(updateSemesterCourses);
-        }
-    }
-    function removeCourse(courseCode: string) {
-        const newSemesterCourses = SemesterCourses;
-        const newnewCourses = newSemesterCourses.filter(
-            (deleteCourse) => deleteCourse.code !== courseCode
-        );
-        setSemesterCourses(newnewCourses);
-    }*/
-    function clearCourses() {
-        /*const updateSemester = {
-            ...semester,
-            courses: []
-        };
-        setSemester(updateSemester);
-        const index = semesters.map((seme: Semester): number => {
-            return seme.season === key ? semesters.indexOf(seme) : -1;
-        });
-        const newValue = index.filter((word) => word > -1);
-        const newSemesters = { ...semesters };
-        newSemesters.splice(newValue[0], 1, semester);
-        setSemesters(newSemesters);*/
-        const updateCourse = plans.map((plan: Plan) => ({
-            ...plan,
-            years: plan.years.map((year: Year) => ({
-                ...year,
-                semesters: year.semesters.map((semester: Semester) => {
-                    if (semester.id !== currentSemester.id) {
-                        return semester;
-                    } else {
-                        return {
-                            ...semester,
-                            courses: []
-                        };
-                    }
-                })
-            }))
-        }));
-        setPlans(updateCourse);
-    }
-
-    /*function flipVisibility(): void {
-        // Set visible to be the logical opposite of its previous value
-        setVisible(!visible);
-    }*/
-
-    //function updateName(event: React.ChangeEvent<HTMLInputElement>) {
-    // setName(event.target.value);
-    // }
-
-    /*function flipVisibility2(): void {
-        // Set visible to be the logical opposite of its previous value
-        setIsShown(!isShown);
-    }*/
-
     const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
         const course = event.dataTransfer.getData("text");
         const newCourse: Course = findCourse(course);
         if (newCourse.code !== "") {
-            /*const updateSemester = {
-                ...semester,
-                courses: [...semester.courses, newCourse]
-            };
-            setSemester(updateSemester);
-            const update = semesters.map((oneSemester: Semester) => {
-                if (oneSemester.season !== key) {
-                    return oneSemester;
-                } else {
-                    return {
-                        ...oneSemester,
-                        courses: [...oneSemester.courses, newCourse]
-                    };
-                }
-            });
-            setSemesters(update);*/
             const updateCourse = plans.map((plan: Plan) => ({
                 ...plan,
                 years: plan.years.map((year: Year) => ({
@@ -162,19 +72,13 @@ export function CourseAdder({
     return (
         <>
             <div onDragOver={enableDropping} onDrop={handleDrop}>
-                {currentSemester.season}
+                <h3>{currentSemester.season}</h3>
                 <Container>
                     <ShowCourses
                         currentSemester={currentSemester}
                         plans={plans}
                         setPlans={setPlans}
                     ></ShowCourses>
-                    <Row>
-                        <Button onClick={() => clearCourses()}>
-                            {" "}
-                            Clear Courses
-                        </Button>
-                    </Row>
                 </Container>
             </div>
         </>
