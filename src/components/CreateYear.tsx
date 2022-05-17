@@ -3,8 +3,33 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Plan } from "../interfaces/plan";
 import { Year } from "../interfaces/year";
-import { ShowSemesters } from "./ShowSemesters";
-export function Years({
+import { CreateSemesters } from "./CreateSemesters";
+function ShowForm({
+    name,
+    updateName,
+    addYear,
+    visible
+}: {
+    name: string;
+    updateName: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    addYear: (s: string) => void;
+    visible: boolean;
+}): JSX.Element | null {
+    if (visible) {
+        return (
+            <>
+                <Form.Group controlId="forYearName">
+                    <Form.Label>New Year Name:</Form.Label>
+                    <Form.Control value={name} onChange={updateName} />
+                </Form.Group>
+                <Button onClick={() => addYear(name)}>Confirm</Button>
+            </>
+        );
+    } else {
+        return null;
+    }
+}
+export function CreateYear({
     catalog,
     plans,
     setPlans,
@@ -72,19 +97,7 @@ export function Years({
         setName(event.target.value);
     }
     function flipVisibility(): void {
-        // Set visible to be the logical opposite of its previous value
         setVisible(!visible);
-    }
-    function ShowForm(): JSX.Element {
-        return (
-            <>
-                <Form.Group controlId="forYearName">
-                    <Form.Label>New Year Name:</Form.Label>
-                    <Form.Control value={name} onChange={updateName} />
-                </Form.Group>
-                <Button onClick={() => addYear(name)}>Confirm</Button>
-            </>
-        );
     }
     return (
         <div
@@ -96,7 +109,12 @@ export function Years({
         >
             <Button onClick={flipVisibility}>Add a Year</Button>
             <Button onClick={clearYears}>Delete All Years</Button>
-            {visible && <ShowForm></ShowForm>}
+            <ShowForm
+                name={name}
+                updateName={updateName}
+                addYear={addYear}
+                visible={visible}
+            ></ShowForm>
             {currentPlan.years.map((currentYear: Year) => {
                 return (
                     <div key={currentYear.name} style={{ marginBottom: "4px" }}>
@@ -127,12 +145,12 @@ export function Years({
                                 </Col>
                             </Row>
                             <Row>
-                                <ShowSemesters
+                                <CreateSemesters
                                     currentYear={currentYear}
                                     plans={plans}
                                     setPlans={setPlans}
                                     catalog={catalog}
-                                ></ShowSemesters>
+                                ></CreateSemesters>
                             </Row>
                         </Container>
                     </div>

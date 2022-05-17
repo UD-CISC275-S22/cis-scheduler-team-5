@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Col, Container, Row, Table } from "react-bootstrap";
+import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
 import { CourseModal } from "./CourseModal";
 import WarningIcon from "@mui/icons-material/Warning";
 import { red } from "@mui/material/colors";
+import { Plan } from "../interfaces/plan";
+import { Year } from "../interfaces/year";
 
 function ShowCourseModal({
     course,
@@ -47,9 +49,13 @@ function ShowWarningIcon({ course }: { course: Course }): JSX.Element {
 }
 
 export function ShowCourses({
-    currentSemester
+    currentSemester,
+    plans,
+    setPlans
 }: {
     currentSemester: Semester;
+    plans: Plan[];
+    setPlans: (s: Plan[]) => void;
 }): JSX.Element {
     const [show, setShow] = useState<boolean>(false); //To show Modal when Course is clicked
 
@@ -62,6 +68,65 @@ export function ShowCourses({
         return updatedSemesterCourses;
     }
     */
+    /*function deleteOneCourse(courseCode: string) {
+        const updatePlans: Plan[] = plans.map((plan: Plan) =>
+        {return(plan.years.map((year: Year) =>
+                year.semesters.map((semester: Semester) => {
+                    if (semester.id !== currentSemester.id) {
+                        plan;
+                    } else {
+                        const temp = { ...semester };
+                        const updateSemester = temp.courses.filter(
+                            (course: Course): boolean =>
+                                course.code !== courseCode
+                        );
+                        return {
+                            ...plan,
+                            ...year,
+                            ...semester,
+                            courses: updateSemester
+                        };
+                    }
+                })
+            )
+        );});}
+            
+        setPlans(updatePlans);
+    }*/
+    function clearCourse(courseName: string) {
+        /*const updateSemester = {
+            ...semester,
+            courses: []
+        };
+        setSemester(updateSemester);
+        const index = semesters.map((seme: Semester): number => {
+            return seme.season === key ? semesters.indexOf(seme) : -1;
+        });
+        const newValue = index.filter((word) => word > -1);
+        const newSemesters = { ...semesters };
+        newSemesters.splice(newValue[0], 1, semester);
+        setSemesters(newSemesters);*/
+        const updateCourse = plans.map((plan: Plan) => ({
+            ...plan,
+            years: plan.years.map((year: Year) => ({
+                ...year,
+                semesters: year.semesters.map((semester: Semester) => {
+                    if (semester.id !== currentSemester.id) {
+                        return semester;
+                    } else {
+                        const newCourses = semester.courses.filter(
+                            (course: Course) => course.code !== courseName
+                        );
+                        return {
+                            ...semester,
+                            courses: newCourses
+                        };
+                    }
+                })
+            }))
+        }));
+        setPlans(updateCourse);
+    }
 
     return (
         <div>
@@ -123,6 +188,23 @@ export function ShowCourses({
                                                     setShow={setShow}
                                                     course={course}
                                                 ></ShowCourseModal>
+                                                <td>
+                                                    <Button
+                                                        style={{
+                                                            backgroundColor:
+                                                                "white",
+                                                            color: "red",
+                                                            borderColor: "grey"
+                                                        }}
+                                                        onClick={() =>
+                                                            clearCourse(
+                                                                course.code
+                                                            )
+                                                        }
+                                                    >
+                                                        X
+                                                    </Button>
+                                                </td>
                                             </tr>
                                         );
                                     }
