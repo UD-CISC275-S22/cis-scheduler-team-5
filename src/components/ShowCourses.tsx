@@ -103,6 +103,7 @@ export function ShowCourses({
                                     <th>Course Code</th>
                                     <th>Course Name</th>
                                     <th>Credits</th>
+                                    <th>Delete Course</th>
                                 </tr>
                             </thead>
                             <tbody>
