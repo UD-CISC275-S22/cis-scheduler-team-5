@@ -703,7 +703,179 @@ FAIL src/components/CourseModal.test.tsx
       at Object.<anonymous> (src/components/CourseModal.test.tsx:66:42)
 
 PASS src/components/CreateYear.test.tsx
-PASS src/components/HelpModal.test.tsx
+FAIL src/components/HelpModal.test.tsx
+  ● HelpModal Component tests › 'Instructions' are visible when the site loads initially
+
+    expect(received).toBeInTheDocument()
+
+    received value must be an HTMLElement or an SVGElement.
+    Received has value: null
+
+       7 |     test("'Instructions' are visible when the site loads initially", () => {
+       8 |         const instructionsText = screen.queryByText(/Instructions/i);
+    >  9 |         expect(instructionsText).toBeInTheDocument();
+         |                                  ^
+      10 |     });
+      11 |     test("There is a Help button", () => {
+      12 |         const helpButton = screen.getByRole("button", { name: /Help/i });
+
+      at __EXTERNAL_MATCHER_TRAP__ (node_modules/expect/build/index.js:386:30)
+      at Object.toBeInTheDocument (node_modules/expect/build/index.js:387:15)
+      at Object.<anonymous> (src/components/HelpModal.test.tsx:9:34)
+
+  ● HelpModal Component tests › Clicking Help button reveals the 'Instructions'
+
+    TestingLibraryElementError: Unable to find an element with the text: /Instructions/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body[39m
+      [33mclass[39m=[32m"modal-open"[39m
+      [33mdata-rr-ui-modal-open[39m=[32m""[39m
+      [33mstyle[39m=[32m"padding-right: 2048px;"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"btn btn-primary"[39m
+          [33mstyle[39m=[32m"margin-left: auto; color: blue; background: rgb(255, 210, 0);"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mHelp[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"modal-backdrop show"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-modal[39m=[32m"true"[39m
+        [33mclass[39m=[32m"modal"[39m
+        [33mrole[39m=[32m"dialog"[39m
+        [33mstyle[39m=[32m"display: block;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"modal-dialog"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"modal-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-header"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"modal-title h4"[39m
+              [36m>[39m
+                [0mWelcome to your CS degree scheduler![0m
+              [36m</div>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Close"[39m
+                [33mclass[39m=[32m"btn-close"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m/>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-body"[39m
+            [36m>[39m
+              [0mHow to use it?[0m
+              [36m<ol>[39m
+                [36m<li>[39m
+                  [0mBegin by clicking [0m
+                  [36m<b>[39m
+                    [0mAdd Plan[0m
+                  [36m</b>[39m
+                  [0m and creating a new degree plan with the name of your choosing.[0m
+                [36m</li>[39m
+                [36m<li>[39m
+                  [0mThen, you will want to [0m
+                  [36m<b>[39m
+                    [0mAdd a Year[0m
+                  [36m</b>[39m
+                  [0m, with the name of your choice (freshman, year 1, etc.)[0m
+                [36m</li>[39m
+                [36m<li>[39m
+                  [0mThis new year will come with[0m
+                  [0m [0m
+                  [36m<b>[39m
+                    [0mfour empty semesters[0m
+                  [36m</b>[39m
+                  [0m by clicking 4-semesters default.[0m
+                [36m</li>[39m
+                [36m<li>[39m
+                  [0mLook to the left side of the screen to view the[0m
+                  [0m [0m
+                  [36m<b>[39m
+                    [0mcourse pool[0m
+                  [36m</b>[39m
+                  [0m. Either begin typing in a course code or scroll through all the options to find your desired class and click insert course to place it in the course pool.[0m
+                [36m</li>[39m
+                [36m<li>[39m
+                  [0mFrom there, [0m
+                  [36m<b>[39m
+                    [0mclick and drag[0m
+                  [36m</b>[39m
+                  [0m the class to your desired semester.[0m
+                [36m</li>[39m
+                [36m<li>[39m
+                  [0mIf you are taking a required course, make sure to[0m
+                  [0m [0m
+                  [36m<b>[39m
+                    [0mcheck it off on the checklist[0m
+                  [36m</b>[39m
+                  [0m on the right side of the screen by clicking the course name. You can [0m
+                  [36m<b>[39m
+                    [0mchoose any type of CS degree[0m
+                  [36m</b>[39m
+                  [0m.[0m
+                [36m</li>[39m
+                [36m<li>[39m
+                  [0mAfter inserting a course you can[0m
+                  [0m [0m
+                  [36m<b>[39m
+                    [0mclick on it to see all the information[0m
+                  [36m</b>[39m
+                  [0m, also you can [0m
+                  [36m<b>[39m
+                    [0medit the course[0m
+                  [36m</b>[39m
+                  [0m and save the new changes.[0m
+                [36m</li>[39m
+                [36m<li>[39m
+                  [0mFinally, you can [0m
+                  [36m<b>[39m
+                    [0mexport and import[0m
+                  [36m</b>[39m
+                  [0m your plan to a csv file using the right buttons so you can share the plan with your advisor![0m
+                [36m</li>[39m
+              [36m</ol>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"modal-footer"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-secondary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mClose[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+      16 |         const helpButton = screen.getByRole("button", { name: /Help/i });
+      17 |         helpButton.click();
+    > 18 |         const instructionsText = screen.getByText(/Instructions/i);
+         |                                         ^
+      19 |         expect(instructionsText).toBeInTheDocument();
+      20 |     });
+      21 |     test("Clicking the Close hides the 'Instructions'", () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/components/HelpModal.test.tsx:18:41)
+
 FAIL src/App.test.tsx
   ● Console
 
@@ -734,6 +906,151 @@ FAIL src/App.test.tsx
       at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23940:14)
       at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
       at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+
+  ● renders the word UD somewhere
+
+    TestingLibraryElementError: Unable to find an element with the text: /UD/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body[39m
+      [33mclass[39m=[32m"modal-open"[39m
+      [33mdata-rr-ui-modal-open[39m=[32m""[39m
+      [33mstyle[39m=[32m"padding-right: 1024px;"[39m
+    [36m>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header2"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col-md-12 text-right"[39m
+              [33mstyle[39m=[32m"display: flex;"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mstyle[39m=[32m"margin-left: auto; color: blue; background: rgb(255, 210, 0);"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mHelp[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</header>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [36m<h1>[39m
+              [0mWelcome to your CS degree scheduler![0m
+            [36m</h1>[39m
+            [0m [0m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"row"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"col-md-2"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mstyle[39m=[32m"top: 0px; position: sticky;"[39m
+              [36m>[39m
+                [36m<p>[39m
+                  [0mChoose the courses you want to insert, drag them to the right semester![0m
+                [36m</p>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"container"[39m
+                [36m>[39m
+                  [36m<div />[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"row"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"MuiAutocomplete-root MuiAutocomplete-hasClearIcon MuiAutocomplete-hasPopupIcon css-viou3o-MuiAutocomplete-root"[39m
+                    [36m>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root"[39m
+                      [36m>[39m
+                        [36m<label[39m
+                          [33mclass[39m=[32m"MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"[39m
+                          [33mdata-shrink[39m=[32m"false"[39m
+                          [33mfor[39m=[32m"combo-box-demo"[39m
+                          [33mid[39m=[32m"combo-box-demo-label"[39m
+                        [36m>[39m
+                          [0mCourse[0m
+                        [36m</label>[39m
+                        [36m<div[39m
+                          [33mclass[39m=[32m"MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd MuiAutocomplete-inputRoot css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root"[39m
+                        [36m>[39m
+                          [36m<input[39m
+                            [33maria-autocomplete[39m=[32m"list"[39m
+                            [33maria-expanded[39m=[32m"false"[39m
+                            [33maria-invalid[39m=[32m"false"[39m
+                            [33mautocapitalize[39m=[32m"none"[39m
+                            [33mautocomplete[39m=[32m"off"[39m
+                            [33mclass[39m=[32m"MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputAdornedEnd MuiAutocomplete-input MuiAutocomplete-inputFocused css-nxo287-MuiInputBase-input-MuiOutlinedInput-input"[39m
+                            [33mid[39m=[32m"combo-box-demo"[39m
+                            [33mrole[39m=[32m"combobox"[39m
+                            [33mspellcheck[39m=[32m"false"[39m
+                            [33mtype[39m=[32m"text"[39m
+                            [33mvalue[39m=[32m""[39m
+                          [36m/>[39m
+                          [36m<div[39m
+                            [33mclass[39m=[32m"MuiAutocomplete-endAdornment css-1q60rmi-MuiAutocomplete-endAdornment"[39m
+                          [36m>[39m
+                            [36m<button[39m
+                              [33maria-label[39m=[32m"Clear"[39m
+                              [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-clearIndicator css-1glvl0p-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-clearIndicator"[39m
+                              [33mtabindex[39m=[32m"-1"[39m
+                              [33mtitle[39m=[32m"Clear"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [36m<svg[39m
+                                [33maria-hidden[39m=[32m"true"[39m
+                                [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeSmall css-ptiqhd-MuiSvgIcon-root"[39m
+                                [33mdata-testid[39m=[32m"CloseIcon"[39m
+                                [33mfocusable[39m=[32m"false"[39m
+                                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                              [36m>[39m
+                                [36m<path[39m
+                                  [33md[39m=[32m"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"[39m
+                                [36m/>[39m
+                              [36m</svg>[39m
+                              [36m<span[39m
+                                [33mclass[39m=[32m"MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"[39m
+                              [36m/>[39m
+                            [36m</button>[39m
+                            [36m<button[39m
+                              [33maria-label[39m=[32m"Open"[39m
+                              [33mclass[39m=[32m"MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium MuiAutocomplete-popupIndicator css-qzbt6i-MuiButtonBase-root-MuiIconButton-root-MuiAutocomplete-popupIndicator"[39m
+                              [33mtabindex[39m=[32m"-1"[39m
+                              [33mtitle[39m=[32m"Open"[39m
+                              [33mtype[39m=[32m"button"[39m
+                            [36m>[39m
+                              [36m<svg[39m
+                                [33maria-hidden[39m=[32m"true"[39m
+                                [33mclass[39m=[32m"MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"[39m
+                                [33mdata-testid[39m=[32m"ArrowDropDownIcon"[39m
+                                [33mfocusable[39m=[32m"false"[39m
+                                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                              [36m>[39m
+                                [36m<path[39m
+                                  [33md[39m=[32m"M7 10l5 5 5-5z"[39m
+                                [36m/>[39m
+                              [36m</svg...
+
+       5 | test("renders the word UD somewhere", () => {
+       6 |     render(<App />);
+    >  7 |     const linkElement = screen.getByText(/UD/i);
+         |                                ^
+       8 |     expect(linkElement).toBeInTheDocument();
+       9 | });
+      10 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/App.test.tsx:7:32)
 
   ● Welcome › renders welcome modal and usage guide
 
@@ -810,20 +1127,20 @@ PASS src/components/CSVExport.test.tsx
 ----------------------|---------|----------|---------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                                                                                                                           
 ----------------------|---------|----------|---------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-All files             |   31.94 |    33.57 |   23.45 |   31.63 |                                                                                                                                                                             
+All files             |   33.92 |    33.57 |    24.2 |   33.63 |                                                                                                                                                                             
  src                  |     100 |      100 |     100 |     100 |                                                                                                                                                                             
   App.tsx             |     100 |      100 |     100 |     100 |                                                                                                                                                                             
- src/components       |   31.37 |    33.57 |   22.98 |   31.05 |                                                                                                                                                                             
+ src/components       |   33.33 |    33.57 |   23.71 |   33.02 |                                                                                                                                                                             
   CSVExport.tsx       |   15.38 |      100 |   14.28 |   15.38 | 11-32,38                                                                                                                                                                    
   CSVImport.tsx       |   24.13 |       20 |      30 |      25 | 16,36-114,119                                                                                                                                                               
   CourseAdder.tsx     |      15 |        0 |   14.28 |   15.78 | 24-41,45-64,69                                                                                                                                                              
-  CourseModal.tsx     |    5.76 |        0 |    8.33 |    5.76 | 28-45,49-66,71-97,106-219                                                                                                                                                   
+  CourseModal.tsx     |    7.14 |        0 |   14.28 |    7.14 | 27-53,62-166                                                                                                                                                                
   CoursePool.tsx      |   45.16 |        0 |   27.27 |   43.33 | 30-58,62,80-121,131-135                                                                                                                                                     
   CreatePlan.tsx      |   29.16 |    33.33 |      25 |   29.16 | 19-31,50-84,125-147                                                                                                                                                         
   CreateSemesters.tsx |   27.77 |       25 |   42.85 |   27.77 | 24-73                                                                                                                                                                       
   CreateYear.tsx      |   64.51 |       60 |   71.42 |   64.51 | 51,69,80-94,140                                                                                                                                                             
   HelpModal.tsx       |     100 |      100 |     100 |     100 |                                                                                                                                                                             
-  Requirements.tsx    |   34.23 |    41.46 |    7.69 |   34.23 | 43-50,60-67,78-83,87-92,103,114-119,123-130,141-146,150-157,168-173,177-184,195-200,204-211,222-227,231-238,248-253,256-263,273-278,281-288,298-303,319-327,347-389,425-434 
+  Requirements.tsx    |   34.23 |    41.46 |    7.69 |   34.23 | 43-50,60-67,78-83,87-92,103,114-119,123-130,141-146,150-157,168-173,177-184,195-200,204-211,222-227,231-238,248-253,256-263,273-278,281-288,298-303,319-327,347-389,421-430 
   ShowCourses.tsx     |   31.81 |    33.33 |   30.76 |   33.33 | 23,38,63-82,116-155                                                                                                                                                         
  src/interfaces       |     100 |      100 |     100 |     100 |                                                                                                                                                                             
   course.ts           |       0 |        0 |       0 |       0 |                                                                                                                                                                             
@@ -833,8 +1150,8 @@ All files             |   31.94 |    33.57 |   23.45 |   31.63 |
   year.ts             |       0 |        0 |       0 |       0 |                                                                                                                                                                             
 ----------------------|---------|----------|---------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Test Suites: 3 failed, 3 passed, 6 total
-Tests:       11 failed, 9 passed, 20 total
+Test Suites: 4 failed, 2 passed, 6 total
+Tests:       14 failed, 6 passed, 20 total
 Snapshots:   0 total
-Time:        9.002 s
+Time:        6.641 s
 Ran all test suites.
