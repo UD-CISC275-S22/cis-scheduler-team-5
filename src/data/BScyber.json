@@ -1,0 +1,187 @@
+[
+    {
+        "id": 1,
+        "code": "ENGL 110",
+        "complete": false
+    },
+    {
+        "id": 2,
+        "code": "First Year Seminar",
+        "complete": false
+    },
+    {
+        "id": 3,
+        "code": "Discovering Learning Experience",
+        "complete": false
+    },
+    {
+        "id": 4,
+        "code": "Multicultural Requirement",
+        "complete": false
+    },
+    {
+        "id": 5,
+        "code": "3 credits Group A Breadth",
+        "complete": false
+    },
+    {
+        "id": 6,
+        "code": "3 credits Group B Breadth",
+        "complete": false
+    },
+    {
+        "id": 7,
+        "code": "3 credits Group C Breadth",
+        "complete": false
+    },
+    {
+        "id": 8,
+        "code": "3 credits Group D Breadth",
+        "complete": false
+    },
+    {
+        "id": 9,
+        "code": "9 credits Engineering Breadth",
+        "complete": false
+    },
+    {
+        "id": 10,
+        "code": "Capstone",
+        "complete": false
+    },
+    {
+        "id": 11,
+        "code": "Second Writing Requirement",
+        "complete": false
+    },
+    {
+        "id": 12,
+        "code": "CISC 108",
+        "complete": false
+    },
+    {
+        "id": 13,
+        "code": "CISC 181",
+        "complete": false
+    },
+    {
+        "id": 14,
+        "code": "CISC 210",
+        "complete": false
+    },
+    {
+        "id": 15,
+        "code": "CISC 220",
+        "complete": false
+    },
+    {
+        "id": 16,
+        "code": "CISC 260",
+        "complete": false
+    },
+    {
+        "id": 17,
+        "code": "CISC 275",
+        "complete": false
+    },
+    {
+        "id": 18,
+        "code": "CISC 303",
+        "complete": false
+    },
+    {
+        "id": 19,
+        "code": "CISC 320",
+        "complete": false
+    },
+    {
+        "id": 20,
+        "code": "CISC 355",
+        "complete": false
+    },
+    {
+        "id": 21,
+        "code": "CISC 361",
+        "complete": false
+    },
+    {
+        "id": 22,
+        "code": "CISC 372",
+        "complete": false
+    },
+    {
+        "id": 23,
+        "code": "CISC 450",
+        "complete": false
+    },
+    {
+        "id": 24,
+        "code": "CISC 464",
+        "complete": false
+    },
+    {
+        "id": 25,
+        "code": "CPEG 465",
+        "complete": false
+    },
+    {
+        "id": 26,
+        "code": "CPEG 494",
+        "complete": false
+    },
+    {
+        "id": 27,
+        "code": "MATH 210",
+        "complete": false
+    },
+    {
+        "id": 28,
+        "code": "MATH 241",
+        "complete": false
+    },
+    {
+        "id": 29,
+        "code": "MATH 242",
+        "complete": false
+    },
+    {
+        "id": 30,
+        "code": "MATH 243",
+        "complete": false
+    },
+    {
+        "id": 31,
+        "code": "MATH 349",
+        "complete": false
+    },
+    {
+        "id": 32,
+        "code": "Lab Science Requirement",
+        "complete": false
+    },
+    {
+        "id": 33,
+        "code": "Advance Data Science",
+        "complete": false
+    },
+    {
+        "id": 34,
+        "code": "Advanced Math",
+        "complete": false
+    },
+    {
+        "id": 35,
+        "code": "3 credits Restricted Elective",
+        "complete": false
+    },
+    {
+        "id": 36,
+        "code": "CISC elective above 300",
+        "complete": false
+    },
+    {
+        "id": 37,
+        "code": "Total 124 credits",
+        "complete": false
+    }
+]
