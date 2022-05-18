@@ -13,7 +13,7 @@ describe("Welcome", () => {
         expect(screen.queryByText("Welcome")).toBeInTheDocument();
     });
     it("closes welcome modal when click close button", () => {
-        fireEvent.click(screen.getByRole("button", { name: "Close Guide" }));
+        fireEvent.click(screen.getByRole("button", { name: "Close" }));
         expect(screen.queryByText("Usage Guide")).not.toBeInTheDocument();
     });
     it("renders welcome modal when click Help button", () => {
