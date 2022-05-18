@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-//import { CourseEditor } from "./Courses";
 export function HelpModal() {
     const [show, setShow] = useState(true);
     const handleClose = () => setShow(false);
