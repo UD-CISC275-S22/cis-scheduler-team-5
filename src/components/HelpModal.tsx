@@ -26,23 +26,50 @@ export function HelpModal() {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    Instructions: Begin by clicking Add Plan and creating a new
-                    degree plan with the name of your choosing. Then, you willll
-                    want to add a year, with the name of your choice (freshman,
-                    year 1, etc.), which will population four empty semesters.
-                    Look to the left side of the screen to view the course pool.
-                    Either begin typing in a course code or scroll through all
-                    the options to find your desired class and click insert
-                    course to place it in the course pool. From there, click and
-                    drag the class to your desired semester. If you are taking a
-                    required course, make sure to check it off on the checklist
-                    on the right side of the screen by clicking the course name.
-                    Additional Info: You can add as many plans or years within a
-                    plan as you wish. You can also delete a year within a plan
-                    or delete a plan altogether. If you want to get rid of a
-                    course within a semester, you can either delete it
-                    individually with the X next to the class, or if you are
-                    looking to clear the semester completel
+                    How to use it?
+                    <ol>
+                        <li>
+                            Begin by clicking <b>Add Plan</b> and creating a new
+                            degree plan with the name of your choosing.
+                        </li>
+                        <li>
+                            Then, you will want to <b>Add a Year</b>, with the
+                            name of your choice (freshman, year 1, etc.)
+                        </li>
+                        <li>
+                            This new year will come with{" "}
+                            <b>four empty semesters</b> by clicking 4-semesters
+                            default.
+                        </li>
+                        <li>
+                            Look to the left side of the screen to view the{" "}
+                            <b>course pool</b>. Either begin typing in a course
+                            code or scroll through all the options to find your
+                            desired class and click insert course to place it in
+                            the course pool.
+                        </li>
+                        <li>
+                            From there, <b>click and drag</b> the class to your
+                            desired semester.
+                        </li>
+                        <li>
+                            If you are taking a required course, make sure to{" "}
+                            <b>check it off on the checklist</b> on the right
+                            side of the screen by clicking the course name. You
+                            can <b>choose any type of CS degree</b>.
+                        </li>
+                        <li>
+                            After inserting a course you can{" "}
+                            <b>click on it to see all the information</b>, also
+                            you can <b>edit the course</b> and save the new
+                            changes.
+                        </li>
+                        <li>
+                            Finally, you can <b>export and import</b> your plan
+                            to a csv file using the right buttons so you can
+                            share the plan with your advisor!
+                        </li>
+                    </ol>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>

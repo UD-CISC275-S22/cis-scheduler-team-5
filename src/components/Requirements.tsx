@@ -405,10 +405,6 @@ export function Requirements(/*{ plans }: { plans: Plan[] }*/): JSX.Element {
             }}
         >
             <div>
-                <div>
-                    Choose your degree and click on it when the requirement is
-                    fullfilled!
-                </div>
                 <ButtonGroup>
                     <Dropdown>
                         <Dropdown.Toggle
