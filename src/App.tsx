@@ -23,7 +23,7 @@ function App(): JSX.Element {
                 </div>
             </header>
             <header className="App-header">
-                <h1>Welcome to your UD degree scheduler!</h1>{" "}
+                <h1>Welcome to your CS degree scheduler!</h1>{" "}
             </header>
             <Row>
                 <Col md="2">

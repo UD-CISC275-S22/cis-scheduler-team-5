@@ -3,7 +3,6 @@ import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { EditText, EditTextarea } from "react-edit-text";
 import { Course } from "../interfaces/course";
 import { Semester } from "../interfaces/semester";
-import Catalog from "../data/catalog.json";
 
 export function CourseModal({
     course,
@@ -22,27 +21,6 @@ export function CourseModal({
         name: string;
         value: string;
         previousValue: string;
-    }
-
-    function findCourse(name: string): Course {
-        const code = name.substring(0, 4);
-        const CATALOG_DATA: Record<string, Record<string, Course>> = Catalog;
-        let course: Course;
-        try {
-            course = CATALOG_DATA[code][name];
-        } catch {
-            course = {
-                code: "",
-                name: "",
-                descr: "",
-                credits: "",
-                preReq: "",
-                restrict: "",
-                breadth: "",
-                typ: ""
-            };
-        }
-        return course;
     }
 
     const handleSave = ({ name, value }: save) => {
@@ -67,33 +45,11 @@ export function CourseModal({
         }
     };
 
-    const handleSafePrevious = (changeCourse: Course) => {
-        const newEdit: Course = course;
-        const prevCourse: Course = findCourse(changeCourse.code);
-        newEdit.name = prevCourse.name;
-        newEdit.code = prevCourse.code;
-        newEdit.descr = prevCourse.descr;
-        newEdit.credits = prevCourse.credits;
-        newEdit.preReq = prevCourse.preReq;
-        newEdit.restrict = prevCourse.restrict;
-        newEdit.breadth = prevCourse.breadth;
-        newEdit.typ = prevCourse.typ;
-        handlePreviousChanges(newEdit);
-    };
-
     function handleSaveChanges(): void {
         const newCourses: Course[] = currentSemester.courses;
         newCourses[
             currentSemester.courses.findIndex((c) => c.code == course.code)
         ] = course;
-        currentSemester.courses = newCourses;
-    }
-
-    function handlePreviousChanges(newEdit: Course): void {
-        const newCourses: Course[] = currentSemester.courses;
-        newCourses[
-            currentSemester.courses.findIndex((c) => c.code == newEdit.code)
-        ] = newEdit;
         currentSemester.courses = newCourses;
     }
 
@@ -202,15 +158,6 @@ export function CourseModal({
                         }}
                     >
                         Close
-                    </Button>
-                    <Button
-                        variant="primary"
-                        onClick={() => {
-                            handleSafePrevious(course);
-                            setShow(false);
-                        }}
-                    >
-                        Default Course
                     </Button>
                     <Button
                         variant="primary"
