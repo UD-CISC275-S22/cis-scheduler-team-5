@@ -2,18 +2,8 @@
 > react-typescript-starter@0.1.0 test
 > react-scripts test "--coverage"
 
+PASS src/components/CreateYear.test.tsx
 PASS src/components/HelpModal.test.tsx
-FAIL src/components/CreateYear.test.tsx
-  ● Test suite failed to run
-
-    Your test suite must contain at least one test.
-
-      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
-      at node_modules/@jest/core/build/TestScheduler.js:316:17
-      at node_modules/emittery/index.js:260:13
-          at Array.map (<anonymous>)
-      at Emittery.emit (node_modules/emittery/index.js:258:23)
-
 FAIL src/App.test.tsx
   ● Console
 
@@ -58,7 +48,7 @@ FAIL src/App.test.tsx
          |                                               ^
       14 |     });
       15 |     it("closes welcome modal when click close button", () => {
-      16 |         fireEvent.click(screen.getByRole("button", { name: "Close Guide" }));
+      16 |         fireEvent.click(screen.getByRole("button", { name: "Close" }));
 
       at __EXTERNAL_MATCHER_TRAP__ (node_modules/expect/build/index.js:386:30)
       at Object.toBeInTheDocument (node_modules/expect/build/index.js:387:15)
@@ -66,7 +56,7 @@ FAIL src/App.test.tsx
 
   ● Welcome › closes welcome modal when click close button
 
-    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Close Guide"
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Close"
 
     There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
 
@@ -78,7 +68,7 @@ FAIL src/App.test.tsx
 
       14 |     });
       15 |     it("closes welcome modal when click close button", () => {
-    > 16 |         fireEvent.click(screen.getByRole("button", { name: "Close Guide" }));
+    > 16 |         fireEvent.click(screen.getByRole("button", { name: "Close" }));
          |                                ^
       17 |         expect(screen.queryByText("Usage Guide")).not.toBeInTheDocument();
       18 |     });
@@ -116,44 +106,35 @@ FAIL src/App.test.tsx
       at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
       at Object.<anonymous> (src/App.test.tsx:20:32)
 
-FAIL src/components/ShowCourses.test.tsx
-  ● Test suite failed to run
-
-    Your test suite must contain at least one test.
-
-      at onResult (node_modules/@jest/core/build/TestScheduler.js:175:18)
-      at node_modules/@jest/core/build/TestScheduler.js:316:17
-      at node_modules/emittery/index.js:260:13
-          at Array.map (<anonymous>)
-      at Emittery.emit (node_modules/emittery/index.js:258:23)
-
+PASS src/components/CSVExport.test.tsx
 ----------------------|---------|----------|---------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                                                                                                                                           
 ----------------------|---------|----------|---------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-All files             |   20.55 |    27.14 |   11.11 |   20.05 |                                                                                                                                                                             
+All files             |   31.11 |    33.57 |   22.83 |   30.79 |                                                                                                                                                                             
  src                  |     100 |      100 |     100 |     100 |                                                                                                                                                                             
   App.tsx             |     100 |      100 |     100 |     100 |                                                                                                                                                                             
- src/components       |   20.16 |    27.14 |   10.55 |   19.65 |                                                                                                                                                                             
-  CSVExport.tsx       |       0 |      100 |       0 |       0 | 9-38                                                                                                                                                                        
+ src/components       |   30.53 |    33.57 |   22.36 |   30.19 |                                                                                                                                                                             
+  CSVExport.tsx       |   15.38 |      100 |   14.28 |   15.38 | 11-32,38                                                                                                                                                                    
   CSVImport.tsx       |   24.13 |       20 |      30 |      25 | 16,36-114,119                                                                                                                                                               
-  CourseAdder.tsx     |       0 |        0 |       0 |       0 | 24-72                                                                                                                                                                       
+  CourseAdder.tsx     |      15 |        0 |   14.28 |   15.78 | 24-41,45-64,69                                                                                                                                                              
   CourseModal.tsx     |       0 |        0 |       0 |       0 | 28-219                                                                                                                                                                      
   CoursePool.tsx      |   45.16 |        0 |   27.27 |   43.33 | 30-58,62,80-121,131-135                                                                                                                                                     
   CreatePlan.tsx      |   29.16 |    33.33 |      25 |   29.16 | 19-31,50-84,125-147                                                                                                                                                         
-  CreateSemesters.tsx |       0 |        0 |       0 |       0 | 19-88                                                                                                                                                                       
-  CreateYear.tsx      |       0 |        0 |       0 |       0 | 18-140                                                                                                                                                                      
+  CreateSemesters.tsx |   27.77 |       25 |   42.85 |   27.77 | 24-73                                                                                                                                                                       
+  CreateYear.tsx      |   64.51 |       60 |   71.42 |   64.51 | 51,69,80-94,140                                                                                                                                                             
   HelpModal.tsx       |     100 |      100 |     100 |     100 |                                                                                                                                                                             
   Requirements.tsx    |   34.23 |    41.46 |    7.69 |   34.23 | 43-50,60-67,78-83,87-92,103,114-119,123-130,141-146,150-157,168-173,177-184,195-200,204-211,222-227,231-238,248-253,256-263,273-278,281-288,298-303,319-327,347-389,425-434 
-  ShowCourses.tsx     |       0 |        0 |       0 |       0 | 22-154                                                                                                                                                                      
- src/interfaces       |       0 |      100 |     100 |       0 |                                                                                                                                                                             
+  ShowCourses.tsx     |   31.81 |    33.33 |   30.76 |   33.33 | 23,38,63-82,116-155                                                                                                                                                         
+ src/interfaces       |     100 |      100 |     100 |     100 |                                                                                                                                                                             
   course.ts           |       0 |        0 |       0 |       0 |                                                                                                                                                                             
   plan.ts             |       0 |        0 |       0 |       0 |                                                                                                                                                                             
-  samplePlan.ts       |       0 |      100 |     100 |       0 | 3                                                                                                                                                                           
+  samplePlan.ts       |     100 |      100 |     100 |     100 |                                                                                                                                                                             
   semester.ts         |       0 |        0 |       0 |       0 |                                                                                                                                                                             
   year.ts             |       0 |        0 |       0 |       0 |                                                                                                                                                                             
 ----------------------|---------|----------|---------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Test Suites: 3 failed, 1 passed, 4 total
-Tests:       3 failed, 5 passed, 8 total
+
+Test Suites: 1 failed, 3 passed, 4 total
+Tests:       3 failed, 9 passed, 12 total
 Snapshots:   0 total
-Time:        5.18 s
+Time:        5.659 s
 Ran all test suites.
